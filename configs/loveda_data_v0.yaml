@@ -1,0 +1,19 @@
+version: loveda-data-v0
+dataset: loveda
+root: data/raw/loveda
+splits:
+  train: train
+  validation: val
+image:
+  color_space: RGB
+  crop_size: 512
+  crop_policy: shared_random_crop_on_image_and_mask
+  resize_before_crop: false
+mask:
+  source_format: single_channel_png
+  taxonomy_ignore_index: -1
+normalization:
+  owner: frozen_vlm_backbone
+  policy: apply only the selected backbone's documented preprocessing
+reproducibility:
+  train_crop_seed: derive_from_global_seed_epoch_and_sample_index

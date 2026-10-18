@@ -1,0 +1,51 @@
+{
+  "analysis_type": "post_primary_descriptive_semantic_allocation_diagnostic",
+  "interpretation_limit": "Six covered leaves only. Frozen CLIP prompt distance and IoU change are descriptive; their correlation is not evidence of a semantic-gradient mechanism.",
+  "b0_b1_summary": "outputs/flair_b1_oem_b2test_bootstrap_summary.json",
+  "b0_b1_summary_sha256": "f356110f0ec91fbcfbc721458d318dbf129bd927b418b9a87376446b523550d0",
+  "model_id": "/root/autodl-tmp/models/clip-vit-base-patch16",
+  "prompt_config": "/root/autodl-tmp/p1/configs/taxonomy_prompts_v0.yaml",
+  "prompt_config_sha256": "586ff2ddea25aed59f8f776d5d51192b0cfbebd6c544ae250468b56fdbcadd37",
+  "device": "cuda",
+  "reference_leaf": "herbaceous_vegetation",
+  "covered_leaf_count": 6,
+  "pearson_correlation_distance_vs_b1_minus_b0_iou": 0.31773474198724133,
+  "records": [
+    {
+      "leaf": "built_structure",
+      "b1_minus_b0_iou": -0.0058585078819660685,
+      "frozen_clip_prompt_cosine_similarity_to_herbaceous": 0.7901489734649658,
+      "frozen_clip_prompt_cosine_distance_to_herbaceous": 0.20985102653503418
+    },
+    {
+      "leaf": "transport_surface",
+      "b1_minus_b0_iou": -0.17993467905062463,
+      "frozen_clip_prompt_cosine_similarity_to_herbaceous": 0.7665401697158813,
+      "frozen_clip_prompt_cosine_distance_to_herbaceous": 0.23345983028411865
+    },
+    {
+      "leaf": "woody_vegetation",
+      "b1_minus_b0_iou": -0.0984606680095606,
+      "frozen_clip_prompt_cosine_similarity_to_herbaceous": 0.8319021463394165,
+      "frozen_clip_prompt_cosine_distance_to_herbaceous": 0.1680978536605835
+    },
+    {
+      "leaf": "cropland",
+      "b1_minus_b0_iou": -0.23569216880136618,
+      "frozen_clip_prompt_cosine_similarity_to_herbaceous": 0.8972992897033691,
+      "frozen_clip_prompt_cosine_distance_to_herbaceous": 0.10270071029663086
+    },
+    {
+      "leaf": "bare_surface",
+      "b1_minus_b0_iou": 0.010461603371564994,
+      "frozen_clip_prompt_cosine_similarity_to_herbaceous": 0.8566086292266846,
+      "frozen_clip_prompt_cosine_distance_to_herbaceous": 0.14339137077331543
+    },
+    {
+      "leaf": "surface_water",
+      "b1_minus_b0_iou": 0.009421903643298868,
+      "frozen_clip_prompt_cosine_similarity_to_herbaceous": 0.7924837470054626,
+      "frozen_clip_prompt_cosine_distance_to_herbaceous": 0.20751625299453735
+    }
+  ]
+}

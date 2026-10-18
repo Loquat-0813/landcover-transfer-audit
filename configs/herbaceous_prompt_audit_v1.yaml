@@ -1,0 +1,16 @@
+version: herbaceous-prompt-audit-v1
+target_leaf: herbaceous_vegetation
+candidates:
+  grassland_or_rangeland: a satellite image of grassland or rangeland
+  grassland: a satellite image of grassland
+  rangeland: a satellite image of rangeland
+  pasture: a satellite image of pasture
+  meadow: a satellite image of meadow
+  herbaceous_vegetation: a satellite image of herbaceous vegetation
+ensemble_members:
+  - grassland_or_rangeland
+  - grassland
+  - rangeland
+  - pasture
+  - meadow
+  - herbaceous_vegetation

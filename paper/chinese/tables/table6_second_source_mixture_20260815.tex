@@ -1,0 +1,39 @@
+\begin{table}[H]
+\centering
+\caption{第二源混合评估：Semantic Drone 为基础源，LoveDA agriculture 为提供耕地监督的辅助源，OpenEarthMap 为目标。基础源指标对三个具有 Semantic Drone 精确操作性支持的类别平均：草本植被、木本植被与地表水。点值对三个已完成检查点平均。差值由未舍入指标计算，仅展示时舍入。区间采用2,000次配对城市 bootstrap，以这些检查点及排除 Shanghai、Tyrol、Vienna 后72城总体为条件。}
+\label{tab:second-mixture}
+\small
+\renewcommand{\arraystretch}{1.12}
+\setlength{\tabcolsep}{4pt}
+\begin{tabular*}{\linewidth}{@{\extracolsep{\fill}}lrrrr@{}}
+\toprule
+\multicolumn{5}{l}{各检查点的耕地 IoU 与均值} \\
+分支 & 种子19 & 种子37 & 种子73 & 均值 \\
+\midrule
+SD-B0 & 0.0000 & 0.0000 & 0.0000 & 0.0000 \\
+SD-B0-half & 0.0000 & 0.0000 & 0.0000 & 0.0000 \\
+SD-B1 & 0.1627 & 0.1642 & 0.1627 & 0.1632 \\
+\bottomrule
+\end{tabular*}
+\par\medskip
+\begin{tabular*}{\linewidth}{@{\extracolsep{\fill}}lrl@{}}
+\toprule
+分支 & 基础源 mIoU & 角色 \\
+\midrule
+SD-B0 & 0.2686 & 基础源 \\
+SD-B0-half & 0.2337 & 暴露控制 \\
+SD-B1 & 0.1001 & 辅助耕地源 \\
+\bottomrule
+\end{tabular*}
+\par\medskip
+\begin{tabular*}{\linewidth}{@{\extracolsep{\fill}}lrrr@{}}
+\toprule
+SD-B1 减 SD-B0 & 估计 & 95\%下界 & 95\%上界 \\
+\midrule
+耕地 IoU & +0.1632 & +0.1262 & +0.2049 \\
+基础源 mIoU & -0.1686 & -0.1903 & -0.1464 \\
+\bottomrule
+\end{tabular*}
+\par\smallskip
+\raggedright 三个检查点各自的耕地差值均为正。
+\end{table}

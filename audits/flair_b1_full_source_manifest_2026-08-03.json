@@ -1,0 +1,698 @@
+{
+  "version": "flair-b1-source-manifest-v1",
+  "official_release": "IGNF/FLAIR-1-2 data/train-val",
+  "license": "Etalab Open Licence 2.0",
+  "archive_root": "data\\raw\\flair_b1_full",
+  "extract_root": "data\\raw\\flair_b1_full_extracted_cloud",
+  "train_domains": [
+    "D006_2020",
+    "D007_2020",
+    "D008_2019",
+    "D009_2019",
+    "D013_2020",
+    "D016_2020",
+    "D017_2018",
+    "D021_2020",
+    "D023_2020",
+    "D030_2021",
+    "D032_2019",
+    "D033_2021",
+    "D034_2021",
+    "D035_2020",
+    "D038_2021",
+    "D041_2021",
+    "D044_2020",
+    "D046_2019",
+    "D049_2020",
+    "D051_2019",
+    "D052_2019",
+    "D055_2018",
+    "D060_2021",
+    "D063_2019",
+    "D070_2020",
+    "D072_2019",
+    "D074_2020",
+    "D078_2021",
+    "D080_2021",
+    "D081_2020",
+    "D086_2020",
+    "D091_2021"
+  ],
+  "validation_domains": [
+    "D004_2021",
+    "D014_2020",
+    "D029_2021",
+    "D031_2019",
+    "D058_2020",
+    "D066_2021",
+    "D067_2021",
+    "D077_2021"
+  ],
+  "archives": [
+    {
+      "archive": "D004_2021.zip",
+      "sha256": "683b1fc39e0a94ade25151c3a836684b933f859b6c1cd5ead030ce5a18d491b2",
+      "compressed_bytes": 2058367341,
+      "uncompressed_bytes": 3128550396,
+      "training_uncompressed_bytes": 2380617336,
+      "member_count": 3711,
+      "training_member_count": 3638,
+      "image_tiff_count": 1800,
+      "mask_tiff_count": 1800,
+      "top_level_directories": [
+        "aerial",
+        "labels",
+        "sentinel"
+      ]
+    },
+    {
+      "archive": "D006_2020.zip",
+      "sha256": "66f58e837577d34f85ebbab45cca6b54856c732af834f1bdb5ddbf19b87da75f",
+      "compressed_bytes": 2803089151,
+      "uncompressed_bytes": 3936256281,
+      "training_uncompressed_bytes": 2348574457,
+      "member_count": 3649,
+      "training_member_count": 3584,
+      "image_tiff_count": 1775,
+      "mask_tiff_count": 1775,
+      "top_level_directories": [
+        "aerial",
+        "labels",
+        "sentinel"
+      ]
+    },
+    {
+      "archive": "D007_2020.zip",
+      "sha256": "256946d883269d7e214a637e44c71445686ee1f0db12898694c4252690726760",
+      "compressed_bytes": 2972402207,
+      "uncompressed_bytes": 4334066779,
+      "training_uncompressed_bytes": 2282542359,
+      "member_count": 3789,
+      "training_member_count": 3564,
+      "image_tiff_count": 1725,
+      "mask_tiff_count": 1725,
+      "top_level_directories": [
+        "aerial",
+        "labels",
+        "sentinel"
+      ]
+    },
+    {
+      "archive": "D008_2019.zip",
+      "sha256": "68e596986b5d50434cad9f6a8e81b50cabaddcd746be7253014dfb8deb63a8a9",
+      "compressed_bytes": 2159056213,
+      "uncompressed_bytes": 3375106889,
+      "training_uncompressed_bytes": 2347861657,
+      "member_count": 3661,
+      "training_member_count": 3588,
+      "image_tiff_count": 1775,
+      "mask_tiff_count": 1775,
+      "top_level_directories": [
+        "aerial",
+        "labels",
+        "sentinel"
+      ]
+    },
+    {
+      "archive": "D009_2019.zip",
+      "sha256": "d6d46e244a7d59aabafcd9a4a24e26fbbfe5512a55510af6ea2cd9c074e133b1",
+      "compressed_bytes": 2546612681,
+      "uncompressed_bytes": 3606831784,
+      "training_uncompressed_bytes": 2378873398,
+      "member_count": 3711,
+      "training_member_count": 3638,
+      "image_tiff_count": 1800,
+      "mask_tiff_count": 1800,
+      "top_level_directories": [
+        "aerial",
+        "labels",
+        "sentinel"
+      ]
+    },
+    {
+      "archive": "D013_2020.zip",
+      "sha256": "7fee53e0f7d4194b84b67e3ea8092890c7485918717e10ab624026764ff1cf24",
+      "compressed_bytes": 2404303734,
+      "uncompressed_bytes": 3604708933,
+      "training_uncompressed_bytes": 2280321206,
+      "member_count": 3561,
+      "training_member_count": 3488,
+      "image_tiff_count": 1725,
+      "mask_tiff_count": 1725,
+      "top_level_directories": [
+        "aerial",
+        "labels",
+        "sentinel"
+      ]
+    },
+    {
+      "archive": "D014_2020.zip",
+      "sha256": "4243eb0ad5d11e228d5ce58f5329bbe9cbec9f6cd7c0eb6aba5528a4000194fc",
+      "compressed_bytes": 2567318192,
+      "uncompressed_bytes": 3846008039,
+      "training_uncompressed_bytes": 2314352392,
+      "member_count": 3683,
+      "training_member_count": 3562,
+      "image_tiff_count": 1750,
+      "mask_tiff_count": 1750,
+      "top_level_directories": [
+        "aerial",
+        "labels",
+        "sentinel"
+      ]
+    },
+    {
+      "archive": "D016_2020.zip",
+      "sha256": "7dff65d9697bf320ab840524469cabe8d3e355892e5dec7d44bc015705bda014",
+      "compressed_bytes": 2403653252,
+      "uncompressed_bytes": 3379635483,
+      "training_uncompressed_bytes": 2349116859,
+      "member_count": 3649,
+      "training_member_count": 3584,
+      "image_tiff_count": 1775,
+      "mask_tiff_count": 1775,
+      "top_level_directories": [
+        "aerial",
+        "labels",
+        "sentinel"
+      ]
+    },
+    {
+      "archive": "D017_2018.zip",
+      "sha256": "284d6e69f0ad63866b36b782a0712fa61422682a805feeff31e109881cdd0355",
+      "compressed_bytes": 2350394676,
+      "uncompressed_bytes": 3323049823,
+      "training_uncompressed_bytes": 2381327019,
+      "member_count": 3705,
+      "training_member_count": 3636,
+      "image_tiff_count": 1800,
+      "mask_tiff_count": 1800,
+      "top_level_directories": [
+        "aerial",
+        "labels",
+        "sentinel"
+      ]
+    },
+    {
+      "archive": "D021_2020.zip",
+      "sha256": "dd15731c8231d14d3e0cd80a645ac6a3f192cf29f875add433320d9934022589",
+      "compressed_bytes": 1122082742,
+      "uncompressed_bytes": 1748629618,
+      "training_uncompressed_bytes": 1320797266,
+      "member_count": 2063,
+      "training_member_count": 2022,
+      "image_tiff_count": 1000,
+      "mask_tiff_count": 1000,
+      "top_level_directories": [
+        "aerial",
+        "labels",
+        "sentinel"
+      ]
+    },
+    {
+      "archive": "D023_2020.zip",
+      "sha256": "76853bbd73c00653372b928ceff4236aa16962bb2f20cf2952e8d17d0899a89c",
+      "compressed_bytes": 670275541,
+      "uncompressed_bytes": 1021985827,
+      "training_uncompressed_bytes": 792642840,
+      "member_count": 1239,
+      "training_member_count": 1214,
+      "image_tiff_count": 600,
+      "mask_tiff_count": 600,
+      "top_level_directories": [
+        "aerial",
+        "labels",
+        "sentinel"
+      ]
+    },
+    {
+      "archive": "D029_2021.zip",
+      "sha256": "f8a6b60d78a2888861c4d56737ead680b8a45d323e8943111d4933e3bb347c3e",
+      "compressed_bytes": 2243268919,
+      "uncompressed_bytes": 3571464927,
+      "training_uncompressed_bytes": 2380533148,
+      "member_count": 3741,
+      "training_member_count": 3648,
+      "image_tiff_count": 1800,
+      "mask_tiff_count": 1800,
+      "top_level_directories": [
+        "aerial",
+        "labels",
+        "sentinel"
+      ]
+    },
+    {
+      "archive": "D030_2021.zip",
+      "sha256": "554cf9ae75ba0c5d61a47407d4591482b630559e29dd7a76c2a5248f14c7821a",
+      "compressed_bytes": 1014178428,
+      "uncompressed_bytes": 1561968269,
+      "training_uncompressed_bytes": 793749897,
+      "member_count": 1263,
+      "training_member_count": 1222,
+      "image_tiff_count": 600,
+      "mask_tiff_count": 600,
+      "top_level_directories": [
+        "aerial",
+        "labels",
+        "sentinel"
+      ]
+    },
+    {
+      "archive": "D031_2019.zip",
+      "sha256": "39d85060b2b7ac867ce7a65b785eadc4005b28127e5b6a9f59a1dd66506d173d",
+      "compressed_bytes": 2013505047,
+      "uncompressed_bytes": 2928125384,
+      "training_uncompressed_bytes": 2281310809,
+      "member_count": 3561,
+      "training_member_count": 3488,
+      "image_tiff_count": 1725,
+      "mask_tiff_count": 1725,
+      "top_level_directories": [
+        "aerial",
+        "labels",
+        "sentinel"
+      ]
+    },
+    {
+      "archive": "D032_2019.zip",
+      "sha256": "3aa2360322f88418ade97851483989bc71076c6dfa69ece60ec8317a84ae469d",
+      "compressed_bytes": 1894064857,
+      "uncompressed_bytes": 2986932248,
+      "training_uncompressed_bytes": 2310640184,
+      "member_count": 3539,
+      "training_member_count": 3514,
+      "image_tiff_count": 1750,
+      "mask_tiff_count": 1750,
+      "top_level_directories": [
+        "aerial",
+        "labels",
+        "sentinel"
+      ]
+    },
+    {
+      "archive": "D033_2021.zip",
+      "sha256": "cc93c3afa2f9c934a88d684f14ee2b4885679848e8470510acdbdecea8bfb2a3",
+      "compressed_bytes": 2093997939,
+      "uncompressed_bytes": 3332788606,
+      "training_uncompressed_bytes": 2345972012,
+      "member_count": 3691,
+      "training_member_count": 3598,
+      "image_tiff_count": 1775,
+      "mask_tiff_count": 1775,
+      "top_level_directories": [
+        "aerial",
+        "labels",
+        "sentinel"
+      ]
+    },
+    {
+      "archive": "D034_2021.zip",
+      "sha256": "9e1c936084c39149d2fcd5516496f3c13acc8b3d4a894ecf0f1a0131859dfb3e",
+      "compressed_bytes": 899647128,
+      "uncompressed_bytes": 1483804917,
+      "training_uncompressed_bytes": 1057258731,
+      "member_count": 1657,
+      "training_member_count": 1620,
+      "image_tiff_count": 800,
+      "mask_tiff_count": 800,
+      "top_level_directories": [
+        "aerial",
+        "labels",
+        "sentinel"
+      ]
+    },
+    {
+      "archive": "D035_2020.zip",
+      "sha256": "118de69b94ee6a785f118f26d173e7caef04d0c2ebaa2d88abf116fb779c2e19",
+      "compressed_bytes": 621182795,
+      "uncompressed_bytes": 891248976,
+      "training_uncompressed_bytes": 623848756,
+      "member_count": 971,
+      "training_member_count": 954,
+      "image_tiff_count": 472,
+      "mask_tiff_count": 472,
+      "top_level_directories": [
+        "aerial",
+        "labels",
+        "sentinel"
+      ]
+    },
+    {
+      "archive": "D038_2021.zip",
+      "sha256": "f6caf7f512073547fd65cea3718dc4ae7425820f440d497d3e618e79f9a519bb",
+      "compressed_bytes": 850465962,
+      "uncompressed_bytes": 1343905721,
+      "training_uncompressed_bytes": 747457832,
+      "member_count": 1199,
+      "training_member_count": 1154,
+      "image_tiff_count": 565,
+      "mask_tiff_count": 565,
+      "top_level_directories": [
+        "aerial",
+        "labels",
+        "sentinel"
+      ]
+    },
+    {
+      "archive": "D041_2021.zip",
+      "sha256": "dfc7c31f196e631822c7347fdba939d23d9d9bddb4a41bf163a823db70e7796f",
+      "compressed_bytes": 588144513,
+      "uncompressed_bytes": 961296130,
+      "training_uncompressed_bytes": 693419019,
+      "member_count": 1083,
+      "training_member_count": 1062,
+      "image_tiff_count": 525,
+      "mask_tiff_count": 525,
+      "top_level_directories": [
+        "aerial",
+        "labels",
+        "sentinel"
+      ]
+    },
+    {
+      "archive": "D044_2020.zip",
+      "sha256": "169d0ee5506f0e2522bf672426cc395317e4a828a3522a53c1793eceed355ec0",
+      "compressed_bytes": 2544908695,
+      "uncompressed_bytes": 3844255034,
+      "training_uncompressed_bytes": 2282115860,
+      "member_count": 3645,
+      "training_member_count": 3516,
+      "image_tiff_count": 1725,
+      "mask_tiff_count": 1725,
+      "top_level_directories": [
+        "aerial",
+        "labels",
+        "sentinel"
+      ]
+    },
+    {
+      "archive": "D046_2019.zip",
+      "sha256": "c57260591f0e7cc0c5d321ffc0b0aa2e9fe400cda01fe448dc801642aba3e470",
+      "compressed_bytes": 2172744651,
+      "uncompressed_bytes": 3053614486,
+      "training_uncompressed_bytes": 2282887827,
+      "member_count": 3621,
+      "training_member_count": 3508,
+      "image_tiff_count": 1725,
+      "mask_tiff_count": 1725,
+      "top_level_directories": [
+        "aerial",
+        "labels",
+        "sentinel"
+      ]
+    },
+    {
+      "archive": "D049_2020.zip",
+      "sha256": "5b76b38fae58f86eb09d2d0bed65d79b5de1982b3bafbf627f0ac0c88a0a4f85",
+      "compressed_bytes": 2354195743,
+      "uncompressed_bytes": 3330458361,
+      "training_uncompressed_bytes": 2282590325,
+      "member_count": 3597,
+      "training_member_count": 3500,
+      "image_tiff_count": 1725,
+      "mask_tiff_count": 1725,
+      "top_level_directories": [
+        "aerial",
+        "labels",
+        "sentinel"
+      ]
+    },
+    {
+      "archive": "D051_2019.zip",
+      "sha256": "fd58e3f4769fbaba7023e11afa9697a351ed1f87f494df615dacf2cfce31ed7f",
+      "compressed_bytes": 2077142883,
+      "uncompressed_bytes": 3361752392,
+      "training_uncompressed_bytes": 2279666174,
+      "member_count": 3555,
+      "training_member_count": 3486,
+      "image_tiff_count": 1725,
+      "mask_tiff_count": 1725,
+      "top_level_directories": [
+        "aerial",
+        "labels",
+        "sentinel"
+      ]
+    },
+    {
+      "archive": "D052_2019.zip",
+      "sha256": "445c3a234da9a27e13a7a10ab6dfd982116e914978ac377f96a4f149c08e3b91",
+      "compressed_bytes": 1889294076,
+      "uncompressed_bytes": 3084191849,
+      "training_uncompressed_bytes": 2281180969,
+      "member_count": 3567,
+      "training_member_count": 3490,
+      "image_tiff_count": 1725,
+      "mask_tiff_count": 1725,
+      "top_level_directories": [
+        "aerial",
+        "labels",
+        "sentinel"
+      ]
+    },
+    {
+      "archive": "D055_2018.zip",
+      "sha256": "91731a462fee2c72316a93c2422e91dc748c35b963fecc5cb5dd239ba89e4c30",
+      "compressed_bytes": 2093628624,
+      "uncompressed_bytes": 3066739223,
+      "training_uncompressed_bytes": 2379469073,
+      "member_count": 3717,
+      "training_member_count": 3640,
+      "image_tiff_count": 1800,
+      "mask_tiff_count": 1800,
+      "top_level_directories": [
+        "aerial",
+        "labels",
+        "sentinel"
+      ]
+    },
+    {
+      "archive": "D058_2020.zip",
+      "sha256": "7fa3b0a1725c95158fbbb6f80844a6abde67ad37fc67e540f2722916a5751b16",
+      "compressed_bytes": 2287599533,
+      "uncompressed_bytes": 3835057703,
+      "training_uncompressed_bytes": 2379814740,
+      "member_count": 3711,
+      "training_member_count": 3638,
+      "image_tiff_count": 1800,
+      "mask_tiff_count": 1800,
+      "top_level_directories": [
+        "aerial",
+        "labels",
+        "sentinel"
+      ]
+    },
+    {
+      "archive": "D060_2021.zip",
+      "sha256": "83433e9db81ca70b8333726b39838f858e184e3fafd06db37c7a3ef92e7d1af4",
+      "compressed_bytes": 2028378422,
+      "uncompressed_bytes": 3358789658,
+      "training_uncompressed_bytes": 2346372315,
+      "member_count": 3697,
+      "training_member_count": 3600,
+      "image_tiff_count": 1775,
+      "mask_tiff_count": 1775,
+      "top_level_directories": [
+        "aerial",
+        "labels",
+        "sentinel"
+      ]
+    },
+    {
+      "archive": "D063_2019.zip",
+      "sha256": "02fe6402c64a3ee293d14a89ebafd7f94b8e6708320fedfed857a5ee18d9346a",
+      "compressed_bytes": 2380509004,
+      "uncompressed_bytes": 3561184778,
+      "training_uncompressed_bytes": 2381742951,
+      "member_count": 3717,
+      "training_member_count": 3640,
+      "image_tiff_count": 1800,
+      "mask_tiff_count": 1800,
+      "top_level_directories": [
+        "aerial",
+        "labels",
+        "sentinel"
+      ]
+    },
+    {
+      "archive": "D066_2021.zip",
+      "sha256": "f2592d7da22a1fab257cc3fe65c1a53a205df7eec5f52165121bc83efa0c3420",
+      "compressed_bytes": 1785615984,
+      "uncompressed_bytes": 3072570463,
+      "training_uncompressed_bytes": 2314787338,
+      "member_count": 3653,
+      "training_member_count": 3552,
+      "image_tiff_count": 1750,
+      "mask_tiff_count": 1750,
+      "top_level_directories": [
+        "aerial",
+        "labels",
+        "sentinel"
+      ]
+    },
+    {
+      "archive": "D067_2021.zip",
+      "sha256": "c5a74f3ea04b7a70b12c2f792943c6635c021620f8f85859185d57f84cd1d0f2",
+      "compressed_bytes": 1747285682,
+      "uncompressed_bytes": 2696309954,
+      "training_uncompressed_bytes": 2281800943,
+      "member_count": 3543,
+      "training_member_count": 3482,
+      "image_tiff_count": 1725,
+      "mask_tiff_count": 1725,
+      "top_level_directories": [
+        "aerial",
+        "labels",
+        "sentinel"
+      ]
+    },
+    {
+      "archive": "D070_2020.zip",
+      "sha256": "c336134106e4bc347fb59b1f7765586236776c45df9e5a9163465d1d8f6349cb",
+      "compressed_bytes": 2695766249,
+      "uncompressed_bytes": 3955062359,
+      "training_uncompressed_bytes": 2347282860,
+      "member_count": 3667,
+      "training_member_count": 3590,
+      "image_tiff_count": 1775,
+      "mask_tiff_count": 1775,
+      "top_level_directories": [
+        "aerial",
+        "labels",
+        "sentinel"
+      ]
+    },
+    {
+      "archive": "D072_2019.zip",
+      "sha256": "9060ba49fd9d0a705f5cc3fe212be9dbeb2bb4a9793fac9cd70d30c4292ca4c9",
+      "compressed_bytes": 2017060542,
+      "uncompressed_bytes": 2844245019,
+      "training_uncompressed_bytes": 2316979005,
+      "member_count": 3581,
+      "training_member_count": 3528,
+      "image_tiff_count": 1750,
+      "mask_tiff_count": 1750,
+      "top_level_directories": [
+        "aerial",
+        "labels",
+        "sentinel"
+      ]
+    },
+    {
+      "archive": "D074_2020.zip",
+      "sha256": "931babfd41072ab15aea7230ce77098b5617e27e71716e81310455eb7525a174",
+      "compressed_bytes": 1745819887,
+      "uncompressed_bytes": 2531682834,
+      "training_uncompressed_bytes": 1686400362,
+      "member_count": 2625,
+      "training_member_count": 2576,
+      "image_tiff_count": 1275,
+      "mask_tiff_count": 1275,
+      "top_level_directories": [
+        "aerial",
+        "labels",
+        "sentinel"
+      ]
+    },
+    {
+      "archive": "D077_2021.zip",
+      "sha256": "8eeb1b4bd951fe864f7402aac32770fb9156291c4fa2da436e59fc79557dfe7f",
+      "compressed_bytes": 1833589555,
+      "uncompressed_bytes": 2872704825,
+      "training_uncompressed_bytes": 2180837683,
+      "member_count": 3471,
+      "training_member_count": 3358,
+      "image_tiff_count": 1650,
+      "mask_tiff_count": 1650,
+      "top_level_directories": [
+        "aerial",
+        "labels",
+        "sentinel"
+      ]
+    },
+    {
+      "archive": "D078_2021.zip",
+      "sha256": "e53ea902a6d32a836c6cf8e3a0c82627bc5e0e843534f78da3298011f467987d",
+      "compressed_bytes": 2278028836,
+      "uncompressed_bytes": 3300702232,
+      "training_uncompressed_bytes": 2183208755,
+      "member_count": 3447,
+      "training_member_count": 3350,
+      "image_tiff_count": 1650,
+      "mask_tiff_count": 1650,
+      "top_level_directories": [
+        "aerial",
+        "labels",
+        "sentinel"
+      ]
+    },
+    {
+      "archive": "D080_2021.zip",
+      "sha256": "a8a49368aa382009646fa01508f4824527d096d9784ea69008a59c225c5f31bc",
+      "compressed_bytes": 2102947552,
+      "uncompressed_bytes": 3378831101,
+      "training_uncompressed_bytes": 2280434134,
+      "member_count": 3603,
+      "training_member_count": 3502,
+      "image_tiff_count": 1725,
+      "mask_tiff_count": 1725,
+      "top_level_directories": [
+        "aerial",
+        "labels",
+        "sentinel"
+      ]
+    },
+    {
+      "archive": "D081_2020.zip",
+      "sha256": "7487e23221dafa3593be2e3458d4c240572a13fd26f1947014cbddc0ab381bc2",
+      "compressed_bytes": 2387752406,
+      "uncompressed_bytes": 3479059312,
+      "training_uncompressed_bytes": 2282466845,
+      "member_count": 3555,
+      "training_member_count": 3486,
+      "image_tiff_count": 1725,
+      "mask_tiff_count": 1725,
+      "top_level_directories": [
+        "aerial",
+        "labels",
+        "sentinel"
+      ]
+    },
+    {
+      "archive": "D086_2020.zip",
+      "sha256": "d865bc0d5b8041c28298852aba01c591287c2a43051c7669085721bf7dfeab5d",
+      "compressed_bytes": 2523723418,
+      "uncompressed_bytes": 3738957255,
+      "training_uncompressed_bytes": 2282111700,
+      "member_count": 3591,
+      "training_member_count": 3498,
+      "image_tiff_count": 1725,
+      "mask_tiff_count": 1725,
+      "top_level_directories": [
+        "aerial",
+        "labels",
+        "sentinel"
+      ]
+    },
+    {
+      "archive": "D091_2021.zip",
+      "sha256": "d141e81169713764bee00d77634788cdf7ab808279678dc3bab3946b43981761",
+      "compressed_bytes": 2206574558,
+      "uncompressed_bytes": 3275958918,
+      "training_uncompressed_bytes": 2149454637,
+      "member_count": 3397,
+      "training_member_count": 3300,
+      "image_tiff_count": 1625,
+      "mask_tiff_count": 1625,
+      "top_level_directories": [
+        "aerial",
+        "labels",
+        "sentinel"
+      ]
+    }
+  ],
+  "total_compressed_bytes": 79428577618,
+  "total_uncompressed_bytes": 120008492786,
+  "total_training_uncompressed_bytes": 81612821673,
+  "extraction_profile": "aerial_labels_only_v1",
+  "extraction_status": {}
+}

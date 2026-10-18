@@ -1,0 +1,15 @@
+__pycache__/
+*.py[cod]
+.pytest_cache/
+.venv/
+.env
+*.pt
+*.pth
+*.safetensors
+*.tif
+*.tiff
+*.aux
+*.log
+*.bbl
+*.blg
+*.out

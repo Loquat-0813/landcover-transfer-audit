@@ -1,0 +1,141 @@
+{
+  "run_config": {
+    "experiment": "openearthmap_b2_e1_checkpoint_replay",
+    "data_root": "/root/autodl-tmp/p1/data/raw/openearthmap",
+    "model_id": "/root/autodl-tmp/models/clip-vit-base-patch16",
+    "adapter_checkpoint": "outputs/b2_openearthmap_e1_seed73/adapter_final.pt",
+    "adapter_checkpoint_sha256": "6b92beb3f4891efbcc08544e53a870cc835db36de1d1d9e9159f6b430e019b11",
+    "taxonomy": "land-cover-taxonomy-v0",
+    "mapping": "dataset-label-mappings-v0",
+    "prompt_config": "/root/autodl-tmp/p1/configs/taxonomy_prompts_v0.yaml",
+    "prompts": [
+      "a satellite image of a building",
+      "a satellite image of a road",
+      "a satellite image of forest or trees",
+      "a satellite image of grassland or rangeland",
+      "a satellite image of agricultural cropland",
+      "a satellite image of bare soil or barren ground",
+      "a satellite image of water"
+    ],
+    "tile_size": 512,
+    "full_city_split": {
+      "train_pairs": 1689,
+      "validation_pairs": 403,
+      "test_pairs": 595,
+      "train_cities": 48,
+      "validation_cities": 11,
+      "test_cities": 16,
+      "train_city_set_sha256": "03fb79ddd5e52aec5153f63b0f0052f1a2732c6a6ebfa66b4690ef7eb3a2fb9e",
+      "validation_city_set_sha256": "3c8a72c3432908ceb69dbe3f83945eaaa3f7f97f8a83c5fe80d16472e3020b35",
+      "test_city_set_sha256": "197a41e375d9e4cd1f1c56dd550ec43cdfd5da142baac6658e897a1350bd1d78",
+      "train_pair_identifier_set_sha256": "c5c11809688ca9dbb63ee30c33b22155cb02fa27cde81ac7335e61ea0a5f825b",
+      "validation_pair_identifier_set_sha256": "f76db63f7c211635967e015e9b4f8642a780562f808efefdefbae34eef99f81c",
+      "test_pair_identifier_set_sha256": "9476790879cfeaff3e4bc1daeb62cc16191537e716327981f95fa140baa37090"
+    },
+    "selected_test_pairs": 595,
+    "evaluated_test_pair_identifier_set_sha256": "9476790879cfeaff3e4bc1daeb62cc16191537e716327981f95fa140baa37090",
+    "bootstrap_replicates": 2000,
+    "bootstrap_seed": 20260803,
+    "source_checkpoint_city_split": {
+      "train_pairs": 1689,
+      "validation_pairs": 403,
+      "test_pairs": 595,
+      "train_cities": 48,
+      "validation_cities": 11,
+      "test_cities": 16,
+      "train_city_set_sha256": "03fb79ddd5e52aec5153f63b0f0052f1a2732c6a6ebfa66b4690ef7eb3a2fb9e",
+      "validation_city_set_sha256": "3c8a72c3432908ceb69dbe3f83945eaaa3f7f97f8a83c5fe80d16472e3020b35",
+      "test_city_set_sha256": "197a41e375d9e4cd1f1c56dd550ec43cdfd5da142baac6658e897a1350bd1d78",
+      "train_pair_identifier_set_sha256": "c5c11809688ca9dbb63ee30c33b22155cb02fa27cde81ac7335e61ea0a5f825b",
+      "validation_pair_identifier_set_sha256": "f76db63f7c211635967e015e9b4f8642a780562f808efefdefbae34eef99f81c",
+      "test_pair_identifier_set_sha256": "9476790879cfeaff3e4bc1daeb62cc16191537e716327981f95fa140baa37090"
+    }
+  },
+  "test": {
+    "mean_iou": 0.5108109165513326,
+    "per_class_iou": {
+      "built_structure": 0.7142780449555451,
+      "transport_surface": 0.45365999522791284,
+      "woody_vegetation": 0.5298600369684098,
+      "herbaceous_vegetation": 0.3776265417196102,
+      "cropland": 0.6193277091768649,
+      "bare_surface": 0.2536560735658816,
+      "surface_water": 0.6272680142451035
+    },
+    "valid_pixels": 469808097
+  },
+  "city_bootstrap": {
+    "resampling_unit": "openearthmap_city",
+    "city_names": [
+      "bielefeld",
+      "buenos_aires",
+      "dhaka",
+      "dolnoslaskie",
+      "dowa",
+      "kagera",
+      "lohur",
+      "malopolskie",
+      "monrovia",
+      "muenster",
+      "piura",
+      "pomorskie",
+      "rio",
+      "san_tome",
+      "soriano",
+      "vegas"
+    ],
+    "city_count": 16,
+    "bootstrap_replicates": 2000,
+    "bootstrap_seed": 20260803,
+    "confidence_level": 0.95,
+    "point": {
+      "mean_iou": 0.5108109165513326,
+      "per_class_iou": {
+        "built_structure": 0.7142780449555451,
+        "transport_surface": 0.45365999522791284,
+        "woody_vegetation": 0.5298600369684098,
+        "herbaceous_vegetation": 0.3776265417196102,
+        "cropland": 0.6193277091768649,
+        "bare_surface": 0.2536560735658816,
+        "surface_water": 0.6272680142451035
+      },
+      "valid_pixels": 469808097
+    },
+    "confidence_interval": {
+      "mean_iou": {
+        "lower": 0.4571108410083456,
+        "upper": 0.5481120474620621
+      },
+      "per_class_iou": {
+        "built_structure": {
+          "lower": 0.6694511645592088,
+          "upper": 0.7454188995443163
+        },
+        "transport_surface": {
+          "lower": 0.3931610655543405,
+          "upper": 0.5099533043013117
+        },
+        "woody_vegetation": {
+          "lower": 0.46568120572447547,
+          "upper": 0.5906554859284058
+        },
+        "herbaceous_vegetation": {
+          "lower": 0.33822496721579376,
+          "upper": 0.4082965332067851
+        },
+        "cropland": {
+          "lower": 0.4898883660663971,
+          "upper": 0.6939699321208807
+        },
+        "bare_surface": {
+          "lower": 0.05198855895473193,
+          "upper": 0.43296707381154637
+        },
+        "surface_water": {
+          "lower": 0.4207583498861292,
+          "upper": 0.7285881800425714
+        }
+      }
+    }
+  }
+}

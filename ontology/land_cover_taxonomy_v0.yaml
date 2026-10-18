@@ -1,0 +1,48 @@
+version: land-cover-taxonomy-v0
+status: draft_before_source_label_audit
+root: land_cover
+nodes:
+  land_cover:
+    parent: null
+    level: 0
+    definition: All mapped terrestrial surface-cover concepts.
+  artificial_surface:
+    parent: land_cover
+    level: 1
+    definition: Human-made built or transport surfaces.
+  vegetated_surface:
+    parent: land_cover
+    level: 1
+    definition: Surface primarily characterized by vegetation.
+  natural_nonvegetated_surface:
+    parent: land_cover
+    level: 1
+    definition: Natural bare or water-covered surface.
+  built_structure:
+    parent: artificial_surface
+    level: 2
+    definition: Building or constructed structure.
+  transport_surface:
+    parent: artificial_surface
+    level: 2
+    definition: Road or other mapped transport corridor.
+  woody_vegetation:
+    parent: vegetated_surface
+    level: 2
+    definition: Forest, tree cover, or woodland.
+  herbaceous_vegetation:
+    parent: vegetated_surface
+    level: 2
+    definition: Grassland or rangeland vegetation not identified as cropland.
+  cropland:
+    parent: vegetated_surface
+    level: 2
+    definition: Agricultural field or managed crop cover.
+  bare_surface:
+    parent: natural_nonvegetated_surface
+    level: 2
+    definition: Barren, bare soil, sand, or exposed ground.
+  surface_water:
+    parent: natural_nonvegetated_surface
+    level: 2
+    definition: Inland or coastal surface water.

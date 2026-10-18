@@ -1,0 +1,23 @@
+\NeedsTeXFormat{LaTeX2e}
+\ProvidesPackage{setspace}[2026/07/25 local minimal setspace compatibility for manuscript builds]
+
+% Minimal subset used by the SPIE manuscript source.  It provides the
+% \begin{spacing}{...}...\end{spacing} environment and common convenience
+% commands so that local builds work when MiKTeX does not have setspace
+% installed.  Full TeX distributions may use the standard setspace package.
+
+\newcommand{\setstretch}[1]{%
+  \renewcommand{\baselinestretch}{#1}%
+  \selectfont
+}
+
+\newenvironment{spacing}[1]{%
+  \par\begingroup
+  \setstretch{#1}%
+}{%
+  \par\endgroup
+}
+
+\newcommand{\singlespacing}{\setstretch{1}}
+\newcommand{\onehalfspacing}{\setstretch{1.5}}
+\newcommand{\doublespacing}{\setstretch{2}}

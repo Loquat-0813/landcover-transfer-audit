@@ -1,0 +1,25 @@
+\section{相关工作}
+\label{sec:related_work}
+\paragraph{图例协调与多数据集标签。}
+土地覆盖协调处理不同命名体系与制图尺度的不一致\citep{yang2017harmonization,baudoux2021translation}。MSeg 进一步协调跨数据集像素标注\citep{lambert2020mseg}；UniSeg 建模多数据集标签冲突并学习共享表征\citep{kim2022uniseg}。HTSS 预印本通过通用类别体系整合冲突标签空间与不同标注类型\citep{meletis2023htss}。因此，本文不将类别体系统一或异质源学习作为新贡献。本文的操作性审计记录：在指定训练协议实际使用的源掩膜中，映射后的精确标签是否真实出现。
+
+\paragraph{开放集适应与恢复、保持报告。}
+域适应方法处理表征与输出分布的变化\citep{ganin2016dann,hoffman2018cycada,vu2019advent,zou2018classbalanced}。BUS 和 UniDA-SS 明确处理源与目标类别空间差异，并评估共同与私有类别性能\citep{choe2024bus,choe2025unida}。SATS 预印本也指出已知类别负迁移与未知类别欠拟合\citep{ren2026sats}。因此，平衡恢复和保持是已有的问题框架。本文估计量针对固定七叶输出空间内一个具名新增类别，使用具有正例的辅助源监督，而非声称提出新的开放集适应方法或指标。本文测量所考察混合的实际收益和损失，不主张优于上述方法。
+
+\paragraph{可迁移土地覆盖语义与非精确指导。}
+TACOSS 利用文本监督对齐视觉与语义表征，以支持可迁移土地覆盖标签\citep{zermatten2025tacoss}。LandSegmenter 将异质土地利用、土地覆盖监督与灵活语义表征结合\citep{liu2026landsegmenter}。这些是遥感领域超越单一刚性图例的近邻研究。粗粒度或歧义指导本身也是独立学习问题\citep{li2024exactguidance,cour2011partial}。本文原始掩膜支持计数仅适用于所声明的精确、粗粒度与忽略映射；不能据此认定精确正例标签是学习或识别的普遍必要条件。源混合干预同时改变影像和标签。
+
+\paragraph{近期语义细化与开放词汇分割。}
+KG-OVRSeg 利用知识图谱关系增强类别表征，以减少遥感分割中的命名和层级歧义\citep{huang2026kgovrseg}。Hierarchical Category Refinement 结合视觉与语义层级信息，研究较粗土地覆盖类别的细化\citep{xiong2026hcr}。ROSS 为文本定义的开放词汇分割构建遥感特定表征与聚合机制\citep{zhang2026ross}。这些研究进一步凸显软件标签分配、语义知识和植物学类别身份之间的差别。本文支持指示量仅涉及被纳入的源掩膜标签，不衡量预训练模型编码的全部知识，也不能证明识别必须具有精确目标类别标注。
+
+\paragraph{粗标签与历史产品监督。}
+CTS-WS 在已有产品监督更高分辨率制图时处理时相标签变化和空间分辨率差异\citep{ctsws2025}。SAMPLER 在这一由粗到细的场景中结合原型学习、改进的 Segment Anything 模型与标签细化\citep{sampler2025}。超像素感知的可信双专家学习则采用超像素训练单元和互补专家估计，处理历史产品标签噪声\citep{dualexpert2025}。这些方法处理标签可靠性和分辨率不匹配。本文审计提出互补问题：保留的源训练协议实际上纳入了哪些精确输出分配？被忽略或未映射的类别，与已纳入类别中的带噪样本，是不同监督记录。本文不对这些算法开展基准比较，也不将其报告收益移入本研究源混合差值。
+
+\paragraph{基础表征下的域泛化。}
+近期遥感分割研究适配视觉基础模型，并扩展源外观多样性\citep{luo2025vfmdg}。MetaFD 连续建模域变化并解耦域相关特征\citep{liang2025metafd}；概念引导的域泛化则在微调预训练视觉基础模型时学习语义概念 token，用于未见域的城市场景分割\citep{liao2025concept}。这些对表征和外观变化的研究与源标签清点互补，不能替代清点。在本文对比中，辅助影像与标签同时改变，这些泛化机制仍可能参与结果，仅凭恢复得分无法分离其作用。因此，当前 CLIP 和历史 U-Net 工具支持有限的家族内部分析，不支持优于当代基础模型方法的结论。
+
+\paragraph{类别空间适应与目标信息要求。}
+遥感分类中的通用适应已有双分类器一致性与特征混合研究\citep{li2025boostingunida}；GLC++ 通过聚类和对比亲和学习处理无源通用域适应\citep{qu2025glcpp}。两者提供近期类别偏移先例，但其分类或适应设置与本文稠密、固定输出且辅助源含正例监督的实验不同。遥感分割的单样本适应同样采用不同于本文源混合比较的目标影像制度\citep{tan2025oneshot}；此处 one-shot 不能误读为 open-set。本文保留上文中针对分割的共同与私有类别先例，不主张提出新指标或通用适应方法。
+
+\paragraph{实验工具与范围。}
+CLIP 提供文本定义的类别分数\citep{radford2021clip}，稠密视觉语言方法将此接口扩展到分割\citep{xu2022groupvit,zhou2022denseclip,li2022lseg}。主要实验冻结 CLIP 编码器，并优化低秩校准头。历史 ResNet-34 U-Net 记录提供卷积模型家族检验\citep{ronneberger2015unet}；其初始化与优化制度不同于 CLIP。LoveDA、FLAIR 和 OpenEarthMap 定义经验源、目标设置\citep{wang2021loveda,garioud2023flair,xia2023openearthmap}。本文报告家族内部源对比，而非分割排行榜或跨架构的一般性能比较。

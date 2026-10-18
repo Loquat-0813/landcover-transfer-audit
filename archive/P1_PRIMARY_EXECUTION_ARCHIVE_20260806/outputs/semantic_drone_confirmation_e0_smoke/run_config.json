@@ -1,0 +1,15 @@
+{
+  "experiment": "semantic_drone_confirmation_e0",
+  "manifest": "audits/semantic_drone_confirmation_manifest_20260804.json",
+  "manifest_sha256": "f04fea758918d0409375a47229488561ad9a7fce1b8398c462c9546a1faae010",
+  "model_id": "/root/autodl-tmp/models/clip-vit-base-patch16",
+  "adapter_checkpoint": null,
+  "adapter_checkpoint_sha256": null,
+  "checkpoint_run_config": null,
+  "extracted_root": "data/raw/semantic_drone_extracted",
+  "tile_size": 512,
+  "evaluated_pairs": 4,
+  "target_leaf": "herbaceous_vegetation",
+  "target_raw_class": "grass",
+  "target_metrics_used_for_method_selection": false
+}

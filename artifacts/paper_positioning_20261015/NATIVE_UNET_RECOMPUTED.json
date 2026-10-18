@@ -1,0 +1,188 @@
+{
+  "source": "original native integer records, no scientific re-evaluation",
+  "inputs": {
+    "E:\\\u535a\u58eb\u8bba\u6587\\\u65b0\u4e3b\u7ebf\\newp1\\artifacts\\audit_submission_20261004\\cloud_evidence\\outputs\\unet_oem_unet_b0_seed19\\city_confusions.json": "60f5f9bfdff7390dbf9f8db7441216c4c2950b675f802522dcf41aa87a4eb23a",
+    "E:\\\u535a\u58eb\u8bba\u6587\\\u65b0\u4e3b\u7ebf\\newp1\\artifacts\\audit_submission_20261004\\cloud_evidence\\outputs\\unet_oem_unet_b0_seed19\\per_raster_confusions.json": "50f4e68cb542e35ee5d7e6e6ef1318c6a66ca102d17f6b8ca5f6909a41c75f25",
+    "E:\\\u535a\u58eb\u8bba\u6587\\\u65b0\u4e3b\u7ebf\\newp1\\artifacts\\audit_submission_20261004\\cloud_evidence\\outputs\\unet_oem_unet_b0_seed19\\metrics.json": "7727b31a7ddb7cfe3be9495f1e66ba6b41845db7cd555cd25867889224a5b593",
+    "E:\\\u535a\u58eb\u8bba\u6587\\\u65b0\u4e3b\u7ebf\\newp1\\artifacts\\audit_submission_20261004\\cloud_evidence\\outputs\\unet_oem_unet_b0_seed19\\run_config.json": "cc261e99d6ebc97837946ae31f311cb52f2cdd76ea166bf20e4fa5efcfc682e9",
+    "E:\\\u535a\u58eb\u8bba\u6587\\\u65b0\u4e3b\u7ebf\\newp1\\artifacts\\audit_submission_20261004\\cloud_evidence\\outputs\\unet_oem_unet_b0_seed37\\city_confusions.json": "926301efe461a41129f82a558db2e058a3f8e9f7e71f2d3767f9498ef2ad7759",
+    "E:\\\u535a\u58eb\u8bba\u6587\\\u65b0\u4e3b\u7ebf\\newp1\\artifacts\\audit_submission_20261004\\cloud_evidence\\outputs\\unet_oem_unet_b0_seed37\\per_raster_confusions.json": "6efa814a7749f628551faffb886d7791504def5bdfa639b4d56a7039a8c952af",
+    "E:\\\u535a\u58eb\u8bba\u6587\\\u65b0\u4e3b\u7ebf\\newp1\\artifacts\\audit_submission_20261004\\cloud_evidence\\outputs\\unet_oem_unet_b0_seed37\\metrics.json": "76627415a88787f015032335fc3dcf2a69e26fbe9669240abcafacae49264cef",
+    "E:\\\u535a\u58eb\u8bba\u6587\\\u65b0\u4e3b\u7ebf\\newp1\\artifacts\\audit_submission_20261004\\cloud_evidence\\outputs\\unet_oem_unet_b0_seed37\\run_config.json": "b2a19a8b75f5aa4583e6fe51c9d1124baa72aabb85cb28befaef2967d7f69364",
+    "E:\\\u535a\u58eb\u8bba\u6587\\\u65b0\u4e3b\u7ebf\\newp1\\artifacts\\audit_submission_20261004\\cloud_evidence\\outputs\\unet_oem_unet_b0_seed73\\city_confusions.json": "a596c94a53c59e09f00be16c0a56125bfd3e875ee69f305777f5a0c485557aa4",
+    "E:\\\u535a\u58eb\u8bba\u6587\\\u65b0\u4e3b\u7ebf\\newp1\\artifacts\\audit_submission_20261004\\cloud_evidence\\outputs\\unet_oem_unet_b0_seed73\\per_raster_confusions.json": "179949aefd9fb081a60c923df4a71aaa7ac18e84c209f3a095a3f8b8ffd38ef2",
+    "E:\\\u535a\u58eb\u8bba\u6587\\\u65b0\u4e3b\u7ebf\\newp1\\artifacts\\audit_submission_20261004\\cloud_evidence\\outputs\\unet_oem_unet_b0_seed73\\metrics.json": "956c38e042c4729eb489c1138691bc45f8404d9a00fb4e1f2026527f57af85c0",
+    "E:\\\u535a\u58eb\u8bba\u6587\\\u65b0\u4e3b\u7ebf\\newp1\\artifacts\\audit_submission_20261004\\cloud_evidence\\outputs\\unet_oem_unet_b0_seed73\\run_config.json": "533ae152c1f68285cc5b04fb6d41037e4d0967ba109ace5902e601037c468b87",
+    "E:\\\u535a\u58eb\u8bba\u6587\\\u65b0\u4e3b\u7ebf\\newp1\\artifacts\\audit_submission_20261004\\cloud_evidence\\outputs\\unet_oem_unet_b0_half_seed19\\city_confusions.json": "58579485c2374d0b9b27058f7058908165db4000f932bfee0f8c89fb1a0f6007",
+    "E:\\\u535a\u58eb\u8bba\u6587\\\u65b0\u4e3b\u7ebf\\newp1\\artifacts\\audit_submission_20261004\\cloud_evidence\\outputs\\unet_oem_unet_b0_half_seed19\\per_raster_confusions.json": "b06ee37a63fc529378de27bf8c7a21743258816cd436eb9f950fd5f466f5356a",
+    "E:\\\u535a\u58eb\u8bba\u6587\\\u65b0\u4e3b\u7ebf\\newp1\\artifacts\\audit_submission_20261004\\cloud_evidence\\outputs\\unet_oem_unet_b0_half_seed19\\metrics.json": "e231e3eb8d66590706ee533be2b09a8b160ef7a60d1c926500e190b88fec2419",
+    "E:\\\u535a\u58eb\u8bba\u6587\\\u65b0\u4e3b\u7ebf\\newp1\\artifacts\\audit_submission_20261004\\cloud_evidence\\outputs\\unet_oem_unet_b0_half_seed19\\run_config.json": "8bedc241c5af2faf451f601a03a17c1e806bd43750e441b2de09d7cbde245ed9",
+    "E:\\\u535a\u58eb\u8bba\u6587\\\u65b0\u4e3b\u7ebf\\newp1\\artifacts\\audit_submission_20261004\\cloud_evidence\\outputs\\unet_oem_unet_b0_half_seed37\\city_confusions.json": "0d6e70fd3cad403af07bf3814e639d40d9f15fade720a4587278ea61d9430981",
+    "E:\\\u535a\u58eb\u8bba\u6587\\\u65b0\u4e3b\u7ebf\\newp1\\artifacts\\audit_submission_20261004\\cloud_evidence\\outputs\\unet_oem_unet_b0_half_seed37\\per_raster_confusions.json": "c4aefd314f6c98c73802b6c8da6361505dd0985523a15bd46526544e226922f4",
+    "E:\\\u535a\u58eb\u8bba\u6587\\\u65b0\u4e3b\u7ebf\\newp1\\artifacts\\audit_submission_20261004\\cloud_evidence\\outputs\\unet_oem_unet_b0_half_seed37\\metrics.json": "6064d8156132b9747a87f74a137a71e8124c9a1aeda5c4ca1e7d64fa296b0eaf",
+    "E:\\\u535a\u58eb\u8bba\u6587\\\u65b0\u4e3b\u7ebf\\newp1\\artifacts\\audit_submission_20261004\\cloud_evidence\\outputs\\unet_oem_unet_b0_half_seed37\\run_config.json": "5d8a73207a393a36305fcffeb14636b135a667c9ed9a2128ff6e7cf2f8246d86",
+    "E:\\\u535a\u58eb\u8bba\u6587\\\u65b0\u4e3b\u7ebf\\newp1\\artifacts\\audit_submission_20261004\\cloud_evidence\\outputs\\unet_oem_unet_b0_half_seed73\\city_confusions.json": "9619a91e891f62c4deff9ff8b2780123d5f3afa7400ed3b3bc6e797fb592afe9",
+    "E:\\\u535a\u58eb\u8bba\u6587\\\u65b0\u4e3b\u7ebf\\newp1\\artifacts\\audit_submission_20261004\\cloud_evidence\\outputs\\unet_oem_unet_b0_half_seed73\\per_raster_confusions.json": "67f51efdffcc5a6ba626319f045fa185656e9ab126d40a7ada782d9cec757ebc",
+    "E:\\\u535a\u58eb\u8bba\u6587\\\u65b0\u4e3b\u7ebf\\newp1\\artifacts\\audit_submission_20261004\\cloud_evidence\\outputs\\unet_oem_unet_b0_half_seed73\\metrics.json": "2a9272cef5a9156cbc067d273e32be02797b61121ed1898a6a32826160223818",
+    "E:\\\u535a\u58eb\u8bba\u6587\\\u65b0\u4e3b\u7ebf\\newp1\\artifacts\\audit_submission_20261004\\cloud_evidence\\outputs\\unet_oem_unet_b0_half_seed73\\run_config.json": "e1e3206a90e22a174cafe5b21b9791d8341e0c1aa3e1f537fcf93965811c1bc7",
+    "E:\\\u535a\u58eb\u8bba\u6587\\\u65b0\u4e3b\u7ebf\\newp1\\artifacts\\audit_submission_20261004\\cloud_evidence\\outputs\\unet_oem_unet_b1_seed19\\city_confusions.json": "d2b77862c2910543ef1e6f4337d913a09b0fd7cfa3e51c35066c0bda05a72762",
+    "E:\\\u535a\u58eb\u8bba\u6587\\\u65b0\u4e3b\u7ebf\\newp1\\artifacts\\audit_submission_20261004\\cloud_evidence\\outputs\\unet_oem_unet_b1_seed19\\per_raster_confusions.json": "449ed6337a4f5470d145941024b9cf7928b5c1317af435be5199d5bf69f33584",
+    "E:\\\u535a\u58eb\u8bba\u6587\\\u65b0\u4e3b\u7ebf\\newp1\\artifacts\\audit_submission_20261004\\cloud_evidence\\outputs\\unet_oem_unet_b1_seed19\\metrics.json": "cfc7deb54b9aa97f2236a2d88a062b01600dd82ec7ac2c616e2c10cc49f24066",
+    "E:\\\u535a\u58eb\u8bba\u6587\\\u65b0\u4e3b\u7ebf\\newp1\\artifacts\\audit_submission_20261004\\cloud_evidence\\outputs\\unet_oem_unet_b1_seed19\\run_config.json": "add327c5313d27b1924f2f72802e8517082406f20fbd411ade66ddf518d08216",
+    "E:\\\u535a\u58eb\u8bba\u6587\\\u65b0\u4e3b\u7ebf\\newp1\\artifacts\\audit_submission_20261004\\cloud_evidence\\outputs\\unet_oem_unet_b1_seed37\\city_confusions.json": "e3ad195991b2f5df187b864b9fac70e63884ceb11a9bcf26dd456c090f691183",
+    "E:\\\u535a\u58eb\u8bba\u6587\\\u65b0\u4e3b\u7ebf\\newp1\\artifacts\\audit_submission_20261004\\cloud_evidence\\outputs\\unet_oem_unet_b1_seed37\\per_raster_confusions.json": "4741cd5cc9f0b4585b36b4cbf0e414443090615a1d766400d1dccb31684bd42f",
+    "E:\\\u535a\u58eb\u8bba\u6587\\\u65b0\u4e3b\u7ebf\\newp1\\artifacts\\audit_submission_20261004\\cloud_evidence\\outputs\\unet_oem_unet_b1_seed37\\metrics.json": "718c5468c2e33111b9a09818f596dd50350c9deecf5c59b9a1ab579b4e940122",
+    "E:\\\u535a\u58eb\u8bba\u6587\\\u65b0\u4e3b\u7ebf\\newp1\\artifacts\\audit_submission_20261004\\cloud_evidence\\outputs\\unet_oem_unet_b1_seed37\\run_config.json": "2db2705278cd7a612c1fb30fad9a0a800a3ca0189cfe6774838fbb651a5132e1",
+    "E:\\\u535a\u58eb\u8bba\u6587\\\u65b0\u4e3b\u7ebf\\newp1\\artifacts\\audit_submission_20261004\\cloud_evidence\\outputs\\unet_oem_unet_b1_seed73\\city_confusions.json": "5be759eb7b3c44c30495612b0100956374b2653b752839c0eb70f0601aa9d64d",
+    "E:\\\u535a\u58eb\u8bba\u6587\\\u65b0\u4e3b\u7ebf\\newp1\\artifacts\\audit_submission_20261004\\cloud_evidence\\outputs\\unet_oem_unet_b1_seed73\\per_raster_confusions.json": "7f4e1384c154418f3e228b20b0298a50bb0eb7979f627b6841e4df42647bfd44",
+    "E:\\\u535a\u58eb\u8bba\u6587\\\u65b0\u4e3b\u7ebf\\newp1\\artifacts\\audit_submission_20261004\\cloud_evidence\\outputs\\unet_oem_unet_b1_seed73\\metrics.json": "d1c3ccce857930aaab96ae17620f89a8821a7b1b8c7409dc48da28766c5e0ebd",
+    "E:\\\u535a\u58eb\u8bba\u6587\\\u65b0\u4e3b\u7ebf\\newp1\\artifacts\\audit_submission_20261004\\cloud_evidence\\outputs\\unet_oem_unet_b1_seed73\\run_config.json": "9a096ab4b99d7a1050c91966b9bc8f6feec2d291254708e155165c5cc931d7e8"
+  },
+  "seed_order": [
+    19,
+    37,
+    73
+  ],
+  "target_pairs": 2638,
+  "cities": 74,
+  "bootstrap_seed": 20260803,
+  "bootstrap_draws": 2000,
+  "points": {
+    "unet_b0": {
+      "rangeland_iou": {
+        "values": [
+          0.0,
+          0.0,
+          0.0
+        ],
+        "mean": 0.0,
+        "sample_sd": 0.0
+      },
+      "supported_leaf_miou": {
+        "values": [
+          0.25003644916953466,
+          0.22994522057073474,
+          0.2187766635502276
+        ],
+        "mean": 0.23291944443016566,
+        "sample_sd": 0.015840708788301277
+      },
+      "overall_miou": {
+        "values": [
+          0.21431695643102971,
+          0.19709590334634405,
+          0.18752285447162365
+        ],
+        "mean": 0.19964523808299914,
+        "sample_sd": 0.013577750389972531
+      }
+    },
+    "unet_b0_half": {
+      "rangeland_iou": {
+        "values": [
+          0.0,
+          0.0,
+          0.0
+        ],
+        "mean": 0.0,
+        "sample_sd": 0.0
+      },
+      "supported_leaf_miou": {
+        "values": [
+          0.22570476863407862,
+          0.24386797536891336,
+          0.19248402766270134
+        ],
+        "mean": 0.2206855905552311,
+        "sample_sd": 0.026057084102198973
+      },
+      "overall_miou": {
+        "values": [
+          0.19346123025778167,
+          0.20902969317335432,
+          0.1649863094251726
+        ],
+        "mean": 0.18915907761876952,
+        "sample_sd": 0.022334643516170545
+      }
+    },
+    "unet_b1": {
+      "rangeland_iou": {
+        "values": [
+          0.29568633140695694,
+          0.27665023999211213,
+          0.27619186407062263
+        ],
+        "mean": 0.2828428118232306,
+        "sample_sd": 0.011125175216351535
+      },
+      "supported_leaf_miou": {
+        "values": [
+          0.1181184458399327,
+          0.07871410347873047,
+          0.1107139263776063
+        ],
+        "mean": 0.10251549189875649,
+        "sample_sd": 0.02094245198532646
+      },
+      "overall_miou": {
+        "values": [
+          0.14348528663522186,
+          0.10699069440921358,
+          0.1343536317623229
+        ],
+        "mean": 0.1282765376022528,
+        "sample_sd": 0.018991106352933336
+      }
+    }
+  },
+  "contrasts": {
+    "unet_b1 minus unet_b0": {
+      "rangeland_iou": {
+        "point": 0.2828428118232306,
+        "CI": [
+          0.2512008244680024,
+          0.313286008402149
+        ]
+      },
+      "supported_leaf_miou": {
+        "point": -0.13040395253140918,
+        "CI": [
+          -0.15289027458838514,
+          -0.10753521058171807
+        ]
+      },
+      "overall_miou": {
+        "point": -0.07136870048074634,
+        "CI": [
+          -0.09221620753991731,
+          -0.05073841452736177
+        ]
+      }
+    },
+    "unet_b1 minus unet_b0_half": {
+      "rangeland_iou": {
+        "point": 0.2828428118232306,
+        "CI": [
+          0.2512008244680024,
+          0.313286008402149
+        ]
+      },
+      "supported_leaf_miou": {
+        "point": -0.11817009865647461,
+        "CI": [
+          -0.13895336178920792,
+          -0.09646473260597153
+        ]
+      },
+      "overall_miou": {
+        "point": -0.06088254001651672,
+        "CI": [
+          -0.08079065431115336,
+          -0.04044741021129875
+        ]
+      }
+    }
+  },
+  "shuffle": "excluded from this analysis; preserved for independent integrity audit"
+}

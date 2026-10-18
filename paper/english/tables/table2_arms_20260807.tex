@@ -1,0 +1,23 @@
+\begin{table}[H]
+\centering
+\caption{Frozen experimental variants and source crops. The recorded B1-shuffle configuration specifies the B1 FLAIR image list with non-native same-region masks and a preserved density multiset; full primary schedules remain unavailable for independent revalidation. B2 optimization and test cities are disjoint. B2 uses a separate 20-epoch direct-supervision learnability schedule and is not a fixed-budget contrast with the other arms.}
+\label{tab:arms}
+\scriptsize
+\renewcommand{\arraystretch}{0.92}
+\setlength{\tabcolsep}{2pt}
+\begin{tabularx}{\linewidth}{@{}>{\raggedright\arraybackslash}p{0.11\linewidth}>{\raggedright\arraybackslash}p{0.12\linewidth}>{\raggedright\arraybackslash}p{0.25\linewidth}>{\raggedright\arraybackslash}p{0.13\linewidth}>{\raggedright\arraybackslash}p{0.13\linewidth}>{\raggedright\arraybackslash}X@{}}
+\toprule
+Variant & Budget & Source crops/update & LoveDA exposures & Seeds & Role \\
+\midrule
+E0 & 0 updates & none & 0 & frozen checkpoint & probe diagnostic \\
+B0 & 25,220 updates & 2 LoveDA & 50,440 & 19, 37, 73 & LoveDA baseline \\
+B0-half & 25,220 updates & 1 LoveDA & 25,220 & 19, 37, 73 & exposure control \\
+B1 & 25,220 updates & 1 LoveDA + 1 native FLAIR herbaceous (ID 10) & 25,220 & 19, 37, 73 & auxiliary training \\
+B1-shuffle & 25,220 updates & 1 LoveDA + 1 mismatched FLAIR herbaceous (ID 10) & 25,220 & 19, 37, 73 & native-pairing control \\
+B2 & 20 epochs & OpenEarthMap optimization cities & not applicable & 19, 37, 73 & direct-support control \\
+E3 & not headline & source-conformal routing diagnostic & not applicable & not applicable & hierarchy negative control \\
+\bottomrule
+\end{tabularx}
+\vspace{2pt}
+\noindent\parbox{\linewidth}{\raggedright\scriptsize Note: B0-half-batch2 duplicates the same deterministic LoveDA crop in both batch slots with mean loss. Its contrast with B0-half is zero at reported precision (Appendix Table~\ref{tab:batch_integrity}); it is a pipeline-integrity check rather than a method arm. E3 routes pixels through the source hierarchy without a target-leaf completion and is retained only as a negative control.}
+\end{table}

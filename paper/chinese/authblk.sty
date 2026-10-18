@@ -1,0 +1,66 @@
+\NeedsTeXFormat{LaTeX2e}
+\ProvidesPackage{authblk}[2026/07/25 local minimal authblk compatibility for SPIE manuscript builds]
+
+% This local compatibility layer is intentionally small.  It supports the
+% subset of authblk commands used by spieman.cls and this submission package:
+% \author[...]{...}, \affil[...]{...}, \Authfont, \Affilfont, \Authand,
+% \Authands, and \affilsep.  Standard LaTeX installations or Overleaf can use
+% the full authblk package instead; this file only prevents local MiKTeX builds
+% from failing when authblk.sty is absent.
+
+\newlength{\affilsep}
+\setlength{\affilsep}{1em}
+\providecommand\Authfont{\normalfont}
+\providecommand\Affilfont{\normalfont}
+\providecommand\Authand{ and }
+\providecommand\Authands{ and }
+
+\makeatletter
+\newif\ifAB@hasauthor
+\newif\ifAB@hasaffil
+\gdef\AB@authorlist{}
+\gdef\AB@affillist{}
+
+\newcommand{\AB@maybe@sup}[1]{%
+  \def\AB@tmp{#1}%
+  \ifx\AB@tmp\@empty\else\textsuperscript{#1}\fi
+}
+
+\newcommand{\AB@refresh@author}{%
+  \gdef\@author{%
+    \AB@authorlist%
+    \par\vspace{\affilsep}%
+    \AB@affillist%
+  }%
+}
+
+\renewcommand{\author}[2][]{%
+  \ifAB@hasauthor
+    \g@addto@macro\AB@authorlist{\Authand}%
+  \else
+    \global\AB@hasauthortrue
+  \fi
+  \def\AB@thislabel{#1}%
+  \ifx\AB@thislabel\@empty
+    \g@addto@macro\AB@authorlist{{\Authfont #2}}%
+  \else
+    \g@addto@macro\AB@authorlist{{\Authfont #2\textsuperscript{#1}}}%
+  \fi
+  \AB@refresh@author
+}
+
+\newcommand{\affil}[2][]{%
+  \ifAB@hasaffil
+    \g@addto@macro\AB@affillist{\par}%
+  \else
+    \global\AB@hasaffiltrue
+  \fi
+  \def\AB@thislabel{#1}%
+  \ifx\AB@thislabel\@empty
+    \g@addto@macro\AB@affillist{{\Affilfont #2}}%
+  \else
+    \g@addto@macro\AB@affillist{{\Affilfont \textsuperscript{#1}#2}}%
+  \fi
+  \AB@refresh@author
+}
+\makeatother

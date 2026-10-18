@@ -1,0 +1,39 @@
+{
+  "version": "second-case-shuffle-output-audit-v2",
+  "case": "semantic_drone_loveda_to_openearthmap_cropland",
+  "results": [
+    {
+      "seed": 19,
+      "output_dir": "outputs/second_case_sd_b1_shuffle_seed19",
+      "record_count": 25220,
+      "permutation_sha256": "3bd15596b3c9aacef0d71fb481c7eb808fdd4acff2d3bcd6597a1c42782438d4",
+      "max_abs_density_difference": 1.0,
+      "mean_abs_density_difference": 0.06810909637281765,
+      "merged_singleton_bins": [],
+      "native_pair_count": 0,
+      "density_pixel_multiset_preserved": true
+    },
+    {
+      "seed": 37,
+      "output_dir": "outputs/second_case_sd_b1_shuffle_seed37",
+      "record_count": 25220,
+      "permutation_sha256": "4539c3e3b366777063b3004d0b76a400562ebec673a37b35bf43c45cd4a12568",
+      "max_abs_density_difference": 1.0,
+      "mean_abs_density_difference": 0.300807455245887,
+      "merged_singleton_bins": [],
+      "native_pair_count": 0,
+      "density_pixel_multiset_preserved": true
+    },
+    {
+      "seed": 73,
+      "output_dir": "outputs/second_case_sd_b1_shuffle_seed73",
+      "record_count": 25220,
+      "permutation_sha256": "63c6bf4631202ad8f980b2da39d6411b8d6ed62a2ad9916114771e1034dafa6e",
+      "max_abs_density_difference": 1.0,
+      "mean_abs_density_difference": 0.22240654645128727,
+      "merged_singleton_bins": [],
+      "native_pair_count": 0,
+      "density_pixel_multiset_preserved": true
+    }
+  ]
+}

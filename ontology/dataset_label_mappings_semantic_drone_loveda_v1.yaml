@@ -1,0 +1,39 @@
+version: dataset-label-mappings-semantic-drone-loveda-v1
+taxonomy: ontology/land_cover_taxonomy_v0.yaml
+purpose: Independent second-case source mixture; no primary-case checkpoint reuse.
+datasets:
+  semantic_drone_base:
+    scoring_status: pending_raw_audit
+    labels:
+      grass: {relation: exact, target: herbaceous_vegetation}
+      tree: {relation: exact, target: woody_vegetation}
+      water: {relation: exact, target: surface_water}
+      vegetation: {relation: ambiguous, target: null}
+      unlabeled: {relation: ignore, target: null}
+      paved-area: {relation: ambiguous, target: null}
+      dirt: {relation: ambiguous, target: null}
+      gravel: {relation: ambiguous, target: null}
+      rocks: {relation: ambiguous, target: null}
+      pool: {relation: ambiguous, target: null}
+      roof: {relation: ambiguous, target: null}
+      wall: {relation: ambiguous, target: null}
+      window: {relation: ambiguous, target: null}
+      door: {relation: ambiguous, target: null}
+      fence: {relation: ambiguous, target: null}
+      fence-pole: {relation: ambiguous, target: null}
+      person: {relation: ignore, target: null}
+      dog: {relation: ignore, target: null}
+      car: {relation: ignore, target: null}
+      bicycle: {relation: ignore, target: null}
+      bald-tree: {relation: ambiguous, target: null}
+      ar-marker: {relation: ignore, target: null}
+      obstacle: {relation: ignore, target: null}
+      conflicting: {relation: ignore, target: null}
+  loveda_cropland_auxiliary:
+    scoring_status: ready
+    labels:
+      agriculture: {source_id: 7, relation: exact, target: cropland}
+  openearthmap_second_case_target:
+    scoring_status: ready
+    labels:
+      agriculture_land: {source_id: 7, relation: exact, target: cropland}

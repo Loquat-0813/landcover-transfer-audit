@@ -1,0 +1,393 @@
+{
+  "protocol": "p1-clip-city-heterogeneity-v1",
+  "input": "outputs\\rangeland_spatial_statistics_clip.json",
+  "contrast": "B1 minus B0-half",
+  "target": "herbaceous_vegetation/rangeland",
+  "seed_count": 3,
+  "city_manifest_count": 74,
+  "eligible_city_count_reference_positive": 74,
+  "positive_delta_city_count": 74,
+  "city_equal_macro_delta_iou": 0.2793371139763919,
+  "median_delta_iou": 0.27077862517309736,
+  "q1_delta_iou": 0.19512553141074435,
+  "q3_delta_iou": 0.35186469861429553,
+  "iqr_delta_iou": 0.1567391672035512,
+  "leave_one_city_out_pooled_delta_range": {
+    "lower": 0.30435163780566044,
+    "upper": 0.31449127580531616
+  },
+  "spearman_prevalence_delta_iou": 0.8407700851536468,
+  "city_rows": [
+    {
+      "city": "aachen",
+      "reference_prevalence": 0.27301433642843337,
+      "delta_iou": 0.30831066131572704
+    },
+    {
+      "city": "abancay",
+      "reference_prevalence": 0.31035030531849495,
+      "delta_iou": 0.4098946362551572
+    },
+    {
+      "city": "accra",
+      "reference_prevalence": 0.3427568341450283,
+      "delta_iou": 0.19856092992484506
+    },
+    {
+      "city": "al_qurnah",
+      "reference_prevalence": 0.12251503648393267,
+      "delta_iou": 0.2018378049139334
+    },
+    {
+      "city": "austin",
+      "reference_prevalence": 0.2084160663612436,
+      "delta_iou": 0.2766080948957817
+    },
+    {
+      "city": "baybay",
+      "reference_prevalence": 0.19177200406632616,
+      "delta_iou": 0.2651047552084101
+    },
+    {
+      "city": "bielefeld",
+      "reference_prevalence": 0.3525984963863984,
+      "delta_iou": 0.35913479877480275
+    },
+    {
+      "city": "bogota",
+      "reference_prevalence": 0.36149638132486817,
+      "delta_iou": 0.4590046939808136
+    },
+    {
+      "city": "buenos_aires",
+      "reference_prevalence": 0.32537141677485565,
+      "delta_iou": 0.385289368944019
+    },
+    {
+      "city": "chiangmai",
+      "reference_prevalence": 0.26272582516523435,
+      "delta_iou": 0.3537766762404742
+    },
+    {
+      "city": "chicago",
+      "reference_prevalence": 0.12767189056804498,
+      "delta_iou": 0.19512553141074435
+    },
+    {
+      "city": "chiclayo",
+      "reference_prevalence": 0.1206766109477077,
+      "delta_iou": 0.15230465857969946
+    },
+    {
+      "city": "chincha",
+      "reference_prevalence": 0.11341268664187211,
+      "delta_iou": 0.18058523812062446
+    },
+    {
+      "city": "chisinau",
+      "reference_prevalence": 0.1334811511412187,
+      "delta_iou": 0.18327671080218033
+    },
+    {
+      "city": "christchurch",
+      "reference_prevalence": 0.3783505156309953,
+      "delta_iou": 0.4275088396445075
+    },
+    {
+      "city": "coxsbazar",
+      "reference_prevalence": 0.26209919273098187,
+      "delta_iou": 0.2423626069950443
+    },
+    {
+      "city": "daressalaam",
+      "reference_prevalence": 0.21298315762020467,
+      "delta_iou": 0.35186469861429553
+    },
+    {
+      "city": "dhaka",
+      "reference_prevalence": 0.16654945319778025,
+      "delta_iou": 0.13642345821212856
+    },
+    {
+      "city": "dolnoslaskie",
+      "reference_prevalence": 0.36043963171760335,
+      "delta_iou": 0.41197829282752696
+    },
+    {
+      "city": "dortmund",
+      "reference_prevalence": 0.2275915483521953,
+      "delta_iou": 0.27958715607529616
+    },
+    {
+      "city": "dowa",
+      "reference_prevalence": 0.139775289586637,
+      "delta_iou": 0.18307632432528034
+    },
+    {
+      "city": "duesseldorf",
+      "reference_prevalence": 0.21336876260257293,
+      "delta_iou": 0.2474783411086704
+    },
+    {
+      "city": "ica",
+      "reference_prevalence": 0.06668236659208107,
+      "delta_iou": 0.09871433103149682
+    },
+    {
+      "city": "kagera",
+      "reference_prevalence": 0.37635622426570486,
+      "delta_iou": 0.2804797485163255
+    },
+    {
+      "city": "kampala",
+      "reference_prevalence": 0.35313997483116916,
+      "delta_iou": 0.33788787478871796
+    },
+    {
+      "city": "khartoum",
+      "reference_prevalence": 0.021195368477327416,
+      "delta_iou": 0.021753747588759597
+    },
+    {
+      "city": "kinshasa",
+      "reference_prevalence": 0.4602107265814138,
+      "delta_iou": 0.3244583706506722
+    },
+    {
+      "city": "kitsap",
+      "reference_prevalence": 0.2414844518926396,
+      "delta_iou": 0.26867642680914505
+    },
+    {
+      "city": "koeln",
+      "reference_prevalence": 0.20788482777941206,
+      "delta_iou": 0.28569103707731436
+    },
+    {
+      "city": "kujawsko-pomorskie",
+      "reference_prevalence": 0.33453193150073435,
+      "delta_iou": 0.4912660077881257
+    },
+    {
+      "city": "kyoto",
+      "reference_prevalence": 0.09642952369275541,
+      "delta_iou": 0.1818430639137977
+    },
+    {
+      "city": "lambayeque",
+      "reference_prevalence": 0.17801105765262348,
+      "delta_iou": 0.3010384721558165
+    },
+    {
+      "city": "lima",
+      "reference_prevalence": 0.15218647388692885,
+      "delta_iou": 0.1421980259056066
+    },
+    {
+      "city": "lodzkie",
+      "reference_prevalence": 0.07105654218453068,
+      "delta_iou": 0.14806818826752688
+    },
+    {
+      "city": "lohur",
+      "reference_prevalence": 0.23743155459861415,
+      "delta_iou": 0.2728808235370496
+    },
+    {
+      "city": "lubuskie",
+      "reference_prevalence": 0.4812148251623454,
+      "delta_iou": 0.5041094868733369
+    },
+    {
+      "city": "mahe",
+      "reference_prevalence": 0.211157225665541,
+      "delta_iou": 0.31112191602560896
+    },
+    {
+      "city": "malopolskie",
+      "reference_prevalence": 0.2525132892820492,
+      "delta_iou": 0.3024257244700153
+    },
+    {
+      "city": "maputo",
+      "reference_prevalence": 0.09578658333605929,
+      "delta_iou": 0.21212885084424749
+    },
+    {
+      "city": "mazowieckie",
+      "reference_prevalence": 0.3031753115068728,
+      "delta_iou": 0.34487758940506613
+    },
+    {
+      "city": "melbourne",
+      "reference_prevalence": 0.24616793665106934,
+      "delta_iou": 0.37162953209486926
+    },
+    {
+      "city": "monrovia",
+      "reference_prevalence": 0.3260891547717492,
+      "delta_iou": 0.22933767509147338
+    },
+    {
+      "city": "muenster",
+      "reference_prevalence": 0.20978099409378728,
+      "delta_iou": 0.2553888616905869
+    },
+    {
+      "city": "ngaoundere",
+      "reference_prevalence": 0.4114379498985909,
+      "delta_iou": 0.3412026519102915
+    },
+    {
+      "city": "niamey",
+      "reference_prevalence": 0.1604316458247958,
+      "delta_iou": 0.20587913390279425
+    },
+    {
+      "city": "pisco",
+      "reference_prevalence": 0.14610436138221364,
+      "delta_iou": 0.20693397485777043
+    },
+    {
+      "city": "piura",
+      "reference_prevalence": 0.2189936123041887,
+      "delta_iou": 0.31059504345251066
+    },
+    {
+      "city": "podkarpackie",
+      "reference_prevalence": 0.23810999643218983,
+      "delta_iou": 0.26100766490341587
+    },
+    {
+      "city": "podlaskie",
+      "reference_prevalence": 0.13034025999639834,
+      "delta_iou": 0.14283981803334997
+    },
+    {
+      "city": "pointenoire",
+      "reference_prevalence": 0.07543015863102139,
+      "delta_iou": 0.1393565288379664
+    },
+    {
+      "city": "pomorskie",
+      "reference_prevalence": 0.17488547746406002,
+      "delta_iou": 0.25240033898428277
+    },
+    {
+      "city": "rio",
+      "reference_prevalence": 0.2893434929588726,
+      "delta_iou": 0.3957434595041694
+    },
+    {
+      "city": "rosario",
+      "reference_prevalence": 0.4035745083212218,
+      "delta_iou": 0.4100243857662178
+    },
+    {
+      "city": "rotterdam",
+      "reference_prevalence": 0.1250566268328674,
+      "delta_iou": 0.15002005322420806
+    },
+    {
+      "city": "san_tome",
+      "reference_prevalence": 0.27639072105344675,
+      "delta_iou": 0.2923783445169346
+    },
+    {
+      "city": "santiago",
+      "reference_prevalence": 0.28975508476699574,
+      "delta_iou": 0.31704104497155455
+    },
+    {
+      "city": "sechura",
+      "reference_prevalence": 0.11194913774105913,
+      "delta_iou": 0.16616917780718263
+    },
+    {
+      "city": "shanghai",
+      "reference_prevalence": 0.12895930228459998,
+      "delta_iou": 0.044755781663506286
+    },
+    {
+      "city": "slaskie",
+      "reference_prevalence": 0.4357528400992673,
+      "delta_iou": 0.5307736362153891
+    },
+    {
+      "city": "soriano",
+      "reference_prevalence": 0.38075210724633324,
+      "delta_iou": 0.4432456414436772
+    },
+    {
+      "city": "svaneti",
+      "reference_prevalence": 0.4949395771799428,
+      "delta_iou": 0.5277457474680867
+    },
+    {
+      "city": "swietokrzyskie",
+      "reference_prevalence": 0.14672319004524492,
+      "delta_iou": 0.1982321439325866
+    },
+    {
+      "city": "tokyo",
+      "reference_prevalence": 0.12839706638521284,
+      "delta_iou": 0.22259537781740793
+    },
+    {
+      "city": "tonga",
+      "reference_prevalence": 0.4487732514016601,
+      "delta_iou": 0.4666872472537219
+    },
+    {
+      "city": "tyrolw",
+      "reference_prevalence": 0.22812040040203355,
+      "delta_iou": 0.2525556637530916
+    },
+    {
+      "city": "ulaanbaatar",
+      "reference_prevalence": 0.5725614934731089,
+      "delta_iou": 0.4337604833857353
+    },
+    {
+      "city": "vegas",
+      "reference_prevalence": 0.08364010547704581,
+      "delta_iou": 0.11470206442919853
+    },
+    {
+      "city": "vienna",
+      "reference_prevalence": 0.13424253162775066,
+      "delta_iou": 0.2343684388807483
+    },
+    {
+      "city": "viru",
+      "reference_prevalence": 0.12390205009825497,
+      "delta_iou": 0.19068857428537966
+    },
+    {
+      "city": "warminsko-mazurskie",
+      "reference_prevalence": 0.2727676707016517,
+      "delta_iou": 0.3025880423734446
+    },
+    {
+      "city": "western",
+      "reference_prevalence": 0.38336162854802336,
+      "delta_iou": 0.17951398181733838
+    },
+    {
+      "city": "wielkopolskie",
+      "reference_prevalence": 0.31145848025428324,
+      "delta_iou": 0.3788205423656469
+    },
+    {
+      "city": "zachodniopomorskie",
+      "reference_prevalence": 0.18840714820811424,
+      "delta_iou": 0.2649003393145883
+    },
+    {
+      "city": "zanzibar",
+      "reference_prevalence": 0.4284666655167746,
+      "delta_iou": 0.3983510754852818
+    }
+  ],
+  "interpretation": "The prevalence association is descriptive because prevalence and IoU are mathematically coupled. Cities with zero reference target support are excluded from city-IoU summaries."
+}

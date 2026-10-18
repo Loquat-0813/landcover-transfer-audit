@@ -1,0 +1,14 @@
+version: dataset-label-mappings-flair-b1-v1
+taxonomy: ontology/land_cover_taxonomy_v0.yaml
+purpose: >
+  Provisional narrow B1 source mapping. It contributes only independently
+  labelled herbaceous supervision and must not replace or modify the frozen
+  multi-dataset mapping file.
+datasets:
+  flair_b1:
+    evidence: >
+      FLAIR #1 official original class table; local complete raw-mask audit is
+      required before this mapping can be made ready for training.
+    scoring_status: source_audit_pending
+    labels:
+      - {source_id: 10, source_name: herbaceous_vegetation, relation: exact, target: herbaceous_vegetation}

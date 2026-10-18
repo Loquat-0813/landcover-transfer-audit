@@ -1,0 +1,32 @@
+version: p1-ov-splits-v1
+background: background
+classes:
+  - airplane
+  - baseball_diamond
+  - basketball_court
+  - bridge
+  - ground_track_field
+  - harbor
+  - helicopter
+  - large_vehicle
+  - roundabout
+  - ship
+  - small_vehicle
+  - soccer_ball_field
+  - storage_tank
+  - swimming_pool
+  - tennis_court
+
+# Pre-registered before any model result is inspected. iSAID is conventionally
+# reported as 15 foreground categories plus background (16 labels total). The
+# 12/4 protocol therefore means 12 seen labels including background, i.e. 11
+# seen foreground categories and 4 unseen foreground categories.
+split_a:
+  unseen: [airplane, bridge, roundabout, storage_tank]
+  seen: [baseball_diamond, basketball_court, ground_track_field, harbor, helicopter, large_vehicle, ship, small_vehicle, soccer_ball_field, swimming_pool, tennis_court]
+split_b:
+  unseen: [baseball_diamond, harbor, helicopter, swimming_pool]
+  seen: [airplane, basketball_court, bridge, ground_track_field, large_vehicle, roundabout, ship, small_vehicle, soccer_ball_field, storage_tank, tennis_court]
+
+# The lists above intentionally remain human-readable. The audit script must
+# verify cardinality and that every foreground class is assigned exactly once.

@@ -1,0 +1,18 @@
+\begin{table}[H]
+\centering
+\caption{Datasets, audited output-label support and target proxies under the frozen operational crosswalk, and roles in the controlled study. Data-acquisition metadata not verified in the local evidence archive are omitted.}
+\label{tab:datasets}
+\small
+\renewcommand{\arraystretch}{1.12}
+\setlength{\tabcolsep}{3pt}
+\begin{tabularx}{\linewidth}{@{}>{\raggedright\arraybackslash}p{0.21\linewidth}>{\raggedright\arraybackslash}p{0.18\linewidth}>{\raggedright\arraybackslash}p{0.15\linewidth}>{\raggedright\arraybackslash}p{0.18\linewidth}>{\raggedright\arraybackslash}X@{}}
+\toprule
+Dataset & Role & Output support / proxy & Population & Use in this study \\
+\midrule
+LoveDA & source & no exact operational leaf & 2522 training pairs & primary source without herbaceous supervision \\
+FLAIR & auxiliary source & raw ID 10, declared operational relation & 47712 training pairs & raw ID 10 enters B1; other IDs are ignored \\
+OpenEarthMap & primary target & rangeland vegetation proxy & 74 Paris-excluded cities & primary replay population \\
+Semantic Drone & secondary target & grass & 400 frozen-manifest rasters & second-target evaluation \\
+\bottomrule
+\end{tabularx}
+\end{table}

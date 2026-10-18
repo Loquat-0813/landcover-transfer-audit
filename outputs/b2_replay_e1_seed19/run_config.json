@@ -1,0 +1,52 @@
+{
+  "experiment": "openearthmap_b2_e1_checkpoint_replay",
+  "data_root": "/root/autodl-tmp/p1/data/raw/openearthmap",
+  "model_id": "/root/autodl-tmp/models/clip-vit-base-patch16",
+  "adapter_checkpoint": "outputs/b2_openearthmap_e1_seed19/adapter_final.pt",
+  "adapter_checkpoint_sha256": "bfbc7e8736c87b7f7531c5f6fd4b30b45e3e0ad165fb174e612538cef328bcb1",
+  "taxonomy": "land-cover-taxonomy-v0",
+  "mapping": "dataset-label-mappings-v0",
+  "prompt_config": "/root/autodl-tmp/p1/configs/taxonomy_prompts_v0.yaml",
+  "prompts": [
+    "a satellite image of a building",
+    "a satellite image of a road",
+    "a satellite image of forest or trees",
+    "a satellite image of grassland or rangeland",
+    "a satellite image of agricultural cropland",
+    "a satellite image of bare soil or barren ground",
+    "a satellite image of water"
+  ],
+  "tile_size": 512,
+  "full_city_split": {
+    "train_pairs": 1689,
+    "validation_pairs": 403,
+    "test_pairs": 595,
+    "train_cities": 48,
+    "validation_cities": 11,
+    "test_cities": 16,
+    "train_city_set_sha256": "03fb79ddd5e52aec5153f63b0f0052f1a2732c6a6ebfa66b4690ef7eb3a2fb9e",
+    "validation_city_set_sha256": "3c8a72c3432908ceb69dbe3f83945eaaa3f7f97f8a83c5fe80d16472e3020b35",
+    "test_city_set_sha256": "197a41e375d9e4cd1f1c56dd550ec43cdfd5da142baac6658e897a1350bd1d78",
+    "train_pair_identifier_set_sha256": "c5c11809688ca9dbb63ee30c33b22155cb02fa27cde81ac7335e61ea0a5f825b",
+    "validation_pair_identifier_set_sha256": "f76db63f7c211635967e015e9b4f8642a780562f808efefdefbae34eef99f81c",
+    "test_pair_identifier_set_sha256": "9476790879cfeaff3e4bc1daeb62cc16191537e716327981f95fa140baa37090"
+  },
+  "selected_test_pairs": 595,
+  "evaluated_test_pair_identifier_set_sha256": "9476790879cfeaff3e4bc1daeb62cc16191537e716327981f95fa140baa37090",
+  "bootstrap_replicates": 2000,
+  "bootstrap_seed": 20260803,
+  "source_checkpoint_city_split": {
+    "train_pairs": 1689,
+    "validation_pairs": 403,
+    "test_pairs": 595,
+    "train_cities": 48,
+    "validation_cities": 11,
+    "test_cities": 16,
+    "train_city_set_sha256": "03fb79ddd5e52aec5153f63b0f0052f1a2732c6a6ebfa66b4690ef7eb3a2fb9e",
+    "validation_city_set_sha256": "3c8a72c3432908ceb69dbe3f83945eaaa3f7f97f8a83c5fe80d16472e3020b35",
+    "test_city_set_sha256": "197a41e375d9e4cd1f1c56dd550ec43cdfd5da142baac6658e897a1350bd1d78",
+    "train_pair_identifier_set_sha256": "c5c11809688ca9dbb63ee30c33b22155cb02fa27cde81ac7335e61ea0a5f825b",
+    "validation_pair_identifier_set_sha256": "f76db63f7c211635967e015e9b4f8642a780562f808efefdefbae34eef99f81c",
+    "test_pair_identifier_set_sha256": "9476790879cfeaff3e4bc1daeb62cc16191537e716327981f95fa140baa37090"
+  }
+}

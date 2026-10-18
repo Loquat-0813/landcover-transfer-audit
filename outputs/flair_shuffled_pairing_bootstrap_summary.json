@@ -1,0 +1,978 @@
+{
+  "version": "flair-shuffled-pairing-bootstrap-v1",
+  "evaluated_pair_identifier_set_sha256": "5458f46b24988726842cc7dfd59c4242e237f40b7d90c5ffdceefa30223fc964",
+  "city_count": 74,
+  "excluded_leaf": "herbaceous_vegetation",
+  "supported_leaves": [
+    "built_structure",
+    "transport_surface",
+    "woody_vegetation",
+    "cropland",
+    "bare_surface",
+    "surface_water"
+  ],
+  "primary_support_criterion": {
+    "contrast": "b1_minus_b1_shuffle",
+    "metric": "herbaceous_vegetation",
+    "requirement": "paired_city_bootstrap_ci_lower_gt_zero_and_all_three_seed_differences_positive",
+    "ci_lower": 0.033251572381827445,
+    "ci_lower_gt_zero": true,
+    "seedwise_differences": [
+      0.039228518006493296,
+      0.03755282379533442,
+      0.03876506973038579
+    ],
+    "all_three_seed_differences_positive": true
+  },
+  "arms": {
+    "b0_half": {
+      "seeds": [
+        19,
+        37,
+        73
+      ],
+      "mean_iou": 0.3719847815156598,
+      "mean_iou_sample_std": 0.009206056624771038,
+      "per_class_iou": {
+        "built_structure": 0.5884318865551419,
+        "transport_surface": 0.4041514942162204,
+        "woody_vegetation": 0.47312248527687023,
+        "herbaceous_vegetation": 0.0,
+        "cropland": 0.5140359075129388,
+        "bare_surface": 0.14416193040741684,
+        "surface_water": 0.4799897666410302
+      },
+      "per_class_iou_sample_std": {
+        "built_structure": 0.02065919622284779,
+        "transport_surface": 0.006886542452678592,
+        "woody_vegetation": 0.009738013809099753,
+        "herbaceous_vegetation": 0.0,
+        "cropland": 0.01938812800966717,
+        "bare_surface": 0.021689050342976128,
+        "surface_water": 0.020525746320759392
+      },
+      "supported_leaf_mean_iou": 0.43398224510160305,
+      "supported_leaf_mean_iou_sample_std": 0.010740399395566218,
+      "per_seed": [
+        {
+          "seed": 19,
+          "mean_iou": 0.3652253674222064,
+          "per_class_iou": {
+            "built_structure": 0.5648686652471544,
+            "transport_surface": 0.400194850049932,
+            "woody_vegetation": 0.46658250542465973,
+            "herbaceous_vegetation": 0.0,
+            "cropland": 0.5106041278672863,
+            "bare_surface": 0.13750391045960725,
+            "surface_water": 0.4768235129068049
+          },
+          "supported_leaf_mean_iou": 0.4260962619925741
+        },
+        {
+          "seed": 37,
+          "mean_iou": 0.38246971335921087,
+          "per_class_iou": {
+            "built_structure": 0.6034358162137087,
+            "transport_surface": 0.4001562752926771,
+            "woody_vegetation": 0.4684709595275679,
+            "herbaceous_vegetation": 0.0,
+            "cropland": 0.5349107814963882,
+            "bare_surface": 0.1683995028034749,
+            "surface_water": 0.5019146581806595
+          },
+          "supported_leaf_mean_iou": 0.446214665585746
+        },
+        {
+          "seed": 73,
+          "mean_iou": 0.368259263765562,
+          "per_class_iou": {
+            "built_structure": 0.5969911782045625,
+            "transport_surface": 0.412103357306052,
+            "woody_vegetation": 0.48431399087838306,
+            "herbaceous_vegetation": 0.0,
+            "cropland": 0.4965928131751421,
+            "bare_surface": 0.12658237795916835,
+            "surface_water": 0.4612311288356262
+          },
+          "supported_leaf_mean_iou": 0.429635807726489
+        }
+      ]
+    },
+    "b1": {
+      "seeds": [
+        19,
+        37,
+        73
+      ],
+      "mean_iou": 0.3367627015492109,
+      "mean_iou_sample_std": 0.00659909381873953,
+      "per_class_iou": {
+        "built_structure": 0.5787669242967377,
+        "transport_surface": 0.2573690760218976,
+        "woody_vegetation": 0.32325857330688135,
+        "herbaceous_vegetation": 0.31176119962271587,
+        "cropland": 0.3199597155705338,
+        "bare_surface": 0.08582532906284103,
+        "surface_water": 0.48039809296286884
+      },
+      "per_class_iou_sample_std": {
+        "built_structure": 0.006069053024572308,
+        "transport_surface": 0.019867565674324406,
+        "woody_vegetation": 0.025075353118399504,
+        "herbaceous_vegetation": 0.007338204906609111,
+        "cropland": 0.0022691349066774743,
+        "bare_surface": 0.01520422056657622,
+        "surface_water": 0.005989624176773117
+      },
+      "supported_leaf_mean_iou": 0.3409296185369601,
+      "supported_leaf_mean_iou_sample_std": 0.00878515241682719,
+      "per_seed": [
+        {
+          "seed": 19,
+          "mean_iou": 0.33996929302489215,
+          "per_class_iou": {
+            "built_structure": 0.5799331264463145,
+            "transport_surface": 0.27660608480173726,
+            "woody_vegetation": 0.32715877501269824,
+            "herbaceous_vegetation": 0.3124257541945148,
+            "cropland": 0.31816288050896413,
+            "bare_surface": 0.08532676432060016,
+            "surface_water": 0.480171665889416
+          },
+          "supported_leaf_mean_iou": 0.34455988282995503
+        },
+        {
+          "seed": 37,
+          "mean_iou": 0.3291730573785113,
+          "per_class_iou": {
+            "built_structure": 0.584168251684619,
+            "transport_surface": 0.23692591063373528,
+            "woody_vegetation": 0.2964616486327501,
+            "herbaceous_vegetation": 0.3187445239297962,
+            "cropland": 0.3225096509019607,
+            "bare_surface": 0.07087652280626078,
+            "surface_water": 0.47452489306045736
+          },
+          "supported_leaf_mean_iou": 0.33091114628663054
+        },
+        {
+          "seed": 73,
+          "mean_iou": 0.34114575424422916,
+          "per_class_iou": {
+            "built_structure": 0.5721993947592795,
+            "transport_surface": 0.2585752326302203,
+            "woody_vegetation": 0.3461552962751957,
+            "herbaceous_vegetation": 0.3041133207438367,
+            "cropland": 0.31920661530067657,
+            "bare_surface": 0.10127270006166215,
+            "surface_water": 0.48649771993873314
+          },
+          "supported_leaf_mean_iou": 0.3473178264942946
+        }
+      ]
+    },
+    "b1_shuffle": {
+      "seeds": [
+        19,
+        37,
+        73
+      ],
+      "mean_iou": 0.26261858688425177,
+      "mean_iou_sample_std": 0.007557625509024918,
+      "per_class_iou": {
+        "built_structure": 0.4654046873298501,
+        "transport_surface": 0.13420729187032404,
+        "woody_vegetation": 0.26721097627192114,
+        "herbaceous_vegetation": 0.27324572911197803,
+        "cropland": 0.2487956947166171,
+        "bare_surface": 0.06795560921140116,
+        "surface_water": 0.38151011967767096
+      },
+      "per_class_iou_sample_std": {
+        "built_structure": 0.021505399610356645,
+        "transport_surface": 0.02433926452466332,
+        "woody_vegetation": 0.02129826770761271,
+        "herbaceous_vegetation": 0.007921835878460907,
+        "cropland": 0.0047933673887594315,
+        "bare_surface": 0.013974930308941608,
+        "surface_water": 0.011625317573977917
+      },
+      "supported_leaf_mean_iou": 0.26084739651296407,
+      "supported_leaf_mean_iou_sample_std": 0.009261655932170966,
+      "per_seed": [
+        {
+          "seed": 19,
+          "mean_iou": 0.2710331132076189,
+          "per_class_iou": {
+            "built_structure": 0.47558438168060874,
+            "transport_surface": 0.16222946066883434,
+            "woody_vegetation": 0.2726483871347249,
+            "herbaceous_vegetation": 0.2731972361880215,
+            "cropland": 0.2506763608625779,
+            "bare_surface": 0.0688655248409922,
+            "surface_water": 0.3940304410775729
+          },
+          "supported_leaf_mean_iou": 0.27067242604421854
+        },
+        {
+          "seed": 37,
+          "mean_iou": 0.2564076986579203,
+          "per_class_iou": {
+            "built_structure": 0.4799302060596732,
+            "transport_surface": 0.12205855530978786,
+            "woody_vegetation": 0.24372108575933202,
+            "herbaceous_vegetation": 0.28119170013446176,
+            "cropland": 0.2433471810728077,
+            "bare_surface": 0.05354795569648933,
+            "surface_water": 0.37105720657289
+          },
+          "supported_leaf_mean_iou": 0.2522770317451633
+        },
+        {
+          "seed": 73,
+          "mean_iou": 0.26041494878721616,
+          "per_class_iou": {
+            "built_structure": 0.44069947424926836,
+            "transport_surface": 0.11833385963234992,
+            "woody_vegetation": 0.28526345592170654,
+            "herbaceous_vegetation": 0.2653482510134509,
+            "cropland": 0.2523635422144657,
+            "bare_surface": 0.08145334709672196,
+            "surface_water": 0.3794427113825499
+          },
+          "supported_leaf_mean_iou": 0.2595927317495104
+        }
+      ]
+    }
+  },
+  "contrasts": {
+    "b1_minus_b1_shuffle": {
+      "overall": {
+        "comparison": "mean_model_minus_mean_baseline",
+        "resampling_unit": "openearthmap_city",
+        "city_names": [
+          "aachen",
+          "abancay",
+          "accra",
+          "al_qurnah",
+          "austin",
+          "baybay",
+          "bielefeld",
+          "bogota",
+          "buenos_aires",
+          "chiangmai",
+          "chicago",
+          "chiclayo",
+          "chincha",
+          "chisinau",
+          "christchurch",
+          "coxsbazar",
+          "daressalaam",
+          "dhaka",
+          "dolnoslaskie",
+          "dortmund",
+          "dowa",
+          "duesseldorf",
+          "ica",
+          "kagera",
+          "kampala",
+          "khartoum",
+          "kinshasa",
+          "kitsap",
+          "koeln",
+          "kujawsko-pomorskie",
+          "kyoto",
+          "lambayeque",
+          "lima",
+          "lodzkie",
+          "lohur",
+          "lubuskie",
+          "mahe",
+          "malopolskie",
+          "maputo",
+          "mazowieckie",
+          "melbourne",
+          "monrovia",
+          "muenster",
+          "ngaoundere",
+          "niamey",
+          "pisco",
+          "piura",
+          "podkarpackie",
+          "podlaskie",
+          "pointenoire",
+          "pomorskie",
+          "rio",
+          "rosario",
+          "rotterdam",
+          "san_tome",
+          "santiago",
+          "sechura",
+          "shanghai",
+          "slaskie",
+          "soriano",
+          "svaneti",
+          "swietokrzyskie",
+          "tokyo",
+          "tonga",
+          "tyrolw",
+          "ulaanbaatar",
+          "vegas",
+          "vienna",
+          "viru",
+          "warminsko-mazurskie",
+          "western",
+          "wielkopolskie",
+          "zachodniopomorskie",
+          "zanzibar"
+        ],
+        "city_count": 74,
+        "model_seed_count": 3,
+        "baseline_seed_count": 3,
+        "bootstrap_replicates": 2000,
+        "bootstrap_seed": 20260806,
+        "confidence_level": 0.95,
+        "point_difference": {
+          "mean_iou": 0.07414411466495907,
+          "per_class_iou": {
+            "built_structure": 0.11336223696688758,
+            "transport_surface": 0.12316178415157358,
+            "woody_vegetation": 0.056047597034960206,
+            "herbaceous_vegetation": 0.03851547051073784,
+            "cropland": 0.07116402085391674,
+            "bare_surface": 0.01786971985143987,
+            "surface_water": 0.09888797328519794
+          }
+        },
+        "confidence_interval": {
+          "mean_iou": {
+            "lower": 0.06343735707660945,
+            "upper": 0.08475146979240272
+          },
+          "per_class_iou": {
+            "built_structure": {
+              "lower": 0.08504764831315453,
+              "upper": 0.143915044973432
+            },
+            "transport_surface": {
+              "lower": 0.10232877019554294,
+              "upper": 0.14525498093034497
+            },
+            "woody_vegetation": {
+              "lower": 0.047805432465231876,
+              "upper": 0.0642859649974216
+            },
+            "herbaceous_vegetation": {
+              "lower": 0.033251572381827445,
+              "upper": 0.04393734588507195
+            },
+            "cropland": {
+              "lower": 0.05348351633110686,
+              "upper": 0.09032486439478406
+            },
+            "bare_surface": {
+              "lower": 0.013118830301556101,
+              "upper": 0.022727416880675325
+            },
+            "surface_water": {
+              "lower": 0.06343339749432382,
+              "upper": 0.1365590860978078
+            }
+          }
+        }
+      },
+      "supported_leaf": {
+        "comparison": "mean_model_minus_mean_baseline",
+        "resampling_unit": "openearthmap_city",
+        "city_names": [
+          "aachen",
+          "abancay",
+          "accra",
+          "al_qurnah",
+          "austin",
+          "baybay",
+          "bielefeld",
+          "bogota",
+          "buenos_aires",
+          "chiangmai",
+          "chicago",
+          "chiclayo",
+          "chincha",
+          "chisinau",
+          "christchurch",
+          "coxsbazar",
+          "daressalaam",
+          "dhaka",
+          "dolnoslaskie",
+          "dortmund",
+          "dowa",
+          "duesseldorf",
+          "ica",
+          "kagera",
+          "kampala",
+          "khartoum",
+          "kinshasa",
+          "kitsap",
+          "koeln",
+          "kujawsko-pomorskie",
+          "kyoto",
+          "lambayeque",
+          "lima",
+          "lodzkie",
+          "lohur",
+          "lubuskie",
+          "mahe",
+          "malopolskie",
+          "maputo",
+          "mazowieckie",
+          "melbourne",
+          "monrovia",
+          "muenster",
+          "ngaoundere",
+          "niamey",
+          "pisco",
+          "piura",
+          "podkarpackie",
+          "podlaskie",
+          "pointenoire",
+          "pomorskie",
+          "rio",
+          "rosario",
+          "rotterdam",
+          "san_tome",
+          "santiago",
+          "sechura",
+          "shanghai",
+          "slaskie",
+          "soriano",
+          "svaneti",
+          "swietokrzyskie",
+          "tokyo",
+          "tonga",
+          "tyrolw",
+          "ulaanbaatar",
+          "vegas",
+          "vienna",
+          "viru",
+          "warminsko-mazurskie",
+          "western",
+          "wielkopolskie",
+          "zachodniopomorskie",
+          "zanzibar"
+        ],
+        "city_count": 74,
+        "model_seed_count": 3,
+        "baseline_seed_count": 3,
+        "supported_leaves": [
+          "built_structure",
+          "transport_surface",
+          "woody_vegetation",
+          "cropland",
+          "bare_surface",
+          "surface_water"
+        ],
+        "bootstrap_replicates": 2000,
+        "bootstrap_seed": 20260806,
+        "confidence_level": 0.95,
+        "baseline_supported_leaf_mean_iou": 0.26084739651296407,
+        "model_supported_leaf_mean_iou": 0.3409296185369601,
+        "point_difference": 0.08008222202399601,
+        "confidence_interval": {
+          "lower": 0.06817252047558621,
+          "upper": 0.0920880890097385
+        }
+      }
+    },
+    "b1_shuffle_minus_b0_half": {
+      "overall": {
+        "comparison": "mean_model_minus_mean_baseline",
+        "resampling_unit": "openearthmap_city",
+        "city_names": [
+          "aachen",
+          "abancay",
+          "accra",
+          "al_qurnah",
+          "austin",
+          "baybay",
+          "bielefeld",
+          "bogota",
+          "buenos_aires",
+          "chiangmai",
+          "chicago",
+          "chiclayo",
+          "chincha",
+          "chisinau",
+          "christchurch",
+          "coxsbazar",
+          "daressalaam",
+          "dhaka",
+          "dolnoslaskie",
+          "dortmund",
+          "dowa",
+          "duesseldorf",
+          "ica",
+          "kagera",
+          "kampala",
+          "khartoum",
+          "kinshasa",
+          "kitsap",
+          "koeln",
+          "kujawsko-pomorskie",
+          "kyoto",
+          "lambayeque",
+          "lima",
+          "lodzkie",
+          "lohur",
+          "lubuskie",
+          "mahe",
+          "malopolskie",
+          "maputo",
+          "mazowieckie",
+          "melbourne",
+          "monrovia",
+          "muenster",
+          "ngaoundere",
+          "niamey",
+          "pisco",
+          "piura",
+          "podkarpackie",
+          "podlaskie",
+          "pointenoire",
+          "pomorskie",
+          "rio",
+          "rosario",
+          "rotterdam",
+          "san_tome",
+          "santiago",
+          "sechura",
+          "shanghai",
+          "slaskie",
+          "soriano",
+          "svaneti",
+          "swietokrzyskie",
+          "tokyo",
+          "tonga",
+          "tyrolw",
+          "ulaanbaatar",
+          "vegas",
+          "vienna",
+          "viru",
+          "warminsko-mazurskie",
+          "western",
+          "wielkopolskie",
+          "zachodniopomorskie",
+          "zanzibar"
+        ],
+        "city_count": 74,
+        "model_seed_count": 3,
+        "baseline_seed_count": 3,
+        "bootstrap_replicates": 2000,
+        "bootstrap_seed": 20260806,
+        "confidence_level": 0.95,
+        "point_difference": {
+          "mean_iou": -0.10936619463140795,
+          "per_class_iou": {
+            "built_structure": -0.12302719922529176,
+            "transport_surface": -0.26994420234589633,
+            "woody_vegetation": -0.2059115090049491,
+            "herbaceous_vegetation": 0.27324572911197803,
+            "cropland": -0.2652402127963217,
+            "bare_surface": -0.07620632119601568,
+            "surface_water": -0.09847964696335931
+          }
+        },
+        "confidence_interval": {
+          "mean_iou": {
+            "lower": -0.13555834432591898,
+            "upper": -0.0838013251723059
+          },
+          "per_class_iou": {
+            "built_structure": {
+              "lower": -0.17493999032901533,
+              "upper": -0.07283709392680247
+            },
+            "transport_surface": {
+              "lower": -0.31594680258382135,
+              "upper": -0.22184361744598705
+            },
+            "woody_vegetation": {
+              "lower": -0.2408098916958549,
+              "upper": -0.17177853435239818
+            },
+            "herbaceous_vegetation": {
+              "lower": 0.24383083704818223,
+              "upper": 0.301498954277834
+            },
+            "cropland": {
+              "lower": -0.31940051805352526,
+              "upper": -0.21007197792519774
+            },
+            "bare_surface": {
+              "lower": -0.13071063593051668,
+              "upper": -0.026009285495469922
+            },
+            "surface_water": {
+              "lower": -0.17156312371810717,
+              "upper": -0.02301084149506687
+            }
+          }
+        }
+      },
+      "supported_leaf": {
+        "comparison": "mean_model_minus_mean_baseline",
+        "resampling_unit": "openearthmap_city",
+        "city_names": [
+          "aachen",
+          "abancay",
+          "accra",
+          "al_qurnah",
+          "austin",
+          "baybay",
+          "bielefeld",
+          "bogota",
+          "buenos_aires",
+          "chiangmai",
+          "chicago",
+          "chiclayo",
+          "chincha",
+          "chisinau",
+          "christchurch",
+          "coxsbazar",
+          "daressalaam",
+          "dhaka",
+          "dolnoslaskie",
+          "dortmund",
+          "dowa",
+          "duesseldorf",
+          "ica",
+          "kagera",
+          "kampala",
+          "khartoum",
+          "kinshasa",
+          "kitsap",
+          "koeln",
+          "kujawsko-pomorskie",
+          "kyoto",
+          "lambayeque",
+          "lima",
+          "lodzkie",
+          "lohur",
+          "lubuskie",
+          "mahe",
+          "malopolskie",
+          "maputo",
+          "mazowieckie",
+          "melbourne",
+          "monrovia",
+          "muenster",
+          "ngaoundere",
+          "niamey",
+          "pisco",
+          "piura",
+          "podkarpackie",
+          "podlaskie",
+          "pointenoire",
+          "pomorskie",
+          "rio",
+          "rosario",
+          "rotterdam",
+          "san_tome",
+          "santiago",
+          "sechura",
+          "shanghai",
+          "slaskie",
+          "soriano",
+          "svaneti",
+          "swietokrzyskie",
+          "tokyo",
+          "tonga",
+          "tyrolw",
+          "ulaanbaatar",
+          "vegas",
+          "vienna",
+          "viru",
+          "warminsko-mazurskie",
+          "western",
+          "wielkopolskie",
+          "zachodniopomorskie",
+          "zanzibar"
+        ],
+        "city_count": 74,
+        "model_seed_count": 3,
+        "baseline_seed_count": 3,
+        "supported_leaves": [
+          "built_structure",
+          "transport_surface",
+          "woody_vegetation",
+          "cropland",
+          "bare_surface",
+          "surface_water"
+        ],
+        "bootstrap_replicates": 2000,
+        "bootstrap_seed": 20260806,
+        "confidence_level": 0.95,
+        "baseline_supported_leaf_mean_iou": 0.43398224510160305,
+        "model_supported_leaf_mean_iou": 0.26084739651296407,
+        "point_difference": -0.17313484858863898,
+        "confidence_interval": {
+          "lower": -0.20217785221635892,
+          "upper": -0.14432864874154377
+        }
+      }
+    },
+    "b1_minus_b0_half": {
+      "overall": {
+        "comparison": "mean_model_minus_mean_baseline",
+        "resampling_unit": "openearthmap_city",
+        "city_names": [
+          "aachen",
+          "abancay",
+          "accra",
+          "al_qurnah",
+          "austin",
+          "baybay",
+          "bielefeld",
+          "bogota",
+          "buenos_aires",
+          "chiangmai",
+          "chicago",
+          "chiclayo",
+          "chincha",
+          "chisinau",
+          "christchurch",
+          "coxsbazar",
+          "daressalaam",
+          "dhaka",
+          "dolnoslaskie",
+          "dortmund",
+          "dowa",
+          "duesseldorf",
+          "ica",
+          "kagera",
+          "kampala",
+          "khartoum",
+          "kinshasa",
+          "kitsap",
+          "koeln",
+          "kujawsko-pomorskie",
+          "kyoto",
+          "lambayeque",
+          "lima",
+          "lodzkie",
+          "lohur",
+          "lubuskie",
+          "mahe",
+          "malopolskie",
+          "maputo",
+          "mazowieckie",
+          "melbourne",
+          "monrovia",
+          "muenster",
+          "ngaoundere",
+          "niamey",
+          "pisco",
+          "piura",
+          "podkarpackie",
+          "podlaskie",
+          "pointenoire",
+          "pomorskie",
+          "rio",
+          "rosario",
+          "rotterdam",
+          "san_tome",
+          "santiago",
+          "sechura",
+          "shanghai",
+          "slaskie",
+          "soriano",
+          "svaneti",
+          "swietokrzyskie",
+          "tokyo",
+          "tonga",
+          "tyrolw",
+          "ulaanbaatar",
+          "vegas",
+          "vienna",
+          "viru",
+          "warminsko-mazurskie",
+          "western",
+          "wielkopolskie",
+          "zachodniopomorskie",
+          "zanzibar"
+        ],
+        "city_count": 74,
+        "model_seed_count": 3,
+        "baseline_seed_count": 3,
+        "bootstrap_replicates": 2000,
+        "bootstrap_seed": 20260806,
+        "confidence_level": 0.95,
+        "point_difference": {
+          "mean_iou": -0.03522207996644888,
+          "per_class_iou": {
+            "built_structure": -0.009664962258404186,
+            "transport_surface": -0.14678241819432275,
+            "woody_vegetation": -0.14986391196998888,
+            "herbaceous_vegetation": 0.31176119962271587,
+            "cropland": -0.194076191942405,
+            "bare_surface": -0.058336601344575814,
+            "surface_water": 0.0004083263218386257
+          }
+        },
+        "confidence_interval": {
+          "mean_iou": {
+            "lower": -0.05321542891491555,
+            "upper": -0.01782364356421833
+          },
+          "per_class_iou": {
+            "built_structure": {
+              "lower": -0.038122860433928055,
+              "upper": 0.016620173651022245
+            },
+            "transport_surface": {
+              "lower": -0.18196468284079292,
+              "upper": -0.11149950403276347
+            },
+            "woody_vegetation": {
+              "lower": -0.18141899580383203,
+              "upper": -0.11928187565372544
+            },
+            "herbaceous_vegetation": {
+              "lower": 0.2828455826796735,
+              "upper": 0.33943303761665433
+            },
+            "cropland": {
+              "lower": -0.23673757466229595,
+              "upper": -0.1518175018113025
+            },
+            "bare_surface": {
+              "lower": -0.11272254295458767,
+              "upper": -0.008071953060173774
+            },
+            "surface_water": {
+              "lower": -0.040727605665541754,
+              "upper": 0.04845760585913186
+            }
+          }
+        }
+      },
+      "supported_leaf": {
+        "comparison": "mean_model_minus_mean_baseline",
+        "resampling_unit": "openearthmap_city",
+        "city_names": [
+          "aachen",
+          "abancay",
+          "accra",
+          "al_qurnah",
+          "austin",
+          "baybay",
+          "bielefeld",
+          "bogota",
+          "buenos_aires",
+          "chiangmai",
+          "chicago",
+          "chiclayo",
+          "chincha",
+          "chisinau",
+          "christchurch",
+          "coxsbazar",
+          "daressalaam",
+          "dhaka",
+          "dolnoslaskie",
+          "dortmund",
+          "dowa",
+          "duesseldorf",
+          "ica",
+          "kagera",
+          "kampala",
+          "khartoum",
+          "kinshasa",
+          "kitsap",
+          "koeln",
+          "kujawsko-pomorskie",
+          "kyoto",
+          "lambayeque",
+          "lima",
+          "lodzkie",
+          "lohur",
+          "lubuskie",
+          "mahe",
+          "malopolskie",
+          "maputo",
+          "mazowieckie",
+          "melbourne",
+          "monrovia",
+          "muenster",
+          "ngaoundere",
+          "niamey",
+          "pisco",
+          "piura",
+          "podkarpackie",
+          "podlaskie",
+          "pointenoire",
+          "pomorskie",
+          "rio",
+          "rosario",
+          "rotterdam",
+          "san_tome",
+          "santiago",
+          "sechura",
+          "shanghai",
+          "slaskie",
+          "soriano",
+          "svaneti",
+          "swietokrzyskie",
+          "tokyo",
+          "tonga",
+          "tyrolw",
+          "ulaanbaatar",
+          "vegas",
+          "vienna",
+          "viru",
+          "warminsko-mazurskie",
+          "western",
+          "wielkopolskie",
+          "zachodniopomorskie",
+          "zanzibar"
+        ],
+        "city_count": 74,
+        "model_seed_count": 3,
+        "baseline_seed_count": 3,
+        "supported_leaves": [
+          "built_structure",
+          "transport_surface",
+          "woody_vegetation",
+          "cropland",
+          "bare_surface",
+          "surface_water"
+        ],
+        "bootstrap_replicates": 2000,
+        "bootstrap_seed": 20260806,
+        "confidence_level": 0.95,
+        "baseline_supported_leaf_mean_iou": 0.43398224510160305,
+        "model_supported_leaf_mean_iou": 0.3409296185369601,
+        "point_difference": -0.09305262656464297,
+        "confidence_interval": {
+          "lower": -0.11294883003963499,
+          "upper": -0.07401782880989562
+        }
+      }
+    }
+  },
+  "source_replay_directories": {
+    "b0_half": [
+      "outputs/flair_b1_b0_half_oem_no_paris_seed19",
+      "outputs/flair_b1_b0_half_oem_no_paris_seed37",
+      "outputs/flair_b1_b0_half_oem_no_paris_seed73"
+    ],
+    "b1": [
+      "outputs/flair_b1_b1_oem_no_paris_seed19",
+      "outputs/flair_b1_b1_oem_no_paris_seed37",
+      "outputs/flair_b1_b1_oem_no_paris_seed73"
+    ],
+    "b1_shuffle": [
+      "outputs/flair_b1_b1_shuffle_oem_no_paris_seed19",
+      "outputs/flair_b1_b1_shuffle_oem_no_paris_seed37",
+      "outputs/flair_b1_b1_shuffle_oem_no_paris_seed73"
+    ]
+  }
+}

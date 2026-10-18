@@ -1,0 +1,30 @@
+{
+  "experiment": "semantic_drone_loveda_second_case_sd_b0",
+  "protocol_mode": "second_case_fixed_budget",
+  "case": "semantic_drone_loveda_to_openearthmap_cropland",
+  "arm": "sd_b0",
+  "seed": 19,
+  "updates": 25220,
+  "rank": 32,
+  "crop_size": 512,
+  "model_id": "/root/autodl-tmp/models/clip-vit-base-patch16",
+  "source_audit": "audits/second_case_semantic_drone_loveda_audit_ready_20260810.json",
+  "source_audit_sha256": "a3c07360b368996e2b21ec0a071a053ae34abb4c2d87251870dfdf87e57a0dac",
+  "semantic_drone_pairs": 400,
+  "loveda_aux_pairs": 0,
+  "prompts": [
+    "a satellite image of a building",
+    "a satellite image of a road",
+    "a satellite image of forest or trees",
+    "a satellite image of grassland or rangeland",
+    "a satellite image of agricultural cropland",
+    "a satellite image of bare soil or barren ground",
+    "a satellite image of water"
+  ],
+  "supervised_semantic_drone_classes": [
+    "grass",
+    "tree",
+    "water"
+  ],
+  "auxiliary_label": "LoveDA agriculture raw value 7 -> cropland"
+}

@@ -1,0 +1,48 @@
+\documentclass[12pt]{spieman}
+\usepackage[T1]{fontenc}
+\usepackage[utf8]{inputenc}
+\usepackage{amsmath,amssymb,booktabs,array,graphicx,caption,subcaption}
+\usepackage{threeparttable,tabularx,adjustbox,enumitem,float,xcolor,lineno}
+\hypersetup{colorlinks=true,citecolor=blue,urlcolor=blue,linkcolor=blue}
+\ifdefined\pdfminorversion\pdfminorversion=7\fi
+\setlength{\emergencystretch}{2em}
+\graphicspath{{figures/}}
+\input{math_commands}
+% Compatibility name: preserve the audited source citation keys and sentences.
+\newcommand{\citep}[1]{\cite{#1}}
+\title{Auditing Source-Label Coverage and Recovery--Retention Trade-offs in Cross-Dataset Land-Cover Segmentation}
+\author[1]{Yangxi Luo}
+\author[2,*]{Liang Cheng}
+\author[2]{Jiawen Pan}
+\affil[1]{Fuzhou Polytechnic University, Fuzhou, China}
+\affil[2]{Fujian Agriculture and Forestry University, Fuzhou, China}
+\begin{document}
+\maketitle
+\linenumbers
+\begin{spacing}{2}
+\begin{abstract}
+\input{sections/0_abstract}
+\end{abstract}
+\keywords{land-cover legend harmonization, label coverage, cross-dataset segmentation, OpenEarthMap, FLAIR, vision-language probe, audit protocol}
+
+\par
+\noindent Corresponding author: Liang Cheng, \href{mailto:52370034073@fafu.edu.cn}{52370034073@fafu.edu.cn}.
+
+\input{sections/1_introduction}
+\input{sections/2_related_work}
+\input{sections/3_materials_methods}
+\input{sections/4_results}
+\input{sections/5_discussion}
+\input{sections/6_conclusion}
+\input{sections/7_declarations}
+
+\bibliographystyle{spiejour}
+\bibliography{references}
+
+\clearpage
+\appendix
+\renewcommand{\thetable}{A.\arabic{table}}
+\setcounter{table}{0}
+\input{sections/A_appendix}
+\end{spacing}
+\end{document}

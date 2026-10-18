@@ -1,0 +1,59 @@
+\section{可复现性与完整性条件}
+\label{app:integrity}
+冻结类别体系包含七个叶类别：建筑、交通地表、木本植被、草本植被、耕地、裸地和地表水。草本植被是冻结输出索引的名称；其 OEM 目标关系是范围较宽、包含灌丛与灌木的 rangeland 植被代理，Semantic Drone 关系则为 grass。这些输出别名不构成完全协调的植物学分类体系。耕地表示所声明的农业田块或管理覆盖关系。冻结映射下，LoveDA 的 building、road、forest、agriculture、barren、water 为六个非草本叶类别提供精确操作性支持。FLAIR 原始 ID 10 是 B1 纳入的唯一 FLAIR 标签。OpenEarthMap rangeland 和 Semantic Drone grass 是所声明的目标关系。OpenEarthMap developed space 仍为较粗祖先类别，不作为 building 或 road 支持。
+
+\begin{table}[h]
+\centering
+\caption{所有报告分支共同使用的完整冻结提示词。英文提示文本按实际输入保留。}
+\label{tab:prompts}
+\begin{tabular}{ll}
+\toprule
+公共叶类别 & 提示词 \\
+\midrule
+建筑 & a satellite image of a building \\
+交通地表 & a satellite image of a road \\
+木本植被 & a satellite image of forest or trees \\
+草本植被 & a satellite image of grassland or rangeland \\
+耕地 & a satellite image of agricultural cropland \\
+裸地 & a satellite image of bare soil or barren ground \\
+地表水 & a satellite image of water \\
+\bottomrule
+\end{tabular}
+\end{table}
+
+每张栅格按步长512划分为不重叠的\(512\times512\) RGB 瓦片，仅对右侧和底部边缘瓦片补零。对 CLIP 图像块特征评分后，使用双线性插值将 logit 调整为\(512\times512\)，align-corners 参数为 false，再将叶类别 argmax 复制到未填充区域。不使用重叠、混合、测试时增强或后处理。
+
+对于 B0-half-batch2，同一确定性裁块的重复副本具有相同的单样本损失。当采用平均损失、冻结骨干、无训练态批依赖状态、适配器不采用样本依赖随机变换且优化器状态相同时，每次更新的平均梯度等于单裁块梯度。平均 mIoU 差值的绝对值小于\(4\times10^{-9}\)，在报告精度下为零。因此，它是构造性的流程完整性检查，而非一般批大小效应的经验估计。
+
+\begin{table}[h]
+\centering
+\caption{重复裁块流程完整性检查。B0-half-batch2 在第二个更新槽重复同一确定性 LoveDA 裁块。}
+\label{tab:batch_integrity}
+\begin{tabular}{@{}p{0.28\linewidth}p{0.30\linewidth}p{0.27\linewidth}@{}}
+\toprule
+对比 & 指标 & 审计结果 \\
+\midrule
+B0-half-batch2 减 B0-half & 平均 mIoU 差值绝对值 & 小于\(4\times10^{-9}\) \\
+\bottomrule
+\end{tabular}
+\end{table}
+
+表\ref{tab:all_leaf_contrasts}给出七个 OpenEarthMap 叶类别的完整、未调整描述性区间。
+\begin{table}[h]
+\centering
+\caption{OpenEarthMap 全部叶类别差值的未调整描述性配对城市 bootstrap 区间。主要目标类别为草本输出对应的 rangeland 代理类别。}
+\label{tab:all_leaf_contrasts}
+\begin{tabular}{lrrr}
+\toprule
+叶类别 & B1 减 B0 的 IoU & 下界 & 上界 \\
+\midrule
+建筑 & -0.01958 & -0.04881 & +0.00555 \\
+交通地表 & -0.1482 & -0.1845 & -0.1134 \\
+木本植被 & -0.1554 & -0.1880 & -0.1225 \\
+Rangeland 代理 & +0.3118 & +0.2821 & +0.3399 \\
+耕地 & -0.2005 & -0.2497 & -0.1498 \\
+裸地 & -0.05080 & -0.1094 & -0.00103 \\
+地表水 & -0.03249 & -0.07099 & +0.00676 \\
+\bottomrule
+\end{tabular}
+\end{table}

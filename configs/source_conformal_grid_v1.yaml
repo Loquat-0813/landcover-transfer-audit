@@ -1,0 +1,5 @@
+version: source-conformal-grid-v1
+purpose: source_only_diagnostic_not_target_parameter_selection
+alpha_candidates: [0.10, 0.20, 0.30, 0.40, 0.50]
+calibration_percent: 15
+calibration_pixels_per_tile: 512

@@ -1,0 +1,222 @@
+{
+  "class_names": [
+    "built_structure",
+    "transport_surface",
+    "woody_vegetation",
+    "herbaceous_vegetation",
+    "cropland",
+    "bare_surface",
+    "surface_water"
+  ],
+  "evaluated_pair_identifier_set_sha256": "9476790879cfeaff3e4bc1daeb62cc16191537e716327981f95fa140baa37090",
+  "b0_seeds": [
+    {
+      "mean_iou": 0.36504463669123416,
+      "per_class_iou": {
+        "built_structure": 0.5689322233523575,
+        "transport_surface": 0.4017971276733051,
+        "woody_vegetation": 0.45805861611046217,
+        "herbaceous_vegetation": 6.743568513373268e-07,
+        "cropland": 0.5152813273253043,
+        "bare_surface": 0.07360830296823218,
+        "surface_water": 0.5376341850521267
+      },
+      "valid_pixels": 469808097
+    },
+    {
+      "mean_iou": 0.3610576990216163,
+      "per_class_iou": {
+        "built_structure": 0.5630481603966184,
+        "transport_surface": 0.399241020778297,
+        "woody_vegetation": 0.4617763726600858,
+        "herbaceous_vegetation": 0.0,
+        "cropland": 0.486143361760571,
+        "bare_surface": 0.06622989839236486,
+        "surface_water": 0.550965079163377
+      },
+      "valid_pixels": 469808097
+    },
+    {
+      "mean_iou": 0.35357949593232296,
+      "per_class_iou": {
+        "built_structure": 0.5728012085986267,
+        "transport_surface": 0.37796379700255994,
+        "woody_vegetation": 0.47385194786400725,
+        "herbaceous_vegetation": 0.0,
+        "cropland": 0.4807171041321824,
+        "bare_surface": 0.04511227723024001,
+        "surface_water": 0.5246101366986445
+      },
+      "valid_pixels": 469808097
+    }
+  ],
+  "b0_mean": {
+    "mean_iou": 0.35989394388172447,
+    "mean_iou_sample_std": 0.005820490329399247,
+    "per_class_iou": {
+      "built_structure": 0.5682605307825342,
+      "transport_surface": 0.39300064848472066,
+      "woody_vegetation": 0.4645623122115184,
+      "herbaceous_vegetation": 2.2478561711244225e-07,
+      "cropland": 0.4940472644060192,
+      "bare_surface": 0.06165015953027901,
+      "surface_water": 0.5377364669713828
+    },
+    "per_class_iou_sample_std": {
+      "built_structure": 0.004911096159610512,
+      "transport_surface": 0.013084861385857195,
+      "woody_vegetation": 0.008257022850735075,
+      "herbaceous_vegetation": 3.8934010964947404e-07,
+      "cropland": 0.01858830651263125,
+      "bare_surface": 0.014789738900628116,
+      "surface_water": 0.013177768941406383
+    }
+  },
+  "b1_seeds": [
+    {
+      "mean_iou": 0.33390865141136755,
+      "per_class_iou": {
+        "built_structure": 0.5585591504287701,
+        "transport_surface": 0.23311238442051505,
+        "woody_vegetation": 0.37027003014385074,
+        "herbaceous_vegetation": 0.30624557990059503,
+        "cropland": 0.25555384038630624,
+        "bare_surface": 0.07049168058689312,
+        "surface_water": 0.5431278940126425
+      },
+      "valid_pixels": 469808097
+    },
+    {
+      "mean_iou": 0.33055547039612615,
+      "per_class_iou": {
+        "built_structure": 0.568120471672675,
+        "transport_surface": 0.19162930475018164,
+        "woody_vegetation": 0.34300035664423106,
+        "herbaceous_vegetation": 0.3119553674821093,
+        "cropland": 0.26542965616308256,
+        "bare_surface": 0.08634982349837035,
+        "surface_water": 0.5474033125622334
+      },
+      "valid_pixels": 469808097
+    },
+    {
+      "mean_iou": 0.3320067309942951,
+      "per_class_iou": {
+        "built_structure": 0.5605264466002592,
+        "transport_surface": 0.21445621913159135,
+        "woody_vegetation": 0.38503454581779156,
+        "herbaceous_vegetation": 0.2995104252564161,
+        "cropland": 0.25408179026457045,
+        "bare_surface": 0.05949378462026856,
+        "surface_water": 0.5509439052691686
+      },
+      "valid_pixels": 469808097
+    }
+  ],
+  "b1_mean": {
+    "mean_iou": 0.3321569509339296,
+    "mean_iou_sample_std": 0.0016816302366875074,
+    "per_class_iou": {
+      "built_structure": 0.5624020229005681,
+      "transport_surface": 0.213065969434096,
+      "woody_vegetation": 0.3661016442019578,
+      "herbaceous_vegetation": 0.3059037908797068,
+      "cropland": 0.2583550956046531,
+      "bare_surface": 0.07211176290184401,
+      "surface_water": 0.5471583706146815
+    },
+    "per_class_iou_sample_std": {
+      "built_structure": 0.005049064846681702,
+      "transport_surface": 0.020776454712001433,
+      "woody_vegetation": 0.021324864498751116,
+      "herbaceous_vegetation": 0.00622950732813681,
+      "cropland": 0.006170801261699333,
+      "bare_surface": 0.01350111869757248,
+      "surface_water": 0.003913758476041735
+    }
+  },
+  "paired_city_bootstrap_mean_b1_minus_b0": {
+    "comparison": "mean_model_minus_mean_baseline",
+    "resampling_unit": "openearthmap_city",
+    "city_names": [
+      "bielefeld",
+      "buenos_aires",
+      "dhaka",
+      "dolnoslaskie",
+      "dowa",
+      "kagera",
+      "lohur",
+      "malopolskie",
+      "monrovia",
+      "muenster",
+      "piura",
+      "pomorskie",
+      "rio",
+      "san_tome",
+      "soriano",
+      "vegas"
+    ],
+    "city_count": 16,
+    "model_seed_count": 3,
+    "baseline_seed_count": 3,
+    "bootstrap_replicates": 2000,
+    "bootstrap_seed": 20260803,
+    "confidence_level": 0.95,
+    "point_difference": {
+      "mean_iou": -0.027736992947794914,
+      "per_class_iou": {
+        "built_structure": -0.0058585078819660685,
+        "transport_surface": -0.17993467905062463,
+        "woody_vegetation": -0.0984606680095606,
+        "herbaceous_vegetation": 0.3059035660940897,
+        "cropland": -0.23569216880136618,
+        "bare_surface": 0.010461603371564994,
+        "surface_water": 0.009421903643298868
+      }
+    },
+    "confidence_interval": {
+      "mean_iou": {
+        "lower": -0.052651950340884046,
+        "upper": -0.003988067010606813
+      },
+      "per_class_iou": {
+        "built_structure": {
+          "lower": -0.07436803531755136,
+          "upper": 0.04054763694721508
+        },
+        "transport_surface": {
+          "lower": -0.26438836184705083,
+          "upper": -0.10746843632478638
+        },
+        "woody_vegetation": {
+          "lower": -0.15523823967521377,
+          "upper": -0.05828114154551594
+        },
+        "herbaceous_vegetation": {
+          "lower": 0.2701317503324238,
+          "upper": 0.3415094513640461
+        },
+        "cropland": {
+          "lower": -0.3323091984732022,
+          "upper": -0.1241682375811701
+        },
+        "bare_surface": {
+          "lower": -0.020602602099273597,
+          "upper": 0.06488873126891305
+        },
+        "surface_water": {
+          "lower": -0.021422057498818824,
+          "upper": 0.050708318239178964
+        }
+      }
+    }
+  },
+  "source_replay_directories": [
+    "outputs/flair_b1_b0_oem_b2test_seed19",
+    "outputs/flair_b1_b0_oem_b2test_seed37",
+    "outputs/flair_b1_b0_oem_b2test_seed73",
+    "outputs/flair_b1_b1_oem_b2test_seed19",
+    "outputs/flair_b1_b1_oem_b2test_seed37",
+    "outputs/flair_b1_b1_oem_b2test_seed73"
+  ]
+}

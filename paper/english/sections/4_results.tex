@@ -1,0 +1,76 @@
+\section{Results}
+\label{sec:results}
+
+\subsection{The audit identifies an unsupported target leaf}
+\label{sec:gap_result}
+
+Figure~\ref{fig:coverage} summarizes the operational coverage record. LoveDA provides exact operational support for six leaves but not herbaceous vegetation. FLAIR raw ID 10 supplies the declared auxiliary herbaceous label, whereas all other FLAIR labels are ignored by B1. OpenEarthMap \texttt{rangeland} and Semantic Drone \texttt{grass} are the declared target leaves for the same non-cropland herbaceous concept under the frozen crosswalk. Table~\ref{tab:datasets} gives the audited dataset populations and source roles.
+
+\begin{figure}[H]
+  \centering
+  \includegraphics[width=0.92\textwidth]{fig1_coverage_20261015.pdf}
+  \caption{Declared operational coverage for the primary source mixture and OpenEarthMap target. Exact means a raw label is mapped to the named common leaf under the fixed crosswalk; it does not assert universal semantic equivalence. LoveDA has no admitted source label for the herbaceous output. B1 retains FLAIR raw ID 10 and ignores all other FLAIR labels. The OEM cell marked Proxy reflects its broader rangeland definition, including shrubs (Supplementary Section S2). Semantic Drone is evaluated separately as grass versus all other pixels (Section~\ref{sec:semanticdrone_result}).}
+  \label{fig:coverage}
+\end{figure}
+
+\subsection{An auxiliary FLAIR source recovers OpenEarthMap rangeland}
+\label{sec:oem_result}
+
+The largest primary contrast is concentrated in the audited missing leaf. Across the three fixed checkpoints, B0 rangeland IoU is $1.6\times10^{-7}$, 0, and 0, whereas B1 reaches 0.3124, 0.3187, and 0.3041 for seeds 19, 37, and 73. The mean paired contrast is +0.3118 with a 95\% evaluation-unit bootstrap interval of [+0.2821, +0.3399] on the Paris-excluded 74-city population (Table~\ref{tab:oem-seeds}, Figure~\ref{fig:oem-primary}). The interval resamples declared city units and is conditional on the completed checkpoints.
+
+\begin{figure}[H]
+  \centering
+  \includegraphics[width=0.92\textwidth]{fig2_oem_results_20261015.pdf}
+  \caption{OpenEarthMap results on the Paris-excluded 74-city population. (a) Rangeland IoU for seeds 19, 37 and 73, with horizontal marks showing their mean; horizontal offsets separate checkpoints. (b) B1 minus B0 contrasts. (c) B1 minus the recorded B1-shuffle configuration. Panels (b) and (c) use different axis ranges and show 95\% paired city-bootstrap intervals from 2,000 draws, conditional on the three completed checkpoints. Supported-leaf mIoU averages the six LoveDA-supported leaves. Complete original shuffle schedules were not recovered: panel (c) is a configuration-based sensitivity, not a fully revalidated pairing mechanism.}
+  \label{fig:oem-primary}
+\end{figure}
+
+Reduced LoveDA exposure alone does not reproduce the observed target-leaf recovery. B0-half lowers overall mIoU by 0.0069 relative to B0, while B1 retains a rangeland gain of +0.3118 after LoveDA exposure is matched (Table~\ref{tab:oem-controls}). The duplicated-crop integrity check is zero at the reported precision and is reported in Appendix Table~\ref{tab:batch_integrity}; it checks the update implementation rather than a generic batch-size effect.
+
+\subsection{Sensitivity to the recorded pairing configuration}
+\label{sec:pairing_result}
+
+The archived B1-shuffle configuration specifies the same FLAIR image schedule and mask-density multiset with non-native masks. Full raw schedules were not recovered for independent revalidation of these constraints. It still recovers rangeland, with seedwise IoUs of 0.2732, 0.2812, and 0.2653. Its mean contrast against B0 is 0.2732, compared with 0.3118 for B1--B0. Thus, 0.2732/0.3118 = 87.6\% of the observed recovery remains in this mismatched-pair schedule, and the native B1 configuration is higher by +0.0385 (12.4\%; 95\% evaluation-unit bootstrap interval [+0.0333, +0.0439]); all three seedwise contrasts are positive. The same comparison improves overall mIoU by +0.0741 and mIoU over the six LoveDA-supported leaves by +0.0801 (Table~\ref{tab:oem-controls}). This arithmetic partition describes the specified schedules. It does not separate auxiliary image content from label support, and, because the raw primary schedules are unavailable for independent revalidation, it is reported as a configuration-based sensitivity rather than a fully verified pairing mechanism.
+
+\input{tables/table3_oem_seed_metrics_20260807}
+\input{tables/table4_oem_controls_20260807}
+
+\subsection{Recovery is accompanied by a supported-leaf trade-off}
+\label{sec:tradeoff_result}
+
+The target-leaf gain does not improve the full operating profile. B1 mean mIoU is 0.3368 compared with 0.3789 for B0, while mIoU over the six leaves with exact operational LoveDA support changes by -0.1011 (95\% evaluation-unit bootstrap interval [-0.1213, -0.0821]). The two metrics answer different questions: overall mIoU includes the recovered rangeland leaf, whereas the defined supported-leaf metric excludes it to report the retained LoveDA leaves. Their numerical differences are therefore not competing effect-size estimates. The seed-level supported-leaf mIoU ranges from 0.4359 to 0.4468 for B0 and from 0.3309 to 0.3473 for B1 (Table~\ref{tab:oem-seeds}); inference remains the declared city-unit bootstrap, not a three-seed test. Matching LoveDA exposure leaves a supported-leaf contrast of -0.0931 for B1--B0-half (Table~\ref{tab:oem-controls}). Figure~\ref{fig:oem-tradeoff} shows the leafwise pattern: rangeland is recovered, whereas the largest observed supported-leaf decline is cropland. Complete unadjusted descriptive intervals are reported in Appendix Table~\ref{tab:all_leaf_contrasts}.
+
+\begin{figure}[H]
+  \centering
+  \includegraphics[width=0.92\textwidth]{fig3_leaf_contrasts_20261015.pdf}
+  \caption{Leafwise OpenEarthMap contrasts on the Paris-excluded 74-city population. (a) B1 minus B0; (b) B1 minus the recorded B1-shuffle configuration. Both panels use the same seven leaf rows and report 95\% descriptive paired city-bootstrap intervals from 2,000 draws, conditional on checkpoints 19, 37 and 73. Panel (b) is a configuration-based sensitivity: complete original shuffle schedules were not recovered for independent revalidation of pairing and exposure constraints. The two panels use different horizontal scales.}
+  \label{fig:oem-tradeoff}
+\end{figure}
+
+\subsection{The archived native U-Net comparison repeats the direction}
+\label{sec:unet_result}
+Across the three archived native U-Net checkpoints, U-B0 and U-B0-half both give zero rangeland IoU. U-B1 gives 0.2957, 0.2767 and 0.2762, with mean 0.2828 and sample SD 0.0111. The U-B1--U-B0 contrast is +0.2828 (95\% checkpoint-conditional paired city interval [+0.2512, +0.3133]). Supported-leaf mIoU changes from 0.2329 to 0.1025, a contrast of -0.1304 (interval [-0.1529, -0.1075]); against U-B0-half it changes by -0.1182 (interval [-0.1390, -0.0965]). Every matched seed has positive rangeland recovery and lower supported-leaf mIoU for both native baseline comparisons (Table~\ref{tab:unet-native}).
+
+The archived evaluation records therefore show recovery with retention loss in a second recorded architecture on the common target. They do not supply an independent target population, a pure-label causal experiment or a CLIP--U-Net superiority comparison. Original checkpoint, spatial reference and historical-code provenance limits remain as specified in Section~\ref{sec:unet_protocol}. Shuffled U-Net results do not enter this conclusion.
+
+\input{tables/table7_native_unet_20261015}
+
+\subsection{Second target evaluation on Semantic Drone}
+\label{sec:semanticdrone_result}
+
+On the primary 400-raster evaluation, frozen E0 gives grass IoU 0.0224, whereas each of the three LoveDA-only B0 checkpoints gives 0.0000. The three B1 checkpoints give 0.2282, 0.2305, and 0.2228 (mean 0.2272; sample SD 0.0040). The descriptive mean B1--B0 contrast is +0.2272 (Supplementary Sections S9 and S11). No three-checkpoint raster-resampling interval is claimed in this revision. The E0-to-B0 decline is a checkpoint diagnostic consistent with LoveDA-only calibration suppressing the limited grass score present in the frozen probe; it does not identify the mechanism. This is a second-target evaluation of the primary source mixture, not a model-level replication: it reuses the probe, prompts, and training budget. The archived record identifies the target manifest and source-archive hashes; independently timestamped pre-inference provenance is not established here.
+
+
+
+
+
+\subsection{A second source mixture shows the same recovery--trade-off direction}
+\label{sec:second_mixture_result}
+
+The source-role-reversed case begins with a different audited gap: Semantic Drone has no exact operational cropland label, whereas LoveDA agriculture and OpenEarthMap \texttt{agriculture\_land} provide declared cropland support. On the frozen 72-city OpenEarthMap population, SD-B0 and the exposure-matched SD-B0-half produce cropland IoU of zero for every seed. SD-B1 reaches 0.1627, 0.1642, and 0.1627, giving a mean paired SD-B1--SD-B0 difference of +0.1632 (95\% evaluation-unit bootstrap interval: [+0.1262, +0.2049]; Table~\ref{tab:second-mixture}).
+
+The recovery again carries a fixed-budget cost. Over the three leaves with exact operational Semantic Drone support, SD-B1 changes base-source mIoU by -0.1686 relative to SD-B0 (95\% evaluation-unit bootstrap interval [-0.1903, -0.1464]) and by -0.1337 relative to exposure-matched SD-B0-half (interval [-0.1534, -0.1151]). The planned shuffled auxiliary-mask arm met multiset and no-native-pair constraints, but its post-run schedule audit found per-pair density mismatches and retired the contrast. Its efficacy is not interpreted. This case tests a second audited source mixture, not a second pairing-control result or an independent target-pair replication.
+
+\input{tables/table6_second_source_mixture_20260815}
+
+The separate B2 learnability diagnostic is reported in Supplementary Sections S8 and S11. They do not select or alter the primary source-mixture endpoints.

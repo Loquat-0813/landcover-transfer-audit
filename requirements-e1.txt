@@ -1,0 +1,7 @@
+# Install only on the cloud before downloading the frozen E0/E1 CLIP weights.
+# PyTorch 2.8.0+cu128 is already supplied by the validated AutoDL image.
+transformers>=4.48,<5
+safetensors>=0.5
+tifffile>=2024.2.12
+# FLAIR's official GeoTIFF masks use LZW compression, decoded by tifffile via this optional codec package.
+imagecodecs>=2024.12.30

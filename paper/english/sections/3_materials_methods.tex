@@ -1,0 +1,69 @@
+\section{Materials and methods}
+\label{sec:methods}
+\subsection{Coverage record and estimands}
+\label{sec:estimands}
+The fixed leaf set \(\leafset\) contains built structure, transport surface, woody vegetation, herbaceous vegetation, cropland, bare surface and surface water. Each dataset's raw labels map to an exact leaf, a coarse ancestor, an ambiguous value or an ignored value. Exact support is recorded as
+\begin{equation}
+s_d(c)=\indicator{\text{an audited source-training mask contains an exact label for }c}.
+\label{eq:support}
+\end{equation}
+This is a source-label assignment under the declared crosswalk, not universal semantic equivalence between products. Exact in this support record denotes the admitted source-training output assignment. The target rangeland relation is an approximate proxy; it does not certify a botanically exact target class. LoveDA has \(s_d(c^*)=0\) for herbaceous vegetation; FLAIR raw ID 10 supplies positive examples. The primary estimand is the paired target-leaf contrast
+\begin{equation}
+\Delta=\IoU_{\mathrm{B1}}(c^*)-\IoU_{\mathrm{B0}}(c^*).
+\label{eq:oem_estimand}
+\end{equation}
+We separately define supported-leaf retention as
+\begin{equation}
+\mIoU_{\mathrm{sup}}=\frac{1}{|\supportedset|}\sum_{c\in\supportedset}\IoU_c,
+\quad \supportedset=\leafset\setminus\{c^*\}.
+\label{eq:supported_miou}
+\end{equation}
+The confusion matrix is unchanged: a herbaceous prediction on a cropland reference pixel remains an error. Overall mIoU averages all seven leaves. IoUs and contrasts are reported on the 0--1 scale; for example, a contrast of 0.3118 is 31.18 percentage points, not a relative percentage increase.
+
+\subsection{Datasets and evaluation populations}
+\label{sec:datasets}
+LoveDA supplies 2,522 training and 1,669 validation pairs \citep{wang2021loveda}. Its six non-background classes map to the six non-herbaceous leaves. FLAIR provides high-resolution aerial imagery and land-cover annotations \citep{garioud2023flair}; we use its FLAIR \#1 release and documented label definitions \citep{ign2026flair1}. Our retained raw-mask inventory contains 61,712 paired rasters, with 47,712 assigned to training/optimization and 14,000 to validation. B1 uses RGB channels 0--2 and only native herbaceous ID 10; every other FLAIR label is ignored. Dataset roles and audited population counts are listed in Table~\ref{tab:datasets}.
+\input{tables/table1_datasets_20260805}
+
+The primary target is OpenEarthMap \citep{xia2023openearthmap}: 2,687 discovered RGB/mask pairs across 75 cities, with 813 additional label-only masks excluded. Removing 49 Paris pairs leaves 2,638 pairs across 74 cities. Paris is a conservative source-country exclusion; missing usable FLAIR geotags prevent a coordinate-level non-overlap claim. Under the declared crosswalk, OpenEarthMap rangeland is used as an operational proxy for the non-cropland herbaceous output, although its native definition also includes bushes and shrubs. Semantic Drone grass is mapped to the same output. Agriculture\_land remains a separate cropland relation and developed space a coarse ancestor. These are protocol mappings based on native labels, not an assertion of identical botanical scope. Supplementary Section S2 gives the concrete boundaries.
+
+Semantic Drone contributes a second target replay over 400 paired rasters \citep{tugraz2018semanticdrone}. Grass is scored one-versus-rest: pixels with the released grass reference color are positive and every other reference color is negative, so non-grass predictions of grass contribute false positives. Other classes are not separately averaged; this is not an official all-class benchmark score. Identifiers 000--003 were inspected during a pipeline smoke test; the 400-raster result is primary and the 396-raster exclusion is exploratory. The second source-mixture case instead trains on Semantic Drone grass/tree/water and adds LoveDA cropland supervision. Its OpenEarthMap replay excludes Shanghai, Tyrol and Vienna, leaving 2,540 pairs in 72 cities; Paris is retained because FLAIR is absent. This is a reversed source-mixture check on the same target release, not an independent target-pair replication.
+
+Raw-mask audits record identifiers, pairing, admitted labels and pixel support. Exact, coarse and ignored labels remain separate; a broad vegetation label is not silently promoted to an exact herbaceous label. The paper reports archived fixed-checkpoint contrasts, not a prospectively untouched-target confirmation. Target-adjacent inspection and geographic limitations must accompany the population definitions.
+
+\subsection{Fixed probe, training and contrasts}
+\label{sec:probe}
+CLIP ViT-B/16 image/text encoders are frozen \citep{radford2021clip}. Normalized patch and text features \(\mathbf z_{hw},\mathbf t_c\) are calibrated by rank 32 projections:
+\begin{equation}
+\ell_c(h,w)=\tau\mathbf z_{hw}^{\mathsf T}\mathbf t_c+
+\alpha\frac{\langle\mathbf W_I\mathbf z_{hw},\mathbf W_T\mathbf t_c\rangle}{\sqrt{32}}.
+\label{eq:adapter}
+\end{equation}
+Only the projections and scalar terms are optimized. The shared prompts and inference details are given in Appendix~\ref{app:integrity} and Supplementary Sections S3--S4. Training uses 512-pixel crops, AdamW learning rate\(10^{-3}\), weight decay\(10^{-4}\), 25,220 updates and seeds 19/37/73 for the fixed-budget source-mixture arms. A mapped partial label\(y\) has loss
+\begin{equation}
+\mathcal L(x,y)=-\log\sum_{c\in\mathrm{Desc}(y)}p(c\mid x).
+\label{eq:partial_loss}
+\end{equation}
+Ignored pixels contribute no loss. An exact label has one descendant; a coarse label constrains compatible descendants without assigning an exact positive leaf.
+
+Table~\ref{tab:arms} defines the arms. B0 uses two LoveDA crops per update; B0-half uses one; B1 uses one LoveDA and one FLAIR crop. B1--B0 changes auxiliary images and labels jointly. B1--B0-half matches LoveDA exposure; it is still a source-mixture contrast, not a label-only intervention. The deterministic duplicated-crop arm checks update implementation under the conditions in Appendix~\ref{app:integrity}.
+\input{tables/table2_arms_20260807}
+
+The recorded B1-shuffle configuration specifies retention of the FLAIR image schedule, non-self same-region masks and mask-density-multiset preservation. The complete hash-addressed primary schedules are not present in the current evidence bundle, so these constraints are not independently revalidated. Native B1 minus B1-shuffle is therefore a configuration-based pairing sensitivity, not a fully verified pairing intervention or a decomposition of recovery causes. No numerical per-pair density tolerance is documented in the archived configuration; descriptive mismatches and the retired second-case shuffle are reported in Supplementary Section S10. For the reversed mixture, SD-B0 uses two Semantic Drone crops, SD-B0-half one, and SD-B1 one Semantic Drone plus one LoveDA crop, with the same fixed-budget settings. Its shuffled arm is excluded from efficacy interpretation after the recorded mismatch audit.
+
+B2 is a separate direct-supervision learnability diagnostic, with a 20-epoch schedule and city-disjoint OpenEarthMap optimization/validation/test partitions. Its held-out population contains 16 cities and 595 rasters. It is not a budget-matched external-transfer comparison. E0 is the frozen-probe diagnostic; E3 is a hierarchy-routing negative control. Neither is a proposed remedy for the observed trade-off.
+
+\subsection{Archived native model-family check}
+\label{sec:unet_protocol}
+We separately reanalyze archived native ResNet-34 U-Net records, with an ImageNet-initialized encoder, GroupNorm decoder and frozen encoder BatchNorm running statistics. The recorded native arms U-B0, U-B0-half and U-B1 use the same LoveDA/FLAIR source roles, 512-pixel crops, AdamW learning rate $10^{-3}$, weight decay $10^{-4}$, 25,220 updates and seeds 19/37/73 within their own cohort. U-B0 uses two LoveDA crops, U-B0-half one, and U-B1 one LoveDA plus one FLAIR ID-10 crop per update. The nine retained evaluations use the same 2,638 target identifiers in 74 Paris-excluded OpenEarthMap cities as the primary CLIP comparison; per-raster reference-class marginals agree across these archived records.
+
+This is a retrospective analysis of saved confusion matrices and run records. Source-audit content is recovered by equality with the digest recorded in all nine configurations; its differently dated filename does not attest the historical path, timing or actual consumption. The nine original checkpoint files were subsequently recovered from a retained archive and their SHA256 digests exactly match the original evaluation configurations. Spatial image/mask identity, historical initialization and executed-code identity were not reverified, and no model inference replay was performed. We reconstruct all native metrics and paired 2,000-draw city intervals (seed 20260803), conditional on the recorded checkpoints. The U-Net shuffle is excluded from efficacy interpretation. Different pretrained representations and optimization regimes preclude interpreting CLIP--U-Net metric differences as architecture superiority. Supplementary Section S12 gives all native checkpoint values and these provenance boundaries.
+
+\subsection{Inference, aggregation and uncertainty}
+\label{sec:contrasts}
+Rasters are evaluated with non-overlapping 512-pixel tiles, zero-padding at edges, bilinear logit upsampling and argmax over the unpadded extent. No test-time augmentation or post-processing is used. Per-class IoU is \(TP/(TP+FP+FN)\). For each checkpoint, city confusions are pooled before computing IoU; the point estimate averages three matched checkpoint metrics. The primary source-mixture and exposure intervals use 2,000 shared city draws (NumPy seed 20260803); pairing-control contrasts use seed 20260806. Archived seed-19 Semantic Drone sensitivities use 2,000 paired raster draws (seed 20260804); the three-checkpoint points here are descriptive and have no independently reconstructed raster interval; the reversed-source case uses 2,000 city draws (seed 20260815). Percentile intervals condition on completed checkpoints and declared evaluation units. They do not estimate training-seed uncertainty or establish site-level independence for Semantic Drone. Supplementary Sections S6--S10 retain the estimator and diagnostic details.
+
+
+\subsection{AI-assisted preparation}
+\label{sec:ai_assistance}
+OpenAI Codex was used as a development and writing assistant for code drafts, literature retrieval, organization and recomputation of archived records, preparation of figures and tables, and manuscript revisions. Performance contrasts are computed from the retained original integer records; supplementary archival checks read the retained checkpoint and provider files. Generated text is not treated as experimental evidence. Agent-based checks reported in the local audit trail are software-assisted, same-family provisional reviews and do not replace independent human peer review or author responsibility. No claim of an attested exact assistant model version is made.

@@ -1,0 +1,21 @@
+version: semantic-calibration-v0
+status: implementation_scaffold_not_yet_trained
+backbone:
+  frozen: true
+  expected_pixel_embedding_dim: 512
+  expected_text_embedding_dim: 512
+  feature_layout: B_D_H_W
+adapter:
+  name: LowRankSemanticCalibration
+  rank: 32
+  base_logit_scale: 14.2857142857
+  residual_scale: 0.05
+supervision:
+  name: taxonomy_partial_label_nll
+  ignore_index: -1
+  leaf_order_source: ontology/land_cover_taxonomy_v0.yaml
+  coarse_label_policy: sum descendant leaf probabilities
+evaluation:
+  exact_labels: exact_node_iou
+  coarse_labels: ancestor_iou
+  genuine_unknown_only: unknown_rejection_auroc

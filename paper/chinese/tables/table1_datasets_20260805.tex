@@ -1,0 +1,18 @@
+\begin{table}[H]
+\centering
+\caption{冻结操作性映射下的数据集、经审计输出标签支持及目标代理，以及受控研究中的数据角色。未在本地证据归档中验证的数据采集元信息不列入。}
+\label{tab:datasets}
+\small
+\renewcommand{\arraystretch}{1.12}
+\setlength{\tabcolsep}{3pt}
+\begin{tabularx}{\linewidth}{@{}>{\raggedright\arraybackslash}p{0.21\linewidth}>{\raggedright\arraybackslash}p{0.18\linewidth}>{\raggedright\arraybackslash}p{0.15\linewidth}>{\raggedright\arraybackslash}p{0.18\linewidth}>{\raggedright\arraybackslash}X@{}}
+\toprule
+数据集 & 角色 & 输出支持或代理 & 总体 & 本文用途 \\
+\midrule
+LoveDA & 源 & 缺少精确操作性叶类别 & 2522对训练数据 & 无草本监督的主要源 \\
+FLAIR & 辅助源 & 原始 ID 10，声明操作性关系 & 47712对训练数据 & 原始 ID 10 进入 B1；其余 ID 忽略 \\
+OpenEarthMap & 主要目标 & rangeland 植被代理 & 排除 Paris 后74城 & 主要评估总体 \\
+Semantic Drone & 第二目标 & grass & 冻结清单内400张栅格 & 第二目标评估 \\
+\bottomrule
+\end{tabularx}
+\end{table}

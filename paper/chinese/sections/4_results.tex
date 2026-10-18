@@ -1,0 +1,58 @@
+\section{结果}
+\label{sec:results}
+\subsection{审计识别出一个缺少源支持的目标叶类别}
+\label{sec:gap_result}
+图\ref{fig:coverage}概括操作性覆盖记录。LoveDA 为六个叶类别提供精确的操作性支持，但不包含草本植被。FLAIR 原始 ID 10 提供所声明的辅助草本标签，其余 FLAIR 标签在 B1 中均被忽略。在冻结映射下，OpenEarthMap \texttt{rangeland} 和 Semantic Drone \texttt{grass} 被声明为同一非耕地草本概念所对应的目标类别。数据总体和源角色见表\ref{tab:datasets}。
+\begin{figure}[H]
+\centering
+\includegraphics[width=0.92\textwidth]{fig1_coverage_20261015.pdf}
+\caption{主要源混合与 OpenEarthMap 目标的操作性覆盖。Exact 表示原始标签在固定映射下被分配到相应公共叶类别，不表示普遍语义等价。LoveDA 没有被纳入草本输出的源标签。B1 保留 FLAIR 原始 ID 10，忽略其余标签。OEM 的 Proxy 单元反映 rangeland 包括灌木的较宽定义（英文补充材料 S2）。Semantic Drone 单独按草地对全部其他像素评估（第\ref{sec:semanticdrone_result}节）。}
+\label{fig:coverage}
+\end{figure}
+
+\subsection{加入 FLAIR 辅助源能够恢复 OpenEarthMap rangeland}
+\label{sec:oem_result}
+主要对比中最大的变化集中在经审计缺失的叶类别。种子19、37、73的三个固定检查点上，B0 rangeland IoU 分别为$1.6\times10^{-7}$、0、0，B1 则为0.3124、0.3187、0.3041。在排除 Paris 的74城总体上，配对平均差值为+0.3118，95\%评估单位 bootstrap 区间为[+0.2821, +0.3399]（表\ref{tab:oem-seeds}、图\ref{fig:oem-primary}）。该区间对所声明城市单位重采样，并以已完成检查点为条件。
+\begin{figure}[H]
+\centering
+\includegraphics[width=0.92\textwidth]{fig2_oem_results_20261015.pdf}
+\caption{排除 Paris 后74城总体上的 OpenEarthMap 结果。（a）种子19、37、73的 rangeland IoU，水平短线表示均值，横向偏移用于区分检查点。（b）B1 减 B0。（c）B1 减已记录的 B1-shuffle 配置。（b）和（c）采用不同坐标范围，显示2,000次配对城市重采样得到的95\%区间，以三个已完成检查点为条件。支持类别 mIoU 对六个 LoveDA 支持类别平均。完整原始 shuffle 排程未找回，因此（c）仅是基于配置的敏感性，而非完整重验证的配对机制。}
+\label{fig:oem-primary}
+\end{figure}
+仅减少 LoveDA 暴露量不能重复目标叶类别的恢复。相对 B0，B0-half 总体 mIoU 降低0.0069；在匹配 LoveDA 暴露后，B1 的 rangeland 收益仍为+0.3118（表\ref{tab:oem-controls}）。重复裁块完整性检查在所报告精度下为零，见附录表\ref{tab:batch_integrity}；它检查更新实现，而不是一般性的批大小效应。
+
+\subsection{对已记录配对配置的敏感性}
+\label{sec:pairing_result}
+历史 B1-shuffle 配置要求采用相同的 FLAIR 影像排程和掩膜密度多重集，但使用非原生配对掩膜。完整原始排程未找回，因此这些约束无法独立重新验证。该配置仍能恢复 rangeland，三个种子的 IoU 分别为0.2732、0.2812、0.2653。相对 B0 的平均差值为0.2732，而 B1--B0 为0.3118。因此，0.2732/0.3118 = 87.6\%的观察恢复量保留在该错配排程中；原生 B1 配置再提高+0.0385（12.4\%；95\%评估单位 bootstrap 区间[+0.0333, +0.0439]），三个种子的配对差值均为正。同一对比中，总体 mIoU 提高+0.0741，六个 LoveDA 支持类别 mIoU 提高+0.0801（表\ref{tab:oem-controls}）。这一算术划分仅描述指定排程，不分离辅助影像内容和标签支持。由于主要原始排程无法独立重新验证，本文将其作为基于配置的敏感性，而非完整验证的配对机制。
+\input{tables/table3_oem_seed_metrics_20260807}
+\input{tables/table4_oem_controls_20260807}
+
+\subsection{恢复伴随源支持类别性能损失}
+\label{sec:tradeoff_result}
+目标叶类别的收益没有改善完整运行表现。B1 平均 mIoU 为0.3368，B0 为0.3789；对六个具有 LoveDA 精确操作性支持的类别，mIoU 变化为-0.1011（95\%评估单位 bootstrap 区间[-0.1213, -0.0821]）。这两个指标回答不同问题：总体 mIoU 包含恢复后的 rangeland，支持类别指标则排除该类，单独报告 LoveDA 原有类别保持。两者的数值差异不是相互竞争的效应量估计。B0 各种子支持类别 mIoU 为0.4359至0.4468，B1 为0.3309至0.3473（表\ref{tab:oem-seeds}）；推断仍基于城市单位 bootstrap，而非三个种子的显著性检验。匹配 LoveDA 暴露后，B1--B0-half 的支持类别差值为-0.0931（表\ref{tab:oem-controls}）。图\ref{fig:oem-tradeoff}展示逐类模式：rangeland 恢复，但观察到的支持类别最大下降出现在耕地。完整、未调整的描述性区间见附录表\ref{tab:all_leaf_contrasts}。
+\begin{figure}[H]
+\centering
+\includegraphics[width=0.92\textwidth]{fig3_leaf_contrasts_20261015.pdf}
+\caption{排除 Paris 后74城总体上的 OpenEarthMap 逐类差值。（a）B1 减 B0；（b）B1 减已记录的 B1-shuffle。两个面板采用相同的七个类别行，报告2,000次配对城市重采样的95\%描述性区间，以检查点19、37、73为条件。（b）为基于配置的敏感性：完整原始 shuffle 排程未找回，无法独立重验证配对与暴露约束。两个面板横轴尺度不同。}
+\label{fig:oem-tradeoff}
+\end{figure}
+
+\subsection{历史原生 U-Net 对比重复了相同方向}
+\label{sec:unet_result}
+在三个历史原生 U-Net 检查点上，U-B0 与 U-B0-half 的 rangeland IoU 均为零。U-B1 分别为0.2957、0.2767、0.2762，平均0.2828，样本标准差0.0111。U-B1--U-B0 的差值为+0.2828（以检查点为条件的95\%配对城市区间[+0.2512, +0.3133]）。支持类别 mIoU 从0.2329变为0.1025，差值-0.1304（区间[-0.1529, -0.1075]）；相对 U-B0-half 的差值为-0.1182（区间[-0.1390, -0.0965]）。与两个原生基线比较时，每个匹配种子均表现为 rangeland 恢复为正、支持类别 mIoU 下降（表\ref{tab:unet-native}）。
+
+因此，历史评估记录在共同目标上的第二种记录架构中显示了恢复与保持损失并存。它们没有提供独立目标总体、纯标签因果实验或 CLIP--U-Net 优越性比较。原始检查点、空间参考与历史代码的来源限制仍如第\ref{sec:unet_protocol}节所述。U-Net shuffle 结果不参与该结论。
+\input{tables/table7_native_unet_20261015}
+
+\subsection{Semantic Drone 上的第二目标评估}
+\label{sec:semanticdrone_result}
+在主要400张栅格评估中，冻结 E0 的 grass IoU 为0.0224，三个仅用 LoveDA 的 B0 检查点均为0.0000。三个 B1 检查点分别为0.2282、0.2305、0.2228（均值0.2272，样本标准差0.0040）。描述性的 B1--B0 平均差值为+0.2272（英文补充材料 S9 和 S11）。本稿不主张具有三个检查点的栅格重采样区间。E0 到 B0 的下降是检查点诊断，与仅用 LoveDA 校准抑制冻结探针已有的有限 grass 分数相一致，但不能识别具体机制。这是主要源混合在第二目标上的评估，并非模型层面的独立复现，因为它复用了探针、提示词和训练预算。历史记录指明目标清单与源归档哈希，但本文未建立具有独立时间戳的推理前来源证据。
+
+\subsection{第二种源混合呈现相同的恢复—损失方向}
+\label{sec:second_mixture_result}
+源角色反向配置从另一个经审计缺口出发：Semantic Drone 没有精确的操作性耕地标签，而 LoveDA agriculture 和 OpenEarthMap \texttt{agriculture\_land} 提供所声明的耕地关系。在冻结的72城 OpenEarthMap 总体上，SD-B0 与暴露匹配的 SD-B0-half 在每个种子上的耕地 IoU 均为零。SD-B1 为0.1627、0.1642、0.1627，平均配对 SD-B1--SD-B0 差值为+0.1632（95\%评估单位 bootstrap 区间[+0.1262, +0.2049]；表\ref{tab:second-mixture}）。
+
+恢复同样伴随固定预算下的代价。在三个具有 Semantic Drone 精确操作性支持的叶类别上，SD-B1 相对 SD-B0 的基础源 mIoU 变化为-0.1686（95\%评估单位 bootstrap 区间[-0.1903, -0.1464]），相对暴露匹配 SD-B0-half 为-0.1337（区间[-0.1534, -0.1151]）。原计划的辅助掩膜 shuffle 分支满足多重集和无原生配对约束，但运行后排程审计发现逐配对密度错配，因而停用该对比，不解释其效果。该案例考察第二种经审计源混合，不构成第二个配对控制结果或独立目标配对复现。
+\input{tables/table6_second_source_mixture_20260815}
+
+独立的 B2 可学习性诊断见英文补充材料 S8 和 S11；这些诊断不选择或改变主要源混合端点。

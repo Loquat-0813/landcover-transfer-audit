@@ -1,0 +1,61 @@
+\section{Reproducibility and integrity conditions}
+\label{app:integrity}
+
+The frozen ontology contains seven leaves: built structure, transport surface, woody vegetation, herbaceous vegetation, cropland, bare surface, and surface water. Herbaceous vegetation is the frozen output-index name; its OEM target relation is the broader rangeland vegetation proxy, including bushes/shrubs, while the Semantic Drone relation is grass. These output aliases do not define a fully reconciled botanical taxonomy. Cropland denotes the declared agricultural-field or managed-cover relation. Under the frozen crosswalk, LoveDA building, road, forest, agriculture, barren, and water provide exact operational support for six non-herbaceous leaves. FLAIR raw ID 10 is the only FLAIR label admitted by B1. OpenEarthMap rangeland and Semantic Drone grass are declared target relations. OpenEarthMap developed space remains a coarser ancestor, not building or road support.
+
+\begin{table}[h]
+\centering
+\caption{Complete frozen prompt set used by every reported arm.}
+\label{tab:prompts}
+\begin{tabular}{ll}
+\toprule
+Common leaf & Prompt \\
+\midrule
+Built structure & a satellite image of a building \\
+Transport surface & a satellite image of a road \\
+Woody vegetation & a satellite image of forest or trees \\
+Herbaceous vegetation & a satellite image of grassland or rangeland \\
+Cropland & a satellite image of agricultural cropland \\
+Bare surface & a satellite image of bare soil or barren ground \\
+Surface water & a satellite image of water \\
+\bottomrule
+\end{tabular}
+\end{table}
+
+Each raster is partitioned at stride 512 into non-overlapping \(512\times512\) RGB tiles. Only the right and bottom edge tiles are zero-padded. CLIP patch features are scored, logits are bilinearly interpolated to \(512\times512\) with the align-corners parameter set to false, and the leaf argmax is copied over the unpadded tile extent. No overlap, blending, test-time augmentation, or post-processing is used.
+
+For B0-half-batch2, duplicate copies of the same deterministic crop have the same individual loss. With mean loss, a frozen backbone, no train-mode batch-dependent state, no sample-dependent random transformation at the adapter, and identical optimizer state, the mean gradient equals the one-crop gradient at every update. The absolute mean-mIoU contrast is below \(4\times10^{-9}\), numerically zero at the reported precision; it is therefore a constructive pipeline-integrity check, not an empirical estimate of a generic batch-size effect.
+
+\begin{table}[h]
+\centering
+\caption{Duplicated-crop pipeline-integrity check. B0-half-batch2 duplicates the deterministic LoveDA crop in the second update slot.}
+\label{tab:batch_integrity}
+\begin{tabular}{@{}p{0.28\linewidth}p{0.30\linewidth}p{0.27\linewidth}@{}}
+\toprule
+Contrast & Metric & Audited result \\
+\midrule
+B0-half-batch2 minus B0-half & absolute mean mIoU difference & below \(4\times10^{-9}\) \\
+\bottomrule
+\end{tabular}
+\end{table}
+
+Table~\ref{tab:all_leaf_contrasts} provides the complete descriptive, unadjusted intervals for the seven OpenEarthMap leaves.
+
+\begin{table}[h]
+\centering
+\caption{Unadjusted descriptive paired city-bootstrap intervals for all OpenEarthMap leaf contrasts. The primary target leaf is herbaceous/rangeland.}
+\label{tab:all_leaf_contrasts}
+\begin{tabular}{lrrr}
+\toprule
+Leaf & B1 minus B0 IoU & Lower & Upper \\
+\midrule
+Built structure & -0.01958 & -0.04881 & +0.00555 \\
+Transport surface & -0.1482 & -0.1845 & -0.1134 \\
+Woody vegetation & -0.1554 & -0.1880 & -0.1225 \\
+Rangeland proxy & +0.3118 & +0.2821 & +0.3399 \\
+Cropland & -0.2005 & -0.2497 & -0.1498 \\
+Bare surface & -0.05080 & -0.1094 & -0.00103 \\
+Surface water & -0.03249 & -0.07099 & +0.00676 \\
+\bottomrule
+\end{tabular}
+\end{table}

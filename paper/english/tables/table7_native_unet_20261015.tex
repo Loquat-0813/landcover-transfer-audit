@@ -1,0 +1,27 @@
+\begin{table}[H]
+\centering
+\caption{Archived native U-Net comparison on the same Paris-excluded 74-city OpenEarthMap target (2,638 rasters). Means and sample SDs summarize the three recorded seed checkpoints; SDs are descriptive. Contrasts use 2,000 paired city draws and 95\% intervals conditional on the fixed recorded checkpoints, not training-seed uncertainty. Supported-leaf mIoU averages the six LoveDA-supported leaves. U-B0-half matches LoveDA exposure in U-B1. Original checkpoint and spatial reference bytes were not replayed; this is a within-family archived-record comparison.}
+\label{tab:unet-native}
+\small
+\setlength{\tabcolsep}{3pt}
+\begin{tabular*}{\linewidth}{@{\extracolsep{\fill}}lrrr@{}}
+\toprule
+Arm & Rangeland IoU & Supported-leaf mIoU & Overall mIoU \\
+\midrule
+U-B0 & $0.0000 \pm 0.0000$ & $0.2329 \pm 0.0158$ & $0.1996 \pm 0.0136$ \\
+U-B0-half & $0.0000 \pm 0.0000$ & $0.2207 \pm 0.0261$ & $0.1892 \pm 0.0223$ \\
+U-B1 & $0.2828 \pm 0.0111$ & $0.1025 \pm 0.0209$ & $0.1283 \pm 0.0190$ \\
+\bottomrule
+\end{tabular*}
+\par\medskip
+\begin{tabular*}{\linewidth}{@{\extracolsep{\fill}}lrrr@{}}
+\toprule
+Contrast and metric & Estimate & 95\% lower & 95\% upper \\
+\midrule
+U-B1 $-$ U-B0 / rangeland & $+0.2828$ & $+0.2512$ & $+0.3133$ \\
+U-B1 $-$ U-B0 / supported & $-0.1304$ & $-0.1529$ & $-0.1075$ \\
+U-B1 $-$ U-B0-half / rangeland & $+0.2828$ & $+0.2512$ & $+0.3133$ \\
+U-B1 $-$ U-B0-half / supported & $-0.1182$ & $-0.1390$ & $-0.0965$ \\
+\bottomrule
+\end{tabular*}
+\end{table}

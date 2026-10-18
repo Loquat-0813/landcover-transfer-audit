@@ -1,0 +1,242 @@
+{
+  "version": "flair-b1-raw-audit-v1",
+  "paired_raster_count": 61712,
+  "identifier_set_sha256": "3147befbc58ed12c50d2ac22b833ffb026c2b9ed772c5b41222e05f03ad754ae",
+  "image_shapes": [
+    [
+      512,
+      512,
+      5
+    ]
+  ],
+  "image_dtypes": [
+    "uint8"
+  ],
+  "image_channel_counts": [
+    5
+  ],
+  "mask_shapes": [
+    [
+      512,
+      512
+    ]
+  ],
+  "mask_dtypes": [
+    "uint8"
+  ],
+  "mask_values_pixel_counts": {
+    "1": 1316273797,
+    "2": 1334431521,
+    "3": 2220158462,
+    "4": 561875038,
+    "5": 788698124,
+    "6": 442473747,
+    "7": 2488701372,
+    "8": 1124263153,
+    "9": 505864146,
+    "10": 2886249939,
+    "11": 1775908237,
+    "12": 627354462,
+    "13": 4578663,
+    "14": 24765740,
+    "15": 24501673,
+    "16": 8166791,
+    "17": 1263224,
+    "18": 18778881,
+    "19": 23123558
+  },
+  "herbaceous_raw_id": 10,
+  "herbaceous_pixel_count": 2886249939,
+  "herbaceous_pixel_fraction": 0.17841213621683988,
+  "extracted_root": "data/raw/flair_b1_full_extracted",
+  "train_domains": [
+    "D006_2020",
+    "D007_2020",
+    "D008_2019",
+    "D009_2019",
+    "D013_2020",
+    "D016_2020",
+    "D017_2018",
+    "D021_2020",
+    "D023_2020",
+    "D030_2021",
+    "D032_2019",
+    "D033_2021",
+    "D034_2021",
+    "D035_2020",
+    "D038_2021",
+    "D041_2021",
+    "D044_2020",
+    "D046_2019",
+    "D049_2020",
+    "D051_2019",
+    "D052_2019",
+    "D055_2018",
+    "D060_2021",
+    "D063_2019",
+    "D070_2020",
+    "D072_2019",
+    "D074_2020",
+    "D078_2021",
+    "D080_2021",
+    "D081_2020",
+    "D086_2020",
+    "D091_2021"
+  ],
+  "validation_domains": [
+    "D004_2021",
+    "D014_2020",
+    "D029_2021",
+    "D031_2019",
+    "D058_2020",
+    "D066_2021",
+    "D067_2021",
+    "D077_2021"
+  ],
+  "train": {
+    "version": "flair-b1-raw-audit-v1",
+    "paired_raster_count": 47712,
+    "identifier_set_sha256": "877fba6eadb9fe2db411dfd6e72d641f7cec767fee2e1443311ed5d31c8b286d",
+    "image_shapes": [
+      [
+        512,
+        512,
+        5
+      ]
+    ],
+    "image_dtypes": [
+      "uint8"
+    ],
+    "image_channel_counts": [
+      5
+    ],
+    "mask_shapes": [
+      [
+        512,
+        512
+      ]
+    ],
+    "mask_dtypes": [
+      "uint8"
+    ],
+    "mask_values_pixel_counts": {
+      "1": 1030324179,
+      "2": 1015717625,
+      "3": 1666521854,
+      "4": 313899703,
+      "5": 605125676,
+      "6": 361274353,
+      "7": 2025282915,
+      "8": 881195323,
+      "9": 412513934,
+      "10": 2213531387,
+      "11": 1449740107,
+      "12": 453439980,
+      "13": 3717873,
+      "14": 14177888,
+      "15": 21363579,
+      "16": 8110995,
+      "17": 1145396,
+      "18": 15202365,
+      "19": 15129396
+    },
+    "herbaceous_raw_id": 10,
+    "herbaceous_pixel_count": 2213531387,
+    "herbaceous_pixel_fraction": 0.1769775345691653
+  },
+  "validation": {
+    "version": "flair-b1-raw-audit-v1",
+    "paired_raster_count": 14000,
+    "identifier_set_sha256": "c9944ff66e2aaa13c853ed9037f2ae9581ac949169f5658ae6dca02c2a17226a",
+    "image_shapes": [
+      [
+        512,
+        512,
+        5
+      ]
+    ],
+    "image_dtypes": [
+      "uint8"
+    ],
+    "image_channel_counts": [
+      5
+    ],
+    "mask_shapes": [
+      [
+        512,
+        512
+      ]
+    ],
+    "mask_dtypes": [
+      "uint8"
+    ],
+    "mask_values_pixel_counts": {
+      "1": 285949618,
+      "2": 318713896,
+      "3": 553636608,
+      "4": 247975335,
+      "5": 183572448,
+      "6": 81199394,
+      "7": 463418457,
+      "8": 243067830,
+      "9": 93350212,
+      "10": 672718552,
+      "11": 326168130,
+      "12": 173914482,
+      "13": 860790,
+      "14": 10587852,
+      "15": 3138094,
+      "16": 55796,
+      "17": 117828,
+      "18": 3576516,
+      "19": 7994162
+    },
+    "herbaceous_raw_id": 10,
+    "herbaceous_pixel_count": 672718552,
+    "herbaceous_pixel_fraction": 0.18330125863211497
+  },
+  "source_manifest": "audits/flair_b1_full_source_manifest_2026-08-03.json",
+  "source_archive_sha256": {
+    "D004_2021.zip": "683b1fc39e0a94ade25151c3a836684b933f859b6c1cd5ead030ce5a18d491b2",
+    "D006_2020.zip": "66f58e837577d34f85ebbab45cca6b54856c732af834f1bdb5ddbf19b87da75f",
+    "D007_2020.zip": "256946d883269d7e214a637e44c71445686ee1f0db12898694c4252690726760",
+    "D008_2019.zip": "68e596986b5d50434cad9f6a8e81b50cabaddcd746be7253014dfb8deb63a8a9",
+    "D009_2019.zip": "d6d46e244a7d59aabafcd9a4a24e26fbbfe5512a55510af6ea2cd9c074e133b1",
+    "D013_2020.zip": "7fee53e0f7d4194b84b67e3ea8092890c7485918717e10ab624026764ff1cf24",
+    "D014_2020.zip": "4243eb0ad5d11e228d5ce58f5329bbe9cbec9f6cd7c0eb6aba5528a4000194fc",
+    "D016_2020.zip": "7dff65d9697bf320ab840524469cabe8d3e355892e5dec7d44bc015705bda014",
+    "D017_2018.zip": "284d6e69f0ad63866b36b782a0712fa61422682a805feeff31e109881cdd0355",
+    "D021_2020.zip": "dd15731c8231d14d3e0cd80a645ac6a3f192cf29f875add433320d9934022589",
+    "D023_2020.zip": "76853bbd73c00653372b928ceff4236aa16962bb2f20cf2952e8d17d0899a89c",
+    "D029_2021.zip": "f8a6b60d78a2888861c4d56737ead680b8a45d323e8943111d4933e3bb347c3e",
+    "D030_2021.zip": "554cf9ae75ba0c5d61a47407d4591482b630559e29dd7a76c2a5248f14c7821a",
+    "D031_2019.zip": "39d85060b2b7ac867ce7a65b785eadc4005b28127e5b6a9f59a1dd66506d173d",
+    "D032_2019.zip": "3aa2360322f88418ade97851483989bc71076c6dfa69ece60ec8317a84ae469d",
+    "D033_2021.zip": "cc93c3afa2f9c934a88d684f14ee2b4885679848e8470510acdbdecea8bfb2a3",
+    "D034_2021.zip": "9e1c936084c39149d2fcd5516496f3c13acc8b3d4a894ecf0f1a0131859dfb3e",
+    "D035_2020.zip": "118de69b94ee6a785f118f26d173e7caef04d0c2ebaa2d88abf116fb779c2e19",
+    "D038_2021.zip": "f6caf7f512073547fd65cea3718dc4ae7425820f440d497d3e618e79f9a519bb",
+    "D041_2021.zip": "dfc7c31f196e631822c7347fdba939d23d9d9bddb4a41bf163a823db70e7796f",
+    "D044_2020.zip": "169d0ee5506f0e2522bf672426cc395317e4a828a3522a53c1793eceed355ec0",
+    "D046_2019.zip": "c57260591f0e7cc0c5d321ffc0b0aa2e9fe400cda01fe448dc801642aba3e470",
+    "D049_2020.zip": "5b76b38fae58f86eb09d2d0bed65d79b5de1982b3bafbf627f0ac0c88a0a4f85",
+    "D051_2019.zip": "fd58e3f4769fbaba7023e11afa9697a351ed1f87f494df615dacf2cfce31ed7f",
+    "D052_2019.zip": "445c3a234da9a27e13a7a10ab6dfd982116e914978ac377f96a4f149c08e3b91",
+    "D055_2018.zip": "91731a462fee2c72316a93c2422e91dc748c35b963fecc5cb5dd239ba89e4c30",
+    "D058_2020.zip": "7fa3b0a1725c95158fbbb6f80844a6abde67ad37fc67e540f2722916a5751b16",
+    "D060_2021.zip": "83433e9db81ca70b8333726b39838f858e184e3fafd06db37c7a3ef92e7d1af4",
+    "D063_2019.zip": "02fe6402c64a3ee293d14a89ebafd7f94b8e6708320fedfed857a5ee18d9346a",
+    "D066_2021.zip": "f2592d7da22a1fab257cc3fe65c1a53a205df7eec5f52165121bc83efa0c3420",
+    "D067_2021.zip": "c5a74f3ea04b7a70b12c2f792943c6635c021620f8f85859185d57f84cd1d0f2",
+    "D070_2020.zip": "c336134106e4bc347fb59b1f7765586236776c45df9e5a9163465d1d8f6349cb",
+    "D072_2019.zip": "9060ba49fd9d0a705f5cc3fe212be9dbeb2bb4a9793fac9cd70d30c4292ca4c9",
+    "D074_2020.zip": "931babfd41072ab15aea7230ce77098b5617e27e71716e81310455eb7525a174",
+    "D077_2021.zip": "8eeb1b4bd951fe864f7402aac32770fb9156291c4fa2da436e59fc79557dfe7f",
+    "D078_2021.zip": "e53ea902a6d32a836c6cf8e3a0c82627bc5e0e843534f78da3298011f467987d",
+    "D080_2021.zip": "a8a49368aa382009646fa01508f4824527d096d9784ea69008a59c225c5f31bc",
+    "D081_2020.zip": "7487e23221dafa3593be2e3458d4c240572a13fd26f1947014cbddc0ab381bc2",
+    "D086_2020.zip": "d865bc0d5b8041c28298852aba01c591287c2a43051c7669085721bf7dfeab5d",
+    "D091_2021.zip": "d141e81169713764bee00d77634788cdf7ab808279678dc3bab3946b43981761"
+  },
+  "source_mapping_status": "source_audit_pending_geographic_overlap_review"
+}

@@ -1,0 +1,68 @@
+\section{材料与方法}
+\label{sec:methods}
+\subsection{覆盖记录与目标估计量}
+\label{sec:estimands}
+固定叶类别集合\(\leafset\)包含建筑、交通地表、木本植被、草本植被、耕地、裸地和地表水。各数据集的原始标签分别映射到精确叶类别、较粗祖先类别、歧义值或忽略值。精确支持记为
+\begin{equation}
+s_d(c)=\indicator{\text{经审计的源训练掩膜中含有类别 }c\text{ 的精确标签}}.
+\label{eq:support}
+\end{equation}
+这是明确类别映射下的源标签分配，不意味着不同产品之间具有普遍语义等价性。支持记录中的“精确”表示被纳入的源训练输出分配。目标 rangeland 关系是近似代理，不能证明目标类别在植物学意义上精确对应。对于草本植被，LoveDA 满足\(s_d(c^*)=0\)，FLAIR 原始 ID 10 则提供正例。主要估计量为配对的目标叶类别差值：
+\begin{equation}
+\Delta=\IoU_{\mathrm{B1}}(c^*)-\IoU_{\mathrm{B0}}(c^*).
+\label{eq:oem_estimand}
+\end{equation}
+另将支持类别保持定义为
+\begin{equation}
+\mIoU_{\mathrm{sup}}=\frac{1}{|\supportedset|}\sum_{c\in\supportedset}\IoU_c,
+\quad \supportedset=\leafset\setminus\{c^*\}.
+\label{eq:supported_miou}
+\end{equation}
+原混淆矩阵保持不变：将耕地参考像素预测为草本仍然是错误。总体 mIoU 对全部七个叶类别求平均。IoU 和差值均按0--1尺度报告；例如0.3118的差值表示31.18个百分点，而非相对百分比增幅。
+
+\subsection{数据集与评估总体}
+\label{sec:datasets}
+LoveDA 提供2,522对训练影像和1,669对验证影像\citep{wang2021loveda}，其六个非背景类别映射到六个非草本叶类别。FLAIR 提供高分辨率航空影像和土地覆盖标注\citep{garioud2023flair}；本文使用 FLAIR \#1 版本及其文档标签定义\citep{ign2026flair1}。保留的原始掩膜清单包含61,712对栅格，其中47,712对用于训练或优化，14,000对用于验证。B1 使用 RGB 通道0--2，并仅纳入原生草本 ID 10；其余 FLAIR 标签全部忽略。数据角色和经审计的总体计数见表\ref{tab:datasets}。
+\input{tables/table1_datasets_20260805}
+
+主要目标数据为 OpenEarthMap\citep{xia2023openearthmap}：共发现75个城市中的2,687对 RGB 影像与掩膜，另有813个仅标签掩膜被排除。移除 Paris 的49对数据后，剩余74个城市的2,638对数据。排除 Paris 是保守的源国家重叠防护；缺少可用 FLAIR 地理标签，因此不能声称已在坐标层面证明不重叠。在明确的类别映射下，OpenEarthMap rangeland 被用作非耕地草本输出的操作性代理，尽管其原生定义还包含灌丛和灌木。Semantic Drone grass 也映射到该输出。Agriculture\_land 保持为独立耕地关系，developed space 保持为较粗祖先类别。这些是基于原生标签的协议映射，而非植物学范围完全一致的断言。具体边界见英文补充材料 S2。
+
+Semantic Drone 提供400对栅格上的第二目标评估\citep{tugraz2018semanticdrone}。草地采用一对其余评分：发布的 grass 参考颜色对应正例，所有其他参考颜色均为负例，因此把非草地预测为草地会产生假阳性。其他类别不单独取平均；这不是官方全类别基准分数。标识符000--003曾用于流程冒烟测试；400张栅格结果为主要结果，排除这四张后的396张结果为探索性结果。第二个源混合案例则使用 Semantic Drone grass/tree/water 训练，并加入 LoveDA 耕地监督。该案例的 OpenEarthMap 评估排除 Shanghai、Tyrol 和 Vienna，保留72个城市中的2,540对数据；由于没有使用 FLAIR，Paris 被保留。这是同一目标版本上的反向源混合检验，并非独立目标配对复现。
+
+原始掩膜审计记录标识符、配对、被纳入的标签和像素支持。精确、粗粒度与忽略标签分别记录，不将宽泛植被类别默认为精确草本类别。本文报告历史固定检查点之间的差值，并非对一个事前从未接触的目标开展确认性检验。总体定义需同时说明目标相关检查和地理限制。
+
+\subsection{固定探针、训练与对比}
+\label{sec:probe}
+CLIP ViT-B/16 的影像和文本编码器均冻结\citep{radford2021clip}。归一化图像块特征和文本特征\(\mathbf z_{hw},\mathbf t_c\)经秩32投影校准：
+\begin{equation}
+\ell_c(h,w)=\tau\mathbf z_{hw}^{\mathsf T}\mathbf t_c+
+\alpha\frac{\langle\mathbf W_I\mathbf z_{hw},\mathbf W_T\mathbf t_c\rangle}{\sqrt{32}}.
+\label{eq:adapter}
+\end{equation}
+仅优化投影和标量参数。共享提示词和推理细节见附录\ref{app:integrity}及英文补充材料 S3--S4。固定预算源混合分支使用512像素裁块、AdamW、学习率\(10^{-3}\)、权重衰减\(10^{-4}\)、25,220次更新，以及随机种子19/37/73。映射后的部分标签\(y\)具有损失
+\begin{equation}
+\mathcal L(x,y)=-\log\sum_{c\in\mathrm{Desc}(y)}p(c\mid x).
+\label{eq:partial_loss}
+\end{equation}
+忽略像素不贡献损失。精确标签只有一个后代；粗类别约束相容的后代集合，但不分配精确叶类别正例。
+
+表\ref{tab:arms}定义各分支。B0 每次更新使用两个 LoveDA 裁块；B0-half 使用一个；B1 使用一个 LoveDA 裁块和一个 FLAIR 裁块。B1--B0 同时改变辅助影像与标签。B1--B0-half 匹配 LoveDA 暴露量，但仍是源混合对比，而非仅标签干预。确定性的重复裁块分支在附录\ref{app:integrity}所述条件下检查更新实现。
+\input{tables/table2_arms_20260807}
+
+已记录的 B1-shuffle 配置要求保留 FLAIR 影像排程、使用同区域非自身掩膜，并保持掩膜密度多重集。完整的、可由哈希定位的主要排程在当前证据包中不可得，因此这些约束未得到独立重新验证。原生 B1 减去 B1-shuffle 仅作为基于配置的配对敏感性，不能作为完整验证的配对干预或恢复成因分解。历史配置没有记录逐配对密度的数值容差；描述性错配和已停用的第二案例 shuffle 对比见英文补充材料 S10。对于反向混合，SD-B0 使用两个 Semantic Drone 裁块，SD-B0-half 使用一个，SD-B1 使用一个 Semantic Drone 裁块和一个 LoveDA 裁块，固定预算设置相同。其 shuffle 分支在所记录的错配审计后不再用于效果解释。
+
+B2 是独立的直接监督可学习性诊断，采用20轮训练，以及城市互斥的 OpenEarthMap 优化、验证和测试划分。留出总体包含16个城市和595张栅格。它不是预算匹配的外部迁移对比。E0 为冻结探针诊断，E3 为层级路由负对照，二者均不是针对所观察权衡提出的补救方法。
+
+\subsection{历史原生模型家族检验}
+\label{sec:unet_protocol}
+另对历史原生 ResNet-34 U-Net 记录进行再分析，其编码器采用 ImageNet 初始化，解码器采用 GroupNorm，编码器 BatchNorm 运行统计保持冻结。已记录的原生 U-B0、U-B0-half 和 U-B1 在自身队列内部采用相同的 LoveDA/FLAIR 角色、512像素裁块、AdamW、学习率$10^{-3}$、权重衰减$10^{-4}$、25,220次更新及种子19/37/73。U-B0 每次使用两个 LoveDA 裁块，U-B0-half 使用一个，U-B1 使用一个 LoveDA 裁块和一个 FLAIR ID-10 裁块。九组保留评估与主要 CLIP 对比使用相同的、排除 Paris 后74城2,638个目标标识符；这些历史记录的逐栅格参考类别边际计数一致。
+
+这是对已保存混淆矩阵与运行记录的回顾性分析。源审计内容通过与九份配置中记录的摘要相等而恢复；不同日期的文件名不能证明历史路径、时间或实际使用。九个原始检查点文件随后从保留归档找回，其 SHA256 摘要与原始评估配置完全相同。空间影像与掩膜同一性、历史初始化和实际执行代码身份未重新验证，也未开展模型推理重放。本文重构全部原生指标及配对的2,000次城市重采样区间（种子20260803），这些区间以记录的检查点为条件。U-Net shuffle 不用于效果解释。预训练表征和优化制度不同，不能将 CLIP--U-Net 的指标差异解释为架构优越性。九个原生检查点数值及来源限制见英文补充材料 S12。
+
+\subsection{推理、汇总与不确定性}
+\label{sec:contrasts}
+栅格采用不重叠的512像素瓦片评估，边缘补零，logit 双线性上采样，再在未填充区域取 argmax。不使用测试时增强或后处理。各类 IoU 为\(TP/(TP+FP+FN)\)。对每个检查点先汇总城市混淆矩阵，再计算 IoU；点估计为三个匹配检查点指标的平均值。主要源混合与暴露对比使用2,000组共享城市抽样（NumPy 种子20260803），配对控制对比使用种子20260806。历史种子19的 Semantic Drone 敏感性使用2,000次配对栅格抽样（种子20260804）；本稿中的三个检查点点值为描述性结果，不提供独立重构的栅格区间。反向源案例使用2,000次城市抽样（种子20260815）。百分位区间以已完成检查点和指定评估单位为条件，不估计训练种子不确定性，也不建立 Semantic Drone 站点层面的独立性。估计方法和诊断细节见英文补充材料 S6--S10。
+
+\subsection{AI 辅助准备}
+\label{sec:ai_assistance}
+OpenAI Codex 用作开发与写作助手，辅助代码草拟、文献检索、历史记录整理与重算、图表准备及稿件修订。性能差值由保留的原始整数记录计算；补充归档检查读取保留的检查点与提供方文件。生成文本不被视为实验证据。本地审计轨迹中的代理检查属于软件辅助、同模型家族的暂定审查，不替代独立人工同行评审或作者责任。本文不声称已证明所用助手的精确模型版本。

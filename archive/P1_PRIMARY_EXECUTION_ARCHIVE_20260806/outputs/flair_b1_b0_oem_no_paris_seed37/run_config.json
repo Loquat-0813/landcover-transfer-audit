@@ -1,0 +1,66 @@
+{
+  "experiment": "flair_b1_openearthmap_b0_replay",
+  "arm": "b0",
+  "model_id": "/root/autodl-tmp/models/clip-vit-base-patch16",
+  "adapter_checkpoint": "outputs/flair_b1_b0_seed37/adapter_final.pt",
+  "adapter_checkpoint_sha256": "47a63d815e41b275cc590472186b817f88f3bd4592998ecc75a94d8bba7a3c5b",
+  "source_checkpoint_run_config": {
+    "experiment": "flair_coverage_b0",
+    "protocol_mode": "fixed_budget_primary",
+    "arm": "b0",
+    "seed": 37,
+    "model_id": "/root/autodl-tmp/models/clip-vit-base-patch16",
+    "source_audit": "audits/flair_b1_source_ready_2026-08-03.json",
+    "source_audit_identifier_set_sha256": "3147befbc58ed12c50d2ac22b833ffb026c2b9ed772c5b41222e05f03ad754ae",
+    "love_train_pairs": 2522,
+    "flair_train_pairs": 0,
+    "love_validation_pairs": 1669,
+    "flair_train_domains": [],
+    "crop_size": 512,
+    "tile_size": 512,
+    "rank": 32,
+    "updates": 25220,
+    "batch_composition": [
+      "loveda",
+      "loveda"
+    ],
+    "learning_rate": 0.001,
+    "weight_decay": 0.0001,
+    "prompts": [
+      "a satellite image of a building",
+      "a satellite image of a road",
+      "a satellite image of forest or trees",
+      "a satellite image of grassland or rangeland",
+      "a satellite image of agricultural cropland",
+      "a satellite image of bare soil or barren ground",
+      "a satellite image of water"
+    ],
+    "taxonomy": "land-cover-taxonomy-v0",
+    "loveda_mapping": "dataset-label-mappings-v0",
+    "flair_mapping": "dataset-label-mappings-flair-b1-v1",
+    "flair_mapping_runtime_status": "source_audit_pending",
+    "flair_rgb_channels": []
+  },
+  "data_root": "data/raw/openearthmap",
+  "paired_raster_count": 2687,
+  "geographic_overlap_excluded_cities": [
+    "paris"
+  ],
+  "eligible_pairs_before_sample_cap": 2638,
+  "eligible_pair_identifier_set_sha256": "5458f46b24988726842cc7dfd59c4242e237f40b7d90c5ffdceefa30223fc964",
+  "evaluated_pairs": 2638,
+  "evaluated_pair_identifier_set_sha256": "5458f46b24988726842cc7dfd59c4242e237f40b7d90c5ffdceefa30223fc964",
+  "unpaired_label_count": 813,
+  "tile_size": 512,
+  "bootstrap_replicates": 2000,
+  "bootstrap_seed": 20260803,
+  "prompts": [
+    "a satellite image of a building",
+    "a satellite image of a road",
+    "a satellite image of forest or trees",
+    "a satellite image of grassland or rangeland",
+    "a satellite image of agricultural cropland",
+    "a satellite image of bare soil or barren ground",
+    "a satellite image of water"
+  ]
+}

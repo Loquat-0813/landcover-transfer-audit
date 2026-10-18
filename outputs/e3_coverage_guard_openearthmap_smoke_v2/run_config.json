@@ -1,0 +1,46 @@
+{
+  "dataset": "openearthmap",
+  "experiment": "e3_coverage_guard",
+  "data_root": "data/raw/openearthmap",
+  "model_id": "/root/autodl-tmp/models/clip-vit-base-patch16",
+  "adapter_checkpoint": "outputs/e3_coverage_guard_smoke_v2/adapter_final.pt",
+  "taxonomy": "land-cover-taxonomy-v0",
+  "mapping": "dataset-label-mappings-v0",
+  "tile_size": 512,
+  "prompt_config": "/root/autodl-tmp/p1/configs/taxonomy_prompts_v0.yaml",
+  "prompts": [
+    "a satellite image of a building",
+    "a satellite image of a road",
+    "a satellite image of forest or trees",
+    "a satellite image of grassland or rangeland",
+    "a satellite image of agricultural cropland",
+    "a satellite image of bare soil or barren ground",
+    "a satellite image of water"
+  ],
+  "prompt_policy": "checkpoint_matched_protocol_prompt",
+  "probability_threshold": 0.11352497339248657,
+  "alpha": 0.1,
+  "covered_leaf_names": [
+    "built_structure",
+    "transport_surface",
+    "woody_vegetation",
+    "cropland",
+    "bare_surface",
+    "surface_water"
+  ],
+  "uncovered_leaf_names": [
+    "herbaceous_vegetation"
+  ],
+  "audited_mask_count": 3500,
+  "paired_raster_count": 2687,
+  "unpaired_label_count": 813,
+  "unpaired_label_examples": [
+    "adelaide/labels/adelaide_10.tif",
+    "adelaide/labels/adelaide_12.tif",
+    "adelaide/labels/adelaide_13.tif",
+    "adelaide/labels/adelaide_14.tif",
+    "adelaide/labels/adelaide_15.tif"
+  ],
+  "selected_raster_count": 4,
+  "matched_flat_control": "the same E3 adapter before coverage routing"
+}

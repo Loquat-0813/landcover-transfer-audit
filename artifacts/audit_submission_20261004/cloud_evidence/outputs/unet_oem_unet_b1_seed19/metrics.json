@@ -1,0 +1,232 @@
+{
+  "run_config": {
+    "experiment": "unet_openearthmap_unet_b1_replay",
+    "protocol_id": "p1-unet-cross-family-v1",
+    "arm": "unet_b1",
+    "checkpoint": "outputs/unet_full_unet_b1_seed19/model_final.pt",
+    "checkpoint_sha256": "7f0e6ff7c066ecc403d458b682b7ee07e4f2c62280d53c73894539a2358ac3ab",
+    "source_checkpoint_run_config": {
+      "experiment": "unet_coverage_unet_b1",
+      "protocol_mode": "p1_unet_cross_family_v1",
+      "protocol_id": "p1-unet-cross-family-v1",
+      "arm": "unet_b1",
+      "seed": 19,
+      "model": "resnet34_unet_groupnorm_decoder",
+      "encoder_weight_id": "ResNet34_Weights.IMAGENET1K_V1",
+      "initial_encoder_state_sha256": "4a3d253a055229f975682c833601c19601f69c77676910da938ce66fab3b7cff",
+      "source_audit": "audits/flair_b1_source_ready_20260817.json",
+      "source_audit_sha256": "031d2b9b9d11d248e86172f8e23b22173d8e59ceae9a0f797491a0f3c02caf23",
+      "source_audit_identifier_set_sha256": "3147befbc58ed12c50d2ac22b833ffb026c2b9ed772c5b41222e05f03ad754ae",
+      "love_train_pairs": 2522,
+      "flair_train_pairs": 47712,
+      "love_validation_pairs": 1669,
+      "flair_train_domains": [
+        "D006_2020",
+        "D007_2020",
+        "D008_2019",
+        "D009_2019",
+        "D013_2020",
+        "D016_2020",
+        "D017_2018",
+        "D021_2020",
+        "D023_2020",
+        "D030_2021",
+        "D032_2019",
+        "D033_2021",
+        "D034_2021",
+        "D035_2020",
+        "D038_2021",
+        "D041_2021",
+        "D044_2020",
+        "D046_2019",
+        "D049_2020",
+        "D051_2019",
+        "D052_2019",
+        "D055_2018",
+        "D060_2021",
+        "D063_2019",
+        "D070_2020",
+        "D072_2019",
+        "D074_2020",
+        "D078_2021",
+        "D080_2021",
+        "D081_2020",
+        "D086_2020",
+        "D091_2021"
+      ],
+      "crop_size": 512,
+      "tile_size": 512,
+      "updates": 25220,
+      "batch_composition": [
+        "loveda",
+        "flair_raw_id_10_only"
+      ],
+      "learning_rate": 0.001,
+      "weight_decay": 0.0001,
+      "taxonomy": "land-cover-taxonomy-v0",
+      "loveda_mapping": "dataset-label-mappings-v0",
+      "flair_mapping": "dataset-label-mappings-flair-b1-v1",
+      "torch_version": "2.8.0+cu128",
+      "torchvision_version": "0.23.0+cu128",
+      "python_version": "3.12.3 | packaged by Anaconda, Inc. | (main, May  6 2024, 19:46:43) [GCC 11.2.0]",
+      "platform": "Linux-5.15.0-78-generic-x86_64-with-glibc2.35",
+      "cuda_device": "NVIDIA GeForce RTX 5090",
+      "shuffle_schedule_audit": null
+    },
+    "excluded_cities": [
+      "paris"
+    ],
+    "paired_raster_count": 2687,
+    "evaluated_pairs": 2638,
+    "evaluated_pair_identifier_set_sha256": "5458f46b24988726842cc7dfd59c4242e237f40b7d90c5ffdceefa30223fc964",
+    "evaluated_city_count": 74,
+    "tile_size": 512,
+    "bootstrap_replicates": 2000,
+    "bootstrap_seed": 20260803
+  },
+  "exact_leaf": {
+    "mean_iou": 0.14348528663522186,
+    "per_class_iou": {
+      "built_structure": 0.3817964022115681,
+      "transport_surface": 0.10584889501484952,
+      "woody_vegetation": 0.06292934784987299,
+      "herbaceous_vegetation": 0.29568633140695694,
+      "cropland": 0.027390322405706165,
+      "bare_surface": 0.024151058362097574,
+      "surface_water": 0.10659464919550185
+    },
+    "valid_pixels": 2100088476
+  },
+  "city_bootstrap": {
+    "resampling_unit": "openearthmap_city",
+    "city_names": [
+      "aachen",
+      "abancay",
+      "accra",
+      "al_qurnah",
+      "austin",
+      "baybay",
+      "bielefeld",
+      "bogota",
+      "buenos_aires",
+      "chiangmai",
+      "chicago",
+      "chiclayo",
+      "chincha",
+      "chisinau",
+      "christchurch",
+      "coxsbazar",
+      "daressalaam",
+      "dhaka",
+      "dolnoslaskie",
+      "dortmund",
+      "dowa",
+      "duesseldorf",
+      "ica",
+      "kagera",
+      "kampala",
+      "khartoum",
+      "kinshasa",
+      "kitsap",
+      "koeln",
+      "kujawsko-pomorskie",
+      "kyoto",
+      "lambayeque",
+      "lima",
+      "lodzkie",
+      "lohur",
+      "lubuskie",
+      "mahe",
+      "malopolskie",
+      "maputo",
+      "mazowieckie",
+      "melbourne",
+      "monrovia",
+      "muenster",
+      "ngaoundere",
+      "niamey",
+      "pisco",
+      "piura",
+      "podkarpackie",
+      "podlaskie",
+      "pointenoire",
+      "pomorskie",
+      "rio",
+      "rosario",
+      "rotterdam",
+      "san_tome",
+      "santiago",
+      "sechura",
+      "shanghai",
+      "slaskie",
+      "soriano",
+      "svaneti",
+      "swietokrzyskie",
+      "tokyo",
+      "tonga",
+      "tyrolw",
+      "ulaanbaatar",
+      "vegas",
+      "vienna",
+      "viru",
+      "warminsko-mazurskie",
+      "western",
+      "wielkopolskie",
+      "zachodniopomorskie",
+      "zanzibar"
+    ],
+    "city_count": 74,
+    "bootstrap_replicates": 2000,
+    "bootstrap_seed": 20260803,
+    "confidence_level": 0.95,
+    "point": {
+      "mean_iou": 0.14348528663522186,
+      "per_class_iou": {
+        "built_structure": 0.3817964022115681,
+        "transport_surface": 0.10584889501484952,
+        "woody_vegetation": 0.06292934784987299,
+        "herbaceous_vegetation": 0.29568633140695694,
+        "cropland": 0.027390322405706165,
+        "bare_surface": 0.024151058362097574,
+        "surface_water": 0.10659464919550185
+      },
+      "valid_pixels": 2100088476
+    },
+    "confidence_interval": {
+      "mean_iou": {
+        "lower": 0.12751558532608126,
+        "upper": 0.16075862360444015
+      },
+      "per_class_iou": {
+        "built_structure": {
+          "lower": 0.33447817183000483,
+          "upper": 0.42854207111536285
+        },
+        "transport_surface": {
+          "lower": 0.08111490563332763,
+          "upper": 0.1307653427093356
+        },
+        "woody_vegetation": {
+          "lower": 0.03918771016593803,
+          "upper": 0.09191087383851801
+        },
+        "herbaceous_vegetation": {
+          "lower": 0.26365307120347564,
+          "upper": 0.32613361262148693
+        },
+        "cropland": {
+          "lower": 0.009347980830111033,
+          "upper": 0.051128960343338525
+        },
+        "bare_surface": {
+          "lower": 0.002740530454575324,
+          "upper": 0.05167323993512575
+        },
+        "surface_water": {
+          "lower": 0.05304246716783827,
+          "upper": 0.17747358226485757
+        }
+      }
+    }
+  }
+}

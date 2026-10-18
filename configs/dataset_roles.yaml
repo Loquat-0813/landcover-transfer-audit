@@ -1,0 +1,41 @@
+version: p1-dataset-roles-v2
+tracks:
+  taxonomy_aware_land_cover_transfer:
+    status: active_p1_candidate
+    task: Cross-dataset open-vocabulary land-cover transfer with exact and coarse labels.
+    protocols:
+      single_source_generalization:
+        train_source: loveda
+        external_evaluation: [openearthmap, landcoverai]
+        purpose: Measure frozen-VLM and calibration transfer without coarse-label supervision.
+      heterogeneous_source_partial_label:
+        train_sources: [loveda, openearthmap]
+        external_evaluation: [landcoverai]
+        purpose: Measure partial-label likelihood when OpenEarthMap developed_space is a declared coarse source label.
+    taxonomy: ontology/land_cover_taxonomy_v0.yaml
+    protocol: protocols/hierarchical_transfer_v0.yaml
+    note: Do not report an iSAID seen/unseen H-score as evidence for this track.
+  object_centric_ovrs_benchmark:
+    status: retained_competitor_context_not_p1_primary
+    task: iSAID/DLRSD object-centric open-vocabulary remote-sensing segmentation.
+    note: RSKT-Seg already occupies the original rotation/transfer/fusion architecture space.
+datasets:
+  isaid:
+    role: object_centric_competitor_context
+    local_path: data/raw/isaid
+    foreground_classes: 15
+    split_protocol: configs/ov_splits.yaml
+  dlrsd:
+    role: object_centric_competitor_context
+    local_path: data/raw/dlrsd
+  loveda:
+    role: taxonomy_track_train_source_and_closed_set_sanity
+    local_path: data/raw/loveda
+    foreground_classes: 7
+  landcoverai:
+    role: taxonomy_track_external_eval
+    local_path: data/raw/landcoverai
+  openearthmap:
+    role: taxonomy_track_external_eval
+    local_path: data/raw/openearthmap
+    foreground_classes: 8

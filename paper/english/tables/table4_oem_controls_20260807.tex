@@ -1,0 +1,24 @@
+\begin{table}[H]
+\centering
+\caption{Fixed-budget and shuffled-pairing OpenEarthMap control contrasts on the Paris-excluded 74-city population. Intervals are paired city-bootstrap intervals conditional on completed fixed checkpoints. Contrasts are computed from unrounded checkpoint metrics and rounded only for display. The duplicated-crop integrity check is reported in Appendix Table~\ref{tab:batch_integrity}.}
+\label{tab:oem-controls}
+\small
+\renewcommand{\arraystretch}{1.12}
+\setlength{\tabcolsep}{4pt}
+\begin{tabular*}{\linewidth}{@{\extracolsep{\fill}}llrrr@{}}
+\toprule
+Contrast & Metric & Estimate & 95\% lower & 95\% upper \\
+\midrule
+B0-half $-$ B0 & overall mIoU & $-0.0069$ & $-0.0100$ & $-0.0038$ \\
+B1 $-$ B0 & overall mIoU & $-0.0422$ & $-0.0613$ & $-0.0252$ \\
+B1 $-$ B0 & rangeland IoU & $+0.3118$ & $+0.2821$ & $+0.3399$ \\
+B1 $-$ B0-half & overall mIoU & $-0.0352$ & $-0.0538$ & $-0.0182$ \\
+B1 $-$ B0-half & rangeland IoU & $+0.3118$ & $+0.2821$ & $+0.3399$ \\
+B1 $-$ B0 & supported-leaf mIoU & $-0.1011$ & $-0.1213$ & $-0.0821$ \\
+B1 $-$ B0-half & supported-leaf mIoU & $-0.0931$ & $-0.1128$ & $-0.0741$ \\
+B1 $-$ B1-shuffle & overall mIoU & $+0.0741$ & $+0.0634$ & $+0.0848$ \\
+B1 $-$ B1-shuffle & supported-leaf mIoU & $+0.0801$ & $+0.0682$ & $+0.0921$ \\
+B1 $-$ B1-shuffle & rangeland IoU & $+0.0385$ & $+0.0333$ & $+0.0439$ \\
+\bottomrule
+\end{tabular*}
+\end{table}

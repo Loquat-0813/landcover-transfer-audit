@@ -1,0 +1,268 @@
+{
+  "run_config": {
+    "dataset": "openearthmap",
+    "experiment": "e3_coverage_guard",
+    "data_root": "data/raw/openearthmap",
+    "model_id": "/root/autodl-tmp/models/clip-vit-base-patch16",
+    "adapter_checkpoint": "outputs/e3_coverage_guard_smoke_v2/adapter_final.pt",
+    "taxonomy": "land-cover-taxonomy-v0",
+    "mapping": "dataset-label-mappings-v0",
+    "tile_size": 512,
+    "prompt_config": "/root/autodl-tmp/p1/configs/taxonomy_prompts_v0.yaml",
+    "prompts": [
+      "a satellite image of a building",
+      "a satellite image of a road",
+      "a satellite image of forest or trees",
+      "a satellite image of grassland or rangeland",
+      "a satellite image of agricultural cropland",
+      "a satellite image of bare soil or barren ground",
+      "a satellite image of water"
+    ],
+    "prompt_policy": "checkpoint_matched_protocol_prompt",
+    "probability_threshold": 0.11352497339248657,
+    "alpha": 0.1,
+    "covered_leaf_names": [
+      "built_structure",
+      "transport_surface",
+      "woody_vegetation",
+      "cropland",
+      "bare_surface",
+      "surface_water"
+    ],
+    "uncovered_leaf_names": [
+      "herbaceous_vegetation"
+    ],
+    "audited_mask_count": 3500,
+    "paired_raster_count": 2687,
+    "unpaired_label_count": 813,
+    "unpaired_label_examples": [
+      "adelaide/labels/adelaide_10.tif",
+      "adelaide/labels/adelaide_12.tif",
+      "adelaide/labels/adelaide_13.tif",
+      "adelaide/labels/adelaide_14.tif",
+      "adelaide/labels/adelaide_15.tif"
+    ],
+    "selected_raster_count": 4,
+    "matched_flat_control": "the same E3 adapter before coverage routing"
+  },
+  "metrics": {
+    "flat_adapter": {
+      "external_leaf_and_coarse_diagnostic": {
+        "exact_leaf": {
+          "class_names": [
+            "built_structure",
+            "transport_surface",
+            "woody_vegetation",
+            "herbaceous_vegetation",
+            "cropland",
+            "bare_surface",
+            "surface_water"
+          ],
+          "confusion": [
+            [
+              0,
+              0,
+              1866,
+              0,
+              237681,
+              0,
+              0
+            ],
+            [
+              0,
+              0,
+              680,
+              0,
+              101288,
+              0,
+              0
+            ],
+            [
+              0,
+              0,
+              5570,
+              0,
+              515521,
+              0,
+              0
+            ],
+            [
+              0,
+              0,
+              29470,
+              0,
+              671438,
+              0,
+              0
+            ],
+            [
+              0,
+              0,
+              15353,
+              0,
+              2215300,
+              0,
+              0
+            ],
+            [
+              0,
+              0,
+              0,
+              0,
+              0,
+              0,
+              0
+            ],
+            [
+              0,
+              0,
+              0,
+              0,
+              2830,
+              0,
+              0
+            ]
+          ],
+          "per_class_iou": {
+            "built_structure": 0.0,
+            "transport_surface": 0.0,
+            "woody_vegetation": 0.009798402702037082,
+            "herbaceous_vegetation": 0.0,
+            "cropland": 0.5892678400951639,
+            "bare_surface": null,
+            "surface_water": 0.0
+          },
+          "macro_iou": 0.0998443737995335,
+          "valid_pixels": 3796997
+        },
+        "coarse_ancestor": {
+          "class_names": [
+            "artificial_surface",
+            "vegetated_surface",
+            "natural_nonvegetated_surface"
+          ],
+          "confusion": [
+            [
+              0,
+              202885,
+              0
+            ],
+            [
+              0,
+              0,
+              0
+            ],
+            [
+              0,
+              0,
+              0
+            ]
+          ],
+          "per_class_iou": {
+            "artificial_surface": 0.0,
+            "vegetated_surface": null,
+            "natural_nonvegetated_surface": null
+          },
+          "macro_iou": 0.0,
+          "valid_pixels": 202885
+        }
+      },
+      "coverage_aware_suite": {
+        "covered_leaf": {
+          "class_names": [
+            "built_structure",
+            "transport_surface",
+            "woody_vegetation",
+            "cropland",
+            "bare_surface",
+            "surface_water"
+          ],
+          "per_class_iou": {
+            "built_structure": 0.0,
+            "transport_surface": 0.0,
+            "woody_vegetation": 0.010334143490602793,
+            "cropland": 0.717396168943187,
+            "bare_surface": null,
+            "surface_water": 0.0
+          },
+          "macro_iou": 0.14554606248675797,
+          "valid_pixels": 3096089
+        },
+        "selective_hierarchy": {
+          "valid_pixels": 3796997,
+          "covered_pixels": 3096089,
+          "uncovered_pixels": 700908,
+          "uncovered_ancestor_correctness": 0.0,
+          "violation_leaf_rate": 1.0,
+          "uncovered_ancestor_specific_utility": 0.0,
+          "prediction_depth_counts": {
+            "0": 0,
+            "1": 0,
+            "2": 3796997
+          },
+          "covered_prediction_depth_counts": {
+            "0": 0,
+            "1": 0,
+            "2": 3096089
+          },
+          "uncovered_prediction_depth_counts": {
+            "0": 0,
+            "1": 0,
+            "2": 700908
+          }
+        },
+        "routed_valid_pixels": 0,
+        "route_rate": 0.0,
+        "mean_conformal_set_size": null
+      }
+    },
+    "coverage_guard": {
+      "covered_leaf": {
+        "class_names": [
+          "built_structure",
+          "transport_surface",
+          "woody_vegetation",
+          "cropland",
+          "bare_surface",
+          "surface_water"
+        ],
+        "per_class_iou": {
+          "built_structure": 0.0,
+          "transport_surface": 0.0,
+          "woody_vegetation": 0.005775663859025878,
+          "cropland": 0.004588780647119075,
+          "bare_surface": null,
+          "surface_water": 0.0
+        },
+        "macro_iou": 0.0020728889012289905,
+        "valid_pixels": 3096089
+      },
+      "selective_hierarchy": {
+        "valid_pixels": 3796997,
+        "covered_pixels": 3096089,
+        "uncovered_pixels": 700908,
+        "uncovered_ancestor_correctness": 0.9302005398711386,
+        "violation_leaf_rate": 0.06979946012886142,
+        "uncovered_ancestor_specific_utility": 0.001998835795853379,
+        "prediction_depth_counts": {
+          "0": 3706035,
+          "1": 7168,
+          "2": 83794
+        },
+        "covered_prediction_depth_counts": {
+          "0": 3056852,
+          "1": 4366,
+          "2": 34871
+        },
+        "uncovered_prediction_depth_counts": {
+          "0": 649183,
+          "1": 2802,
+          "2": 48923
+        }
+      },
+      "routed_valid_pixels": 3713203,
+      "route_rate": 0.9779315074518099,
+      "mean_conformal_set_size": 5.533351488031199
+    }
+  }
+}

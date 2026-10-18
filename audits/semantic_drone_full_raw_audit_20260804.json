@@ -1,0 +1,214 @@
+{
+  "version": "semantic-drone-raw-audit-v1",
+  "paired_raster_count": 400,
+  "total_available_pairs": 400,
+  "identifier_set_sha256": "e0e22d90392a5997299f44d7e02ca94a626c6c0e996ebebb9769e81a2762504d",
+  "image_shapes": [
+    [
+      4000,
+      6000,
+      3
+    ]
+  ],
+  "mask_shapes": [
+    [
+      4000,
+      6000,
+      3
+    ]
+  ],
+  "image_modes": [
+    "RGB"
+  ],
+  "mask_modes": [
+    "RGB"
+  ],
+  "class_names": [
+    "unlabeled",
+    "paved-area",
+    "dirt",
+    "grass",
+    "gravel",
+    "water",
+    "rocks",
+    "pool",
+    "vegetation",
+    "roof",
+    "wall",
+    "window",
+    "door",
+    "fence",
+    "fence-pole",
+    "person",
+    "dog",
+    "car",
+    "bicycle",
+    "tree",
+    "bald-tree",
+    "ar-marker",
+    "obstacle",
+    "conflicting"
+  ],
+  "class_rgb": {
+    "unlabeled": [
+      0,
+      0,
+      0
+    ],
+    "paved-area": [
+      128,
+      64,
+      128
+    ],
+    "dirt": [
+      130,
+      76,
+      0
+    ],
+    "grass": [
+      0,
+      102,
+      0
+    ],
+    "gravel": [
+      112,
+      103,
+      87
+    ],
+    "water": [
+      28,
+      42,
+      168
+    ],
+    "rocks": [
+      48,
+      41,
+      30
+    ],
+    "pool": [
+      0,
+      50,
+      89
+    ],
+    "vegetation": [
+      107,
+      142,
+      35
+    ],
+    "roof": [
+      70,
+      70,
+      70
+    ],
+    "wall": [
+      102,
+      102,
+      156
+    ],
+    "window": [
+      254,
+      228,
+      12
+    ],
+    "door": [
+      254,
+      148,
+      12
+    ],
+    "fence": [
+      190,
+      153,
+      153
+    ],
+    "fence-pole": [
+      153,
+      153,
+      153
+    ],
+    "person": [
+      255,
+      22,
+      96
+    ],
+    "dog": [
+      102,
+      51,
+      0
+    ],
+    "car": [
+      9,
+      143,
+      150
+    ],
+    "bicycle": [
+      119,
+      11,
+      32
+    ],
+    "tree": [
+      51,
+      51,
+      0
+    ],
+    "bald-tree": [
+      190,
+      250,
+      190
+    ],
+    "ar-marker": [
+      112,
+      150,
+      146
+    ],
+    "obstacle": [
+      2,
+      135,
+      115
+    ],
+    "conflicting": [
+      255,
+      0,
+      0
+    ]
+  },
+  "raw_rgb_pixel_counts": {
+    "unlabeled": 20891755,
+    "paved-area": 3622913197,
+    "dirt": 307253346,
+    "grass": 1918375679,
+    "gravel": 701671000,
+    "water": 212497466,
+    "rocks": 68981845,
+    "pool": 61394148,
+    "vegetation": 681674538,
+    "roof": 706871405,
+    "wall": 258344612,
+    "window": 53700119,
+    "door": 3010773,
+    "fence": 91957901,
+    "fence-pole": 5100883,
+    "person": 101021522,
+    "dog": 1365585,
+    "car": 75513357,
+    "bicycle": 20702183,
+    "tree": 196940774,
+    "bald-tree": 127775057,
+    "ar-marker": 21849983,
+    "obstacle": 340192872,
+    "conflicting": 0
+  },
+  "grass_rgb": [
+    0,
+    102,
+    0
+  ],
+  "grass_pixel_count": 1918375679,
+  "total_pixels": 9600000000,
+  "grass_pixel_fraction": 0.19983079989583333,
+  "source_mapping_status": "source_audit_pending_geographic_overlap_review",
+  "extracted_root": "data/raw/semantic_drone_extracted",
+  "class_dict_path": "data/raw/semantic_drone_extracted/semantic_drone_dataset/training_set/gt/semantic/class_dict.csv",
+  "class_dict_sha256": "9c6b90ae8d6c6da5b8e5acabf3bf754c8690aea8887b5612b9941cae6cc1eecc",
+  "archive": "data/raw/semantic_drone/semantic_drone_dataset_semantics_v1.1.zip",
+  "archive_sha256": "426427ce836c495dc85a7d857b64d6cae519a4dc82150c6fe11c22ddf5c2cbf1"
+}

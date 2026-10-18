@@ -1,0 +1,114 @@
+{
+  "version": "semantic-drone-confirmation-bootstrap-v1",
+  "target": {
+    "raw_class": "grass",
+    "p1_leaf": "herbaceous_vegetation",
+    "manifest_sha256": "f04fea758918d0409375a47229488561ad9a7fce1b8398c462c9546a1faae010",
+    "evaluated_pairs": 400
+  },
+  "arms": {
+    "e0": {
+      "true_positive": 43678433,
+      "false_positive": 28508804,
+      "false_negative": 1874697246,
+      "grass_iou": 0.022435040898109618
+    },
+    "b0": {
+      "true_positive": 0,
+      "false_positive": 0,
+      "false_negative": 1918375679,
+      "grass_iou": 0.0
+    },
+    "b1": {
+      "true_positive": 1538371756,
+      "false_positive": 4823524358,
+      "false_negative": 380003923,
+      "grass_iou": 0.22818074245499229
+    }
+  },
+  "comparisons": {
+    "paired_raster_bootstrap_b0_minus_e0": {
+      "comparison": "model_minus_baseline",
+      "resampling_unit": "semantic_drone_raster",
+      "raster_count": 400,
+      "raster_identifier_set_sha256": "e0e22d90392a5997299f44d7e02ca94a626c6c0e996ebebb9769e81a2762504d",
+      "bootstrap_replicates": 2000,
+      "bootstrap_seed": 20260804,
+      "confidence_level": 0.95,
+      "baseline": {
+        "true_positive": 43678433,
+        "false_positive": 28508804,
+        "false_negative": 1874697246,
+        "grass_iou": 0.022435040898109618
+      },
+      "model": {
+        "true_positive": 0,
+        "false_positive": 0,
+        "false_negative": 1918375679,
+        "grass_iou": 0.0
+      },
+      "point_difference": -0.022435040898109618,
+      "confidence_interval": {
+        "lower": -0.025257438674600962,
+        "upper": -0.019844966937711917
+      }
+    },
+    "paired_raster_bootstrap_b1_minus_b0": {
+      "comparison": "model_minus_baseline",
+      "resampling_unit": "semantic_drone_raster",
+      "raster_count": 400,
+      "raster_identifier_set_sha256": "e0e22d90392a5997299f44d7e02ca94a626c6c0e996ebebb9769e81a2762504d",
+      "bootstrap_replicates": 2000,
+      "bootstrap_seed": 20260804,
+      "confidence_level": 0.95,
+      "baseline": {
+        "true_positive": 0,
+        "false_positive": 0,
+        "false_negative": 1918375679,
+        "grass_iou": 0.0
+      },
+      "model": {
+        "true_positive": 1538371756,
+        "false_positive": 4823524358,
+        "false_negative": 380003923,
+        "grass_iou": 0.22818074245499229
+      },
+      "point_difference": 0.22818074245499229,
+      "confidence_interval": {
+        "lower": 0.20127164382584556,
+        "upper": 0.2539053247031791
+      }
+    },
+    "paired_raster_bootstrap_b1_minus_e0": {
+      "comparison": "model_minus_baseline",
+      "resampling_unit": "semantic_drone_raster",
+      "raster_count": 400,
+      "raster_identifier_set_sha256": "e0e22d90392a5997299f44d7e02ca94a626c6c0e996ebebb9769e81a2762504d",
+      "bootstrap_replicates": 2000,
+      "bootstrap_seed": 20260804,
+      "confidence_level": 0.95,
+      "baseline": {
+        "true_positive": 43678433,
+        "false_positive": 28508804,
+        "false_negative": 1874697246,
+        "grass_iou": 0.022435040898109618
+      },
+      "model": {
+        "true_positive": 1538371756,
+        "false_positive": 4823524358,
+        "false_negative": 380003923,
+        "grass_iou": 0.22818074245499229
+      },
+      "point_difference": 0.20574570155688265,
+      "confidence_interval": {
+        "lower": 0.1784874154560385,
+        "upper": 0.23163040176694527
+      }
+    }
+  },
+  "source_result_directories": {
+    "e0": "outputs/semantic_drone_confirmation_e0_full",
+    "b0": "outputs/semantic_drone_confirmation_b0_full",
+    "b1": "outputs/semantic_drone_confirmation_b1_full"
+  }
+}

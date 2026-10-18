@@ -1,0 +1,51 @@
+{
+  "experiment": "semantic_drone_confirmation_b0",
+  "manifest": "audits/semantic_drone_confirmation_manifest_20260804.json",
+  "manifest_sha256": "f04fea758918d0409375a47229488561ad9a7fce1b8398c462c9546a1faae010",
+  "model_id": "/root/autodl-tmp/models/clip-vit-base-patch16",
+  "adapter_checkpoint": "outputs/flair_b1_b0_seed19/adapter_final.pt",
+  "adapter_checkpoint_sha256": "fd98ea495f633ad1555e8a246312dc980ee20a6af9d71940323f3332bf35a08d",
+  "checkpoint_run_config": {
+    "experiment": "flair_coverage_b0",
+    "protocol_mode": "fixed_budget_primary",
+    "arm": "b0",
+    "seed": 19,
+    "model_id": "/root/autodl-tmp/models/clip-vit-base-patch16",
+    "source_audit": "audits/flair_b1_source_ready_2026-08-03.json",
+    "source_audit_identifier_set_sha256": "3147befbc58ed12c50d2ac22b833ffb026c2b9ed772c5b41222e05f03ad754ae",
+    "love_train_pairs": 2522,
+    "flair_train_pairs": 0,
+    "love_validation_pairs": 1669,
+    "flair_train_domains": [],
+    "crop_size": 512,
+    "tile_size": 512,
+    "rank": 32,
+    "updates": 25220,
+    "batch_composition": [
+      "loveda",
+      "loveda"
+    ],
+    "learning_rate": 0.001,
+    "weight_decay": 0.0001,
+    "prompts": [
+      "a satellite image of a building",
+      "a satellite image of a road",
+      "a satellite image of forest or trees",
+      "a satellite image of grassland or rangeland",
+      "a satellite image of agricultural cropland",
+      "a satellite image of bare soil or barren ground",
+      "a satellite image of water"
+    ],
+    "taxonomy": "land-cover-taxonomy-v0",
+    "loveda_mapping": "dataset-label-mappings-v0",
+    "flair_mapping": "dataset-label-mappings-flair-b1-v1",
+    "flair_mapping_runtime_status": "source_audit_pending",
+    "flair_rgb_channels": []
+  },
+  "extracted_root": "data/raw/semantic_drone_extracted",
+  "tile_size": 512,
+  "evaluated_pairs": 4,
+  "target_leaf": "herbaceous_vegetation",
+  "target_raw_class": "grass",
+  "target_metrics_used_for_method_selection": false
+}

@@ -1,0 +1,21 @@
+\begin{table}[H]
+\centering
+\caption{Three-checkpoint Semantic Drone second-target evaluation and B2 direct-supervision learnability diagnostic. The Semantic Drone point estimate averages three completed checkpoints; the three-checkpoint result is descriptive, with no independently reconstructed multi-checkpoint raster interval. The plus/minus value is the sample SD across three completed checkpoints, not a standard error. B2 intervals are paired city-bootstrap intervals over 16 held-out cities.}
+\label{tab:sd-b2}
+\small
+\renewcommand{\arraystretch}{1.12}
+\setlength{\tabcolsep}{3pt}
+\begin{tabularx}{\linewidth}{@{}>{\raggedright\arraybackslash}p{0.16\linewidth}>{\raggedright\arraybackslash}X>{\raggedright\arraybackslash}p{0.25\linewidth}>{\raggedright\arraybackslash}p{0.17\linewidth}>{\raggedright\arraybackslash}X@{}}
+\toprule
+Benchmark & Arm / contrast & Estimate [95\% interval where reported] & Units & Role \\
+\midrule
+Semantic Drone & B1 $-$ B0 (3 checkpoints) & +0.2272 $\pm$ 0.0040 & 400 paired rasters & second-target evaluation \\
+Semantic Drone & E0 grass IoU & 0.0224 & 400 rasters & checkpoint diagnostic \\
+Semantic Drone & B0 grass IoU & 0.0000 & 400 rasters & checkpoint diagnostic \\
+B2 & rangeland IoU (3 seeds) & 0.3867 & 16 held-out cities & learnability control \\
+B2 held-out & B0 rangeland IoU & 0.0000 & 16 held-out cities & baseline replay \\
+B2 & E0 rangeland IoU & 0.0104 & 16 held-out cities & baseline diagnostic \\
+B2 & B2 $-$ E0 rangeland & +0.3763 [+0.3430, +0.4030] & 16 held-out cities & learnability contrast \\
+\bottomrule
+\end{tabularx}
+\end{table}

@@ -1,0 +1,10 @@
+version: taxonomy-prompts-v0
+backbone_family: clip
+leaf_prompts:
+  built_structure: a satellite image of a building
+  transport_surface: a satellite image of a road
+  woody_vegetation: a satellite image of forest or trees
+  herbaceous_vegetation: a satellite image of grassland or rangeland
+  cropland: a satellite image of agricultural cropland
+  bare_surface: a satellite image of bare soil or barren ground
+  surface_water: a satellite image of water

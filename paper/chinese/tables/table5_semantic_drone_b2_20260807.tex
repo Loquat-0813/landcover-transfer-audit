@@ -1,0 +1,21 @@
+\begin{table}[H]
+\centering
+\caption{三个检查点的 Semantic Drone 第二目标评估与 B2 直接监督可学习性诊断。Semantic Drone 点估计为三个已完成检查点的平均值；结果为描述性结果，不提供独立重构的多检查点栅格区间。加减号表示三个已完成检查点之间的样本标准差，不是标准误。B2 区间为16个留出城市上的配对城市 bootstrap 区间。}
+\label{tab:sd-b2}
+\small
+\renewcommand{\arraystretch}{1.12}
+\setlength{\tabcolsep}{3pt}
+\begin{tabularx}{\linewidth}{@{}>{\raggedright\arraybackslash}p{0.16\linewidth}>{\raggedright\arraybackslash}X>{\raggedright\arraybackslash}p{0.25\linewidth}>{\raggedright\arraybackslash}p{0.17\linewidth}>{\raggedright\arraybackslash}X@{}}
+\toprule
+基准 & 分支或对比 & 估计［所报告95\%区间］ & 单位 & 角色 \\
+\midrule
+Semantic Drone & B1 $-$ B0 （3个检查点） & +0.2272 $\pm$ 0.0040 & 400对栅格 & 第二目标评估 \\
+Semantic Drone & E0 grass IoU & 0.0224 & 400张栅格 & 检查点诊断 \\
+Semantic Drone & B0 grass IoU & 0.0000 & 400张栅格 & 检查点诊断 \\
+B2 & rangeland IoU （3个种子） & 0.3867 & 16个留出城市 & 可学习性控制 \\
+B2 留出总体 & B0 rangeland IoU & 0.0000 & 16个留出城市 & 基线评估 \\
+B2 & E0 rangeland IoU & 0.0104 & 16个留出城市 & 基线诊断 \\
+B2 & B2 $-$ E0 rangeland & +0.3763 [+0.3430, +0.4030] & 16个留出城市 & 可学习性对比 \\
+\bottomrule
+\end{tabularx}
+\end{table}

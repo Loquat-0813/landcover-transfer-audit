@@ -1,0 +1,42 @@
+version: dataset-label-mappings-v0
+taxonomy: ontology/land_cover_taxonomy_v0.yaml
+policy:
+  exact: Source label and taxonomy node have the same intended semantic granularity.
+  coarser_than: Source label maps only to an ancestor taxonomy node and must not be scored as an exact leaf match.
+  ambiguous: Source label has no one-to-one cross-dataset semantic equivalent.
+  ignore: Source pixels are excluded from hierarchical transfer scoring.
+datasets:
+  loveda:
+    evidence: Author RSKT-Seg dataset JSON plus local mask audit.
+    scoring_status: ready
+    labels:
+      - {source_id: 0, source_name: no_data, relation: ignore, target: null}
+      - {source_id: 1, source_name: background, relation: ambiguous, target: null}
+      - {source_id: 2, source_name: building, relation: exact, target: built_structure}
+      - {source_id: 3, source_name: road, relation: exact, target: transport_surface}
+      - {source_id: 4, source_name: water, relation: exact, target: surface_water}
+      - {source_id: 5, source_name: barren, relation: exact, target: bare_surface}
+      - {source_id: 6, source_name: forest, relation: exact, target: woody_vegetation}
+      - {source_id: 7, source_name: agriculture, relation: exact, target: cropland}
+  openearthmap:
+    evidence: Official class ordering cross-checked against complete raw-mask audit data/audits/openearthmap_full_audit_v1.json (3500 masks; IDs 0-8); evaluation records the 2687 RGB-paired masks separately from 813 official xBD label-only masks.
+    scoring_status: ready
+    labels:
+      - {source_id: 0, source_name: unknown_or_void, relation: ignore, target: null}
+      - {source_id: 1, source_name: bareland, relation: exact, target: bare_surface}
+      - {source_id: 2, source_name: rangeland, relation: exact, target: herbaceous_vegetation}
+      - {source_id: 3, source_name: developed_space, relation: coarser_than, target: artificial_surface}
+      - {source_id: 4, source_name: road, relation: exact, target: transport_surface}
+      - {source_id: 5, source_name: tree, relation: exact, target: woody_vegetation}
+      - {source_id: 6, source_name: water, relation: exact, target: surface_water}
+      - {source_id: 7, source_name: agriculture_land, relation: exact, target: cropland}
+      - {source_id: 8, source_name: building, relation: exact, target: built_structure}
+  landcoverai:
+    evidence: Official class ordering cross-checked against complete raw-mask audit data/audits/landcoverai_full_audit_v1.json (41 masks; IDs 0-4).
+    scoring_status: ready
+    labels:
+      - {source_id: 0, source_name: background, relation: ambiguous, target: null}
+      - {source_id: 1, source_name: building, relation: exact, target: built_structure}
+      - {source_id: 2, source_name: woodland, relation: exact, target: woody_vegetation}
+      - {source_id: 3, source_name: water, relation: exact, target: surface_water}
+      - {source_id: 4, source_name: road, relation: exact, target: transport_surface}

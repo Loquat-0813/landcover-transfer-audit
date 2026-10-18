@@ -1,0 +1,23 @@
+\begin{table}[H]
+\centering
+\caption{冻结实验变体和源裁块。已记录 B1-shuffle 配置要求采用 B1 的 FLAIR 影像列表、同区域非原生掩膜，并保持密度多重集；完整主要排程仍不可得，无法独立重新验证。B2 优化与测试城市互斥。B2 使用单独的20轮直接监督可学习性排程，不与其他分支构成固定预算对比。}
+\label{tab:arms}
+\scriptsize
+\renewcommand{\arraystretch}{0.92}
+\setlength{\tabcolsep}{2pt}
+\begin{tabularx}{\linewidth}{@{}>{\raggedright\arraybackslash}p{0.11\linewidth}>{\raggedright\arraybackslash}p{0.12\linewidth}>{\raggedright\arraybackslash}p{0.25\linewidth}>{\raggedright\arraybackslash}p{0.13\linewidth}>{\raggedright\arraybackslash}p{0.13\linewidth}>{\raggedright\arraybackslash}X@{}}
+\toprule
+分支 & 预算 & 每次源裁块 & LoveDA 暴露 & 种子 & 角色 \\
+\midrule
+E0 & 0次更新 & 无 & 0 & 冻结检查点 & 探针诊断 \\
+B0 & 25,220次更新 & 2 LoveDA & 50,440 & 19, 37, 73 & LoveDA 基线 \\
+B0-half & 25,220次更新 & 1 LoveDA & 25,220 & 19, 37, 73 & 暴露控制 \\
+B1 & 25,220次更新 & 1 LoveDA + 1 原生 FLAIR 草本（ID 10） & 25,220 & 19, 37, 73 & 辅助训练 \\
+B1-shuffle & 25,220次更新 & 1 LoveDA + 1 错配 FLAIR 草本（ID 10） & 25,220 & 19, 37, 73 & 原生配对控制 \\
+B2 & 20轮 & OpenEarthMap 优化城市 & 不适用 & 19, 37, 73 & 直接支持控制 \\
+E3 & 非主要结果 & 源域保形路由诊断 & 不适用 & 不适用 & 层级负对照 \\
+\bottomrule
+\end{tabularx}
+\vspace{2pt}
+\noindent\parbox{\linewidth}{\raggedright\scriptsize 注：B0-half-batch2 在两个批槽内重复相同的确定性 LoveDA 裁块并取平均损失。其相对 B0-half 的差值在报告精度下为零（附录表\ref{tab:batch_integrity}），用于流程完整性检查，不是方法分支。E3 按源层级路由像素而不补全目标叶类别，仅保留为负对照。}
+\end{table}

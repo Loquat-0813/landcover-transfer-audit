@@ -1,0 +1,9 @@
+# Replace these IDs only if a model uses a different output-channel order.
+prediction_id_to_taxonomy_node:
+  0: built_structure
+  1: transport_surface
+  2: woody_vegetation
+  3: herbaceous_vegetation
+  4: cropland
+  5: bare_surface
+  6: surface_water

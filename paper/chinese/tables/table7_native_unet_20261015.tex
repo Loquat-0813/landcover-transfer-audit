@@ -1,0 +1,27 @@
+\begin{table}[H]
+\centering
+\caption{同一排除 Paris 后74城 OpenEarthMap 目标（2,638张栅格）上的历史原生 U-Net 对比。均值与样本标准差汇总三个已记录种子检查点，标准差为描述性统计。差值使用2,000次配对城市抽样，95\%区间以固定记录检查点为条件，不代表训练种子不确定性。支持类别 mIoU 对六个 LoveDA 支持类别平均。U-B0-half 匹配 U-B1 的 LoveDA 暴露量。未重放原始检查点和空间参考字节；这是家族内部的历史记录对比。}
+\label{tab:unet-native}
+\small
+\setlength{\tabcolsep}{3pt}
+\begin{tabular*}{\linewidth}{@{\extracolsep{\fill}}lrrr@{}}
+\toprule
+分支 & Rangeland IoU & 支持类 mIoU & 总体 mIoU \\
+\midrule
+U-B0 & $0.0000 \pm 0.0000$ & $0.2329 \pm 0.0158$ & $0.1996 \pm 0.0136$ \\
+U-B0-half & $0.0000 \pm 0.0000$ & $0.2207 \pm 0.0261$ & $0.1892 \pm 0.0223$ \\
+U-B1 & $0.2828 \pm 0.0111$ & $0.1025 \pm 0.0209$ & $0.1283 \pm 0.0190$ \\
+\bottomrule
+\end{tabular*}
+\par\medskip
+\begin{tabular*}{\linewidth}{@{\extracolsep{\fill}}lrrr@{}}
+\toprule
+对比与指标 & 估计 & 95\%下界 & 95\%上界 \\
+\midrule
+U-B1 $-$ U-B0 / rangeland & $+0.2828$ & $+0.2512$ & $+0.3133$ \\
+U-B1 $-$ U-B0 / 支持类 & $-0.1304$ & $-0.1529$ & $-0.1075$ \\
+U-B1 $-$ U-B0-half / rangeland & $+0.2828$ & $+0.2512$ & $+0.3133$ \\
+U-B1 $-$ U-B0-half / 支持类 & $-0.1182$ & $-0.1390$ & $-0.0965$ \\
+\bottomrule
+\end{tabular*}
+\end{table}

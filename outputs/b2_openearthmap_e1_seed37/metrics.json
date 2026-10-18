@@ -1,0 +1,165 @@
+{
+  "run_config": {
+    "experiment": "openearthmap_b2_e1",
+    "seed": 37,
+    "model_id": "/root/autodl-tmp/models/clip-vit-base-patch16",
+    "prompt_config": "/root/autodl-tmp/p1/configs/taxonomy_prompts_v0.yaml",
+    "prompts": [
+      "a satellite image of a building",
+      "a satellite image of a road",
+      "a satellite image of forest or trees",
+      "a satellite image of grassland or rangeland",
+      "a satellite image of agricultural cropland",
+      "a satellite image of bare soil or barren ground",
+      "a satellite image of water"
+    ],
+    "taxonomy": "land-cover-taxonomy-v0",
+    "mapping": "dataset-label-mappings-v0",
+    "data_root": "/root/autodl-tmp/p1/data/raw/openearthmap",
+    "crop_size": 512,
+    "tile_size": 512,
+    "rank": 32,
+    "epochs": 20,
+    "batch_size": 2,
+    "learning_rate": 0.001,
+    "weight_decay": 0.0001,
+    "train_percent": 70,
+    "validation_percent": 15,
+    "city_split": {
+      "train_pairs": 1689,
+      "validation_pairs": 403,
+      "test_pairs": 595,
+      "train_cities": 48,
+      "validation_cities": 11,
+      "test_cities": 16,
+      "train_city_set_sha256": "03fb79ddd5e52aec5153f63b0f0052f1a2732c6a6ebfa66b4690ef7eb3a2fb9e",
+      "validation_city_set_sha256": "3c8a72c3432908ceb69dbe3f83945eaaa3f7f97f8a83c5fe80d16472e3020b35",
+      "test_city_set_sha256": "197a41e375d9e4cd1f1c56dd550ec43cdfd5da142baac6658e897a1350bd1d78",
+      "train_pair_identifier_set_sha256": "c5c11809688ca9dbb63ee30c33b22155cb02fa27cde81ac7335e61ea0a5f825b",
+      "validation_pair_identifier_set_sha256": "f76db63f7c211635967e015e9b4f8642a780562f808efefdefbae34eef99f81c",
+      "test_pair_identifier_set_sha256": "9476790879cfeaff3e4bc1daeb62cc16191537e716327981f95fa140baa37090"
+    },
+    "selected_train_pairs": 1689,
+    "selected_validation_pairs": 403,
+    "selected_test_pairs": 595,
+    "audited_mask_count": 3500,
+    "paired_raster_count": 2687,
+    "unpaired_label_count": 813,
+    "unpaired_label_examples": [
+      "adelaide/labels/adelaide_10.tif",
+      "adelaide/labels/adelaide_12.tif",
+      "adelaide/labels/adelaide_13.tif",
+      "adelaide/labels/adelaide_14.tif",
+      "adelaide/labels/adelaide_15.tif"
+    ],
+    "test_data_policy": "city_disjoint_from_optimization_and_validation"
+  },
+  "history": [
+    {
+      "epoch": 1,
+      "train_loss": 1.532423189758549
+    },
+    {
+      "epoch": 2,
+      "train_loss": 1.334662980934572
+    },
+    {
+      "epoch": 3,
+      "train_loss": 1.1189898692291869
+    },
+    {
+      "epoch": 4,
+      "train_loss": 0.9746662253811514
+    },
+    {
+      "epoch": 5,
+      "train_loss": 0.8833765797008424
+    },
+    {
+      "epoch": 6,
+      "train_loss": 0.8125340979480179
+    },
+    {
+      "epoch": 7,
+      "train_loss": 0.7719211989076885
+    },
+    {
+      "epoch": 8,
+      "train_loss": 0.7621398817505357
+    },
+    {
+      "epoch": 9,
+      "train_loss": 0.740426292151389
+    },
+    {
+      "epoch": 10,
+      "train_loss": 0.7293989050670489
+    },
+    {
+      "epoch": 11,
+      "train_loss": 0.7194298864821711
+    },
+    {
+      "epoch": 12,
+      "train_loss": 0.7056088449157907
+    },
+    {
+      "epoch": 13,
+      "train_loss": 0.6996280316065049
+    },
+    {
+      "epoch": 14,
+      "train_loss": 0.693677011432027
+    },
+    {
+      "epoch": 15,
+      "train_loss": 0.6853649737214196
+    },
+    {
+      "epoch": 16,
+      "train_loss": 0.690566488747766
+    },
+    {
+      "epoch": 17,
+      "train_loss": 0.6908332880608429
+    },
+    {
+      "epoch": 18,
+      "train_loss": 0.6848822105036685
+    },
+    {
+      "epoch": 19,
+      "train_loss": 0.6826445332028457
+    },
+    {
+      "epoch": 20,
+      "train_loss": 0.678517508506775
+    }
+  ],
+  "validation": {
+    "mean_iou": 0.5541176091715606,
+    "per_class_iou": {
+      "built_structure": 0.7443880832099631,
+      "transport_surface": 0.5149975537871729,
+      "woody_vegetation": 0.6005155253411328,
+      "herbaceous_vegetation": 0.3690330323997371,
+      "cropland": 0.6523269649237116,
+      "bare_surface": 0.5099313631533194,
+      "surface_water": 0.48763074138588713
+    },
+    "valid_pixels": 345105377
+  },
+  "test": {
+    "mean_iou": 0.5290992539457616,
+    "per_class_iou": {
+      "built_structure": 0.7055206134414971,
+      "transport_surface": 0.4813084478664074,
+      "woody_vegetation": 0.5422148642579085,
+      "herbaceous_vegetation": 0.3889750143400203,
+      "cropland": 0.6252785563358947,
+      "bare_surface": 0.31856140547916273,
+      "surface_water": 0.6418358758994411
+    },
+    "valid_pixels": 469808097
+  }
+}

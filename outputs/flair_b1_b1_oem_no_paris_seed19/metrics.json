@@ -1,0 +1,250 @@
+{
+  "run_config": {
+    "experiment": "flair_b1_openearthmap_b1_replay",
+    "arm": "b1",
+    "model_id": "/root/autodl-tmp/models/clip-vit-base-patch16",
+    "adapter_checkpoint": "outputs/flair_b1_b1_seed19/adapter_final.pt",
+    "adapter_checkpoint_sha256": "54ace4013eeee86faf3f8c22a5f536ec4d004c66e3d1ce1ad798b546a25f1e6c",
+    "source_checkpoint_run_config": {
+      "experiment": "flair_coverage_b1",
+      "protocol_mode": "fixed_budget_primary",
+      "arm": "b1",
+      "seed": 19,
+      "model_id": "/root/autodl-tmp/models/clip-vit-base-patch16",
+      "source_audit": "audits/flair_b1_source_ready_2026-08-03.json",
+      "source_audit_identifier_set_sha256": "3147befbc58ed12c50d2ac22b833ffb026c2b9ed772c5b41222e05f03ad754ae",
+      "love_train_pairs": 2522,
+      "flair_train_pairs": 47712,
+      "love_validation_pairs": 1669,
+      "flair_train_domains": [
+        "D006_2020",
+        "D007_2020",
+        "D008_2019",
+        "D009_2019",
+        "D013_2020",
+        "D016_2020",
+        "D017_2018",
+        "D021_2020",
+        "D023_2020",
+        "D030_2021",
+        "D032_2019",
+        "D033_2021",
+        "D034_2021",
+        "D035_2020",
+        "D038_2021",
+        "D041_2021",
+        "D044_2020",
+        "D046_2019",
+        "D049_2020",
+        "D051_2019",
+        "D052_2019",
+        "D055_2018",
+        "D060_2021",
+        "D063_2019",
+        "D070_2020",
+        "D072_2019",
+        "D074_2020",
+        "D078_2021",
+        "D080_2021",
+        "D081_2020",
+        "D086_2020",
+        "D091_2021"
+      ],
+      "crop_size": 512,
+      "tile_size": 512,
+      "rank": 32,
+      "updates": 25220,
+      "batch_composition": [
+        "loveda",
+        "flair_raw_id_10_only"
+      ],
+      "learning_rate": 0.001,
+      "weight_decay": 0.0001,
+      "prompts": [
+        "a satellite image of a building",
+        "a satellite image of a road",
+        "a satellite image of forest or trees",
+        "a satellite image of grassland or rangeland",
+        "a satellite image of agricultural cropland",
+        "a satellite image of bare soil or barren ground",
+        "a satellite image of water"
+      ],
+      "taxonomy": "land-cover-taxonomy-v0",
+      "loveda_mapping": "dataset-label-mappings-v0",
+      "flair_mapping": "dataset-label-mappings-flair-b1-v1",
+      "flair_mapping_runtime_status": "ready",
+      "flair_rgb_channels": [
+        0,
+        1,
+        2
+      ]
+    },
+    "data_root": "data/raw/openearthmap",
+    "paired_raster_count": 2687,
+    "geographic_overlap_excluded_cities": [
+      "paris"
+    ],
+    "eligible_pairs_before_sample_cap": 2638,
+    "eligible_pair_identifier_set_sha256": "5458f46b24988726842cc7dfd59c4242e237f40b7d90c5ffdceefa30223fc964",
+    "evaluated_pairs": 2638,
+    "evaluated_pair_identifier_set_sha256": "5458f46b24988726842cc7dfd59c4242e237f40b7d90c5ffdceefa30223fc964",
+    "unpaired_label_count": 813,
+    "tile_size": 512,
+    "bootstrap_replicates": 2000,
+    "bootstrap_seed": 20260803,
+    "prompts": [
+      "a satellite image of a building",
+      "a satellite image of a road",
+      "a satellite image of forest or trees",
+      "a satellite image of grassland or rangeland",
+      "a satellite image of agricultural cropland",
+      "a satellite image of bare soil or barren ground",
+      "a satellite image of water"
+    ]
+  },
+  "exact_leaf": {
+    "mean_iou": 0.33996929302489215,
+    "per_class_iou": {
+      "built_structure": 0.5799331264463145,
+      "transport_surface": 0.27660608480173726,
+      "woody_vegetation": 0.32715877501269824,
+      "herbaceous_vegetation": 0.3124257541945148,
+      "cropland": 0.31816288050896413,
+      "bare_surface": 0.08532676432060016,
+      "surface_water": 0.480171665889416
+    },
+    "valid_pixels": 2100088476
+  },
+  "city_bootstrap": {
+    "resampling_unit": "openearthmap_city",
+    "city_names": [
+      "aachen",
+      "abancay",
+      "accra",
+      "al_qurnah",
+      "austin",
+      "baybay",
+      "bielefeld",
+      "bogota",
+      "buenos_aires",
+      "chiangmai",
+      "chicago",
+      "chiclayo",
+      "chincha",
+      "chisinau",
+      "christchurch",
+      "coxsbazar",
+      "daressalaam",
+      "dhaka",
+      "dolnoslaskie",
+      "dortmund",
+      "dowa",
+      "duesseldorf",
+      "ica",
+      "kagera",
+      "kampala",
+      "khartoum",
+      "kinshasa",
+      "kitsap",
+      "koeln",
+      "kujawsko-pomorskie",
+      "kyoto",
+      "lambayeque",
+      "lima",
+      "lodzkie",
+      "lohur",
+      "lubuskie",
+      "mahe",
+      "malopolskie",
+      "maputo",
+      "mazowieckie",
+      "melbourne",
+      "monrovia",
+      "muenster",
+      "ngaoundere",
+      "niamey",
+      "pisco",
+      "piura",
+      "podkarpackie",
+      "podlaskie",
+      "pointenoire",
+      "pomorskie",
+      "rio",
+      "rosario",
+      "rotterdam",
+      "san_tome",
+      "santiago",
+      "sechura",
+      "shanghai",
+      "slaskie",
+      "soriano",
+      "svaneti",
+      "swietokrzyskie",
+      "tokyo",
+      "tonga",
+      "tyrolw",
+      "ulaanbaatar",
+      "vegas",
+      "vienna",
+      "viru",
+      "warminsko-mazurskie",
+      "western",
+      "wielkopolskie",
+      "zachodniopomorskie",
+      "zanzibar"
+    ],
+    "city_count": 74,
+    "bootstrap_replicates": 2000,
+    "bootstrap_seed": 20260803,
+    "confidence_level": 0.95,
+    "point": {
+      "mean_iou": 0.3399692930248922,
+      "per_class_iou": {
+        "built_structure": 0.5799331264463145,
+        "transport_surface": 0.27660608480173726,
+        "woody_vegetation": 0.32715877501269824,
+        "herbaceous_vegetation": 0.3124257541945148,
+        "cropland": 0.31816288050896413,
+        "bare_surface": 0.08532676432060016,
+        "surface_water": 0.480171665889416
+      },
+      "valid_pixels": 2100088476
+    },
+    "confidence_interval": {
+      "mean_iou": {
+        "lower": 0.3206416938473375,
+        "upper": 0.35675559119385886
+      },
+      "per_class_iou": {
+        "built_structure": {
+          "lower": 0.5468780554722659,
+          "upper": 0.6111745428616293
+        },
+        "transport_surface": {
+          "lower": 0.24616279995875592,
+          "upper": 0.310065151095645
+        },
+        "woody_vegetation": {
+          "lower": 0.2875077395496802,
+          "upper": 0.36646786923404423
+        },
+        "herbaceous_vegetation": {
+          "lower": 0.28319275235649843,
+          "upper": 0.33988909172362186
+        },
+        "cropland": {
+          "lower": 0.2677944151428288,
+          "upper": 0.36835089778373187
+        },
+        "bare_surface": {
+          "lower": 0.05269475172483456,
+          "upper": 0.12023815194275181
+        },
+        "surface_water": {
+          "lower": 0.39573987690140894,
+          "upper": 0.5529881401939601
+        }
+      }
+    }
+  }
+}

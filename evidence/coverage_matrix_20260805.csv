@@ -1,0 +1,29 @@
+dataset,role,leaf,support_status,display_note
+LoveDA,source,built_structure,exact,raw class building
+LoveDA,source,transport_surface,exact,raw class road
+LoveDA,source,woody_vegetation,exact,raw class forest
+LoveDA,source,herbaceous_vegetation,absent,no exact source leaf
+LoveDA,source,cropland,exact,raw class agriculture
+LoveDA,source,bare_surface,exact,raw class barren
+LoveDA,source,surface_water,exact,raw class water
+FLAIR,auxiliary source,built_structure,ignored,raw IDs other than 10 ignored by B1
+FLAIR,auxiliary source,transport_surface,ignored,raw IDs other than 10 ignored by B1
+FLAIR,auxiliary source,woody_vegetation,ignored,raw IDs other than 10 ignored by B1
+FLAIR,auxiliary source,herbaceous_vegetation,exact,raw ID 10 only
+FLAIR,auxiliary source,cropland,ignored,raw IDs other than 10 ignored by B1
+FLAIR,auxiliary source,bare_surface,ignored,raw IDs other than 10 ignored by B1
+FLAIR,auxiliary source,surface_water,ignored,raw IDs other than 10 ignored by B1
+OpenEarthMap,primary target,built_structure,exact,building
+OpenEarthMap,primary target,transport_surface,exact,road
+OpenEarthMap,primary target,woody_vegetation,exact,tree
+OpenEarthMap,primary target,herbaceous_vegetation,exact,rangeland
+OpenEarthMap,primary target,cropland,exact,agriculture land
+OpenEarthMap,primary target,bare_surface,exact,bareland
+OpenEarthMap,primary target,surface_water,exact,water
+Semantic Drone,confirmation target,built_structure,not_scored,not part of narrow grass score
+Semantic Drone,confirmation target,transport_surface,not_scored,not part of narrow grass score
+Semantic Drone,confirmation target,woody_vegetation,not_scored,not part of narrow grass score
+Semantic Drone,confirmation target,herbaceous_vegetation,exact,grass
+Semantic Drone,confirmation target,cropland,not_scored,not part of narrow grass score
+Semantic Drone,confirmation target,bare_surface,not_scored,not part of narrow grass score
+Semantic Drone,confirmation target,surface_water,not_scored,not part of narrow grass score

@@ -1,0 +1,39 @@
+\begin{table}[H]
+\centering
+\caption{Second source-mixture replay: Semantic Drone as the base source, LoveDA agriculture as an auxiliary source supplying cropland supervision, and OpenEarthMap as the target. The base-source metric averages the three leaves with exact operational Semantic Drone support: herbaceous vegetation, woody vegetation, and surface water. Point values average three completed checkpoints. Contrasts are computed from unrounded checkpoint metrics and rounded only for display. Intervals are paired 2,000-draw city-bootstrap intervals conditioned on those checkpoints and the 72-city target population excluding Shanghai, Tyrol, and Vienna.}
+\label{tab:second-mixture}
+\small
+\renewcommand{\arraystretch}{1.12}
+\setlength{\tabcolsep}{4pt}
+\begin{tabular*}{\linewidth}{@{\extracolsep{\fill}}lrrrr@{}}
+\toprule
+\multicolumn{5}{l}{Cropland IoU by checkpoint and its mean} \\
+Arm & Seed 19 & Seed 37 & Seed 73 & Mean \\
+\midrule
+SD-B0 & 0.0000 & 0.0000 & 0.0000 & 0.0000 \\
+SD-B0-half & 0.0000 & 0.0000 & 0.0000 & 0.0000 \\
+SD-B1 & 0.1627 & 0.1642 & 0.1627 & 0.1632 \\
+\bottomrule
+\end{tabular*}
+\par\medskip
+\begin{tabular*}{\linewidth}{@{\extracolsep{\fill}}lrl@{}}
+\toprule
+Arm & Base-source mIoU & Role \\
+\midrule
+SD-B0 & 0.2686 & Base source \\
+SD-B0-half & 0.2337 & Exposure control \\
+SD-B1 & 0.1001 & Auxiliary cropland source \\
+\bottomrule
+\end{tabular*}
+\par\medskip
+\begin{tabular*}{\linewidth}{@{\extracolsep{\fill}}lrrr@{}}
+\toprule
+SD-B1 minus SD-B0 & Estimate & 95\% lower & 95\% upper \\
+\midrule
+Cropland IoU & +0.1632 & +0.1262 & +0.2049 \\
+Base-source mIoU & -0.1686 & -0.1903 & -0.1464 \\
+\bottomrule
+\end{tabular*}
+\par\smallskip
+\raggedright All three checkpoint-specific cropland contrasts are positive.
+\end{table}

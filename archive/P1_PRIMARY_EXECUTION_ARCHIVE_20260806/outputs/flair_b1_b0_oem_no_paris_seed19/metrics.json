@@ -1,0 +1,213 @@
+{
+  "run_config": {
+    "experiment": "flair_b1_openearthmap_b0_replay",
+    "arm": "b0",
+    "model_id": "/root/autodl-tmp/models/clip-vit-base-patch16",
+    "adapter_checkpoint": "outputs/flair_b1_b0_seed19/adapter_final.pt",
+    "adapter_checkpoint_sha256": "fd98ea495f633ad1555e8a246312dc980ee20a6af9d71940323f3332bf35a08d",
+    "source_checkpoint_run_config": {
+      "experiment": "flair_coverage_b0",
+      "protocol_mode": "fixed_budget_primary",
+      "arm": "b0",
+      "seed": 19,
+      "model_id": "/root/autodl-tmp/models/clip-vit-base-patch16",
+      "source_audit": "audits/flair_b1_source_ready_2026-08-03.json",
+      "source_audit_identifier_set_sha256": "3147befbc58ed12c50d2ac22b833ffb026c2b9ed772c5b41222e05f03ad754ae",
+      "love_train_pairs": 2522,
+      "flair_train_pairs": 0,
+      "love_validation_pairs": 1669,
+      "flair_train_domains": [],
+      "crop_size": 512,
+      "tile_size": 512,
+      "rank": 32,
+      "updates": 25220,
+      "batch_composition": [
+        "loveda",
+        "loveda"
+      ],
+      "learning_rate": 0.001,
+      "weight_decay": 0.0001,
+      "prompts": [
+        "a satellite image of a building",
+        "a satellite image of a road",
+        "a satellite image of forest or trees",
+        "a satellite image of grassland or rangeland",
+        "a satellite image of agricultural cropland",
+        "a satellite image of bare soil or barren ground",
+        "a satellite image of water"
+      ],
+      "taxonomy": "land-cover-taxonomy-v0",
+      "loveda_mapping": "dataset-label-mappings-v0",
+      "flair_mapping": "dataset-label-mappings-flair-b1-v1",
+      "flair_mapping_runtime_status": "source_audit_pending",
+      "flair_rgb_channels": []
+    },
+    "data_root": "data/raw/openearthmap",
+    "paired_raster_count": 2687,
+    "geographic_overlap_excluded_cities": [
+      "paris"
+    ],
+    "eligible_pairs_before_sample_cap": 2638,
+    "eligible_pair_identifier_set_sha256": "5458f46b24988726842cc7dfd59c4242e237f40b7d90c5ffdceefa30223fc964",
+    "evaluated_pairs": 2638,
+    "evaluated_pair_identifier_set_sha256": "5458f46b24988726842cc7dfd59c4242e237f40b7d90c5ffdceefa30223fc964",
+    "unpaired_label_count": 813,
+    "tile_size": 512,
+    "bootstrap_replicates": 2000,
+    "bootstrap_seed": 20260803,
+    "prompts": [
+      "a satellite image of a building",
+      "a satellite image of a road",
+      "a satellite image of forest or trees",
+      "a satellite image of grassland or rangeland",
+      "a satellite image of agricultural cropland",
+      "a satellite image of bare soil or barren ground",
+      "a satellite image of water"
+    ]
+  },
+  "exact_leaf": {
+    "mean_iou": 0.3829581828795648,
+    "per_class_iou": {
+      "built_structure": 0.600265281863459,
+      "transport_surface": 0.4151363340951168,
+      "woody_vegetation": 0.46502818650743183,
+      "herbaceous_vegetation": 1.6057054590801882e-07,
+      "cropland": 0.5368025287997545,
+      "bare_surface": 0.15357874953539113,
+      "surface_water": 0.5098960387852545
+    },
+    "valid_pixels": 2100088476
+  },
+  "city_bootstrap": {
+    "resampling_unit": "openearthmap_city",
+    "city_names": [
+      "aachen",
+      "abancay",
+      "accra",
+      "al_qurnah",
+      "austin",
+      "baybay",
+      "bielefeld",
+      "bogota",
+      "buenos_aires",
+      "chiangmai",
+      "chicago",
+      "chiclayo",
+      "chincha",
+      "chisinau",
+      "christchurch",
+      "coxsbazar",
+      "daressalaam",
+      "dhaka",
+      "dolnoslaskie",
+      "dortmund",
+      "dowa",
+      "duesseldorf",
+      "ica",
+      "kagera",
+      "kampala",
+      "khartoum",
+      "kinshasa",
+      "kitsap",
+      "koeln",
+      "kujawsko-pomorskie",
+      "kyoto",
+      "lambayeque",
+      "lima",
+      "lodzkie",
+      "lohur",
+      "lubuskie",
+      "mahe",
+      "malopolskie",
+      "maputo",
+      "mazowieckie",
+      "melbourne",
+      "monrovia",
+      "muenster",
+      "ngaoundere",
+      "niamey",
+      "pisco",
+      "piura",
+      "podkarpackie",
+      "podlaskie",
+      "pointenoire",
+      "pomorskie",
+      "rio",
+      "rosario",
+      "rotterdam",
+      "san_tome",
+      "santiago",
+      "sechura",
+      "shanghai",
+      "slaskie",
+      "soriano",
+      "svaneti",
+      "swietokrzyskie",
+      "tokyo",
+      "tonga",
+      "tyrolw",
+      "ulaanbaatar",
+      "vegas",
+      "vienna",
+      "viru",
+      "warminsko-mazurskie",
+      "western",
+      "wielkopolskie",
+      "zachodniopomorskie",
+      "zanzibar"
+    ],
+    "city_count": 74,
+    "bootstrap_replicates": 2000,
+    "bootstrap_seed": 20260803,
+    "confidence_level": 0.95,
+    "point": {
+      "mean_iou": 0.3829581828795648,
+      "per_class_iou": {
+        "built_structure": 0.600265281863459,
+        "transport_surface": 0.4151363340951168,
+        "woody_vegetation": 0.46502818650743183,
+        "herbaceous_vegetation": 1.6057054590801882e-07,
+        "cropland": 0.5368025287997545,
+        "bare_surface": 0.15357874953539113,
+        "surface_water": 0.5098960387852545
+      },
+      "valid_pixels": 2100088476
+    },
+    "confidence_interval": {
+      "mean_iou": {
+        "lower": 0.36044271788788856,
+        "upper": 0.40366572839744685
+      },
+      "per_class_iou": {
+        "built_structure": {
+          "lower": 0.5727692095418399,
+          "upper": 0.6281471636390006
+        },
+        "transport_surface": {
+          "lower": 0.37848338711938884,
+          "upper": 0.4504008352406907
+        },
+        "woody_vegetation": {
+          "lower": 0.4334055591406558,
+          "upper": 0.49539682226472903
+        },
+        "herbaceous_vegetation": {
+          "lower": 0.0,
+          "upper": 5.173395491180654e-07
+        },
+        "cropland": {
+          "lower": 0.4833578008172869,
+          "upper": 0.5859671365465515
+        },
+        "bare_surface": {
+          "lower": 0.08598872761741862,
+          "upper": 0.22289069626725175
+        },
+        "surface_water": {
+          "lower": 0.4264680940271985,
+          "upper": 0.5849803030385985
+        }
+      }
+    }
+  }
+}

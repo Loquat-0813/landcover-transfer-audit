@@ -1,0 +1,169 @@
+{
+  "class_names": [
+    "built_structure",
+    "transport_surface",
+    "woody_vegetation",
+    "herbaceous_vegetation",
+    "cropland",
+    "bare_surface",
+    "surface_water"
+  ],
+  "test_pair_identifier_set_sha256": "9476790879cfeaff3e4bc1daeb62cc16191537e716327981f95fa140baa37090",
+  "e0": {
+    "mean_iou": 0.07645446991333218,
+    "per_class_iou": {
+      "built_structure": 0.01655196854817681,
+      "transport_surface": 0.004522115581287619,
+      "woody_vegetation": 0.04587490133932522,
+      "herbaceous_vegetation": 0.010389094864611625,
+      "cropland": 0.17915227764322925,
+      "bare_surface": 0.018158714704761155,
+      "surface_water": 0.2605322167119336
+    },
+    "valid_pixels": 469808097
+  },
+  "e1_seeds": [
+    {
+      "mean_iou": 0.5206919473039879,
+      "per_class_iou": {
+        "built_structure": 0.6940408102986887,
+        "transport_surface": 0.46395842191006076,
+        "woody_vegetation": 0.5305797766953211,
+        "herbaceous_vegetation": 0.39344288999147853,
+        "cropland": 0.6147288131694206,
+        "bare_surface": 0.30529231741697604,
+        "surface_water": 0.6428006016459696
+      },
+      "valid_pixels": 469808097
+    },
+    {
+      "mean_iou": 0.5290992539457616,
+      "per_class_iou": {
+        "built_structure": 0.7055206134414971,
+        "transport_surface": 0.4813084478664074,
+        "woody_vegetation": 0.5422148642579085,
+        "herbaceous_vegetation": 0.3889750143400203,
+        "cropland": 0.6252785563358947,
+        "bare_surface": 0.31856140547916273,
+        "surface_water": 0.6418358758994411
+      },
+      "valid_pixels": 469808097
+    },
+    {
+      "mean_iou": 0.5108109165513326,
+      "per_class_iou": {
+        "built_structure": 0.7142780449555451,
+        "transport_surface": 0.45365999522791284,
+        "woody_vegetation": 0.5298600369684098,
+        "herbaceous_vegetation": 0.3776265417196102,
+        "cropland": 0.6193277091768649,
+        "bare_surface": 0.2536560735658816,
+        "surface_water": 0.6272680142451035
+      },
+      "valid_pixels": 469808097
+    }
+  ],
+  "e1_mean": {
+    "mean_iou": 0.520200705933694,
+    "mean_iou_sample_std": 0.009154059740139015,
+    "per_class_iou": {
+      "built_structure": 0.7046131562319103,
+      "transport_surface": 0.46630895500146036,
+      "woody_vegetation": 0.5342182259738798,
+      "herbaceous_vegetation": 0.38668148201703634,
+      "cropland": 0.6197783595607267,
+      "bare_surface": 0.2925032654873401,
+      "surface_water": 0.6373014972635047
+    },
+    "per_class_iou_sample_std": {
+      "built_structure": 0.010149089889226089,
+      "transport_surface": 0.013973295519886955,
+      "woody_vegetation": 0.006934635837794169,
+      "herbaceous_vegetation": 0.008153798872408328,
+      "cropland": 0.005289289606931885,
+      "bare_surface": 0.03429060242453449,
+      "surface_water": 0.008702629490671987
+    }
+  },
+  "paired_city_bootstrap_mean_e1_minus_e0": {
+    "comparison": "mean_e1_minus_e0",
+    "resampling_unit": "openearthmap_city",
+    "city_names": [
+      "bielefeld",
+      "buenos_aires",
+      "dhaka",
+      "dolnoslaskie",
+      "dowa",
+      "kagera",
+      "lohur",
+      "malopolskie",
+      "monrovia",
+      "muenster",
+      "piura",
+      "pomorskie",
+      "rio",
+      "san_tome",
+      "soriano",
+      "vegas"
+    ],
+    "city_count": 16,
+    "model_seed_count": 3,
+    "bootstrap_replicates": 2000,
+    "bootstrap_seed": 20260803,
+    "confidence_level": 0.95,
+    "point_difference": {
+      "mean_iou": 0.4437462360203619,
+      "per_class_iou": {
+        "built_structure": 0.6880611876837335,
+        "transport_surface": 0.4617868394201727,
+        "woody_vegetation": 0.4883433246345546,
+        "herbaceous_vegetation": 0.3762923871524247,
+        "cropland": 0.4406260819174974,
+        "bare_surface": 0.27434455078257897,
+        "surface_water": 0.3767692805515711
+      }
+    },
+    "confidence_interval": {
+      "mean_iou": {
+        "lower": 0.39557157786752517,
+        "upper": 0.483619856897487
+      },
+      "per_class_iou": {
+        "built_structure": {
+          "lower": 0.6359630721827361,
+          "upper": 0.7224987843052247
+        },
+        "transport_surface": {
+          "lower": 0.40138119589293925,
+          "upper": 0.5185939179581824
+        },
+        "woody_vegetation": {
+          "lower": 0.43993460825566105,
+          "upper": 0.5376326935835013
+        },
+        "herbaceous_vegetation": {
+          "lower": 0.34301780110221114,
+          "upper": 0.403020181178671
+        },
+        "cropland": {
+          "lower": 0.31676465846046553,
+          "upper": 0.517985346756022
+        },
+        "bare_surface": {
+          "lower": 0.06924028782286196,
+          "upper": 0.45711295877658187
+        },
+        "surface_water": {
+          "lower": 0.32127009039088394,
+          "upper": 0.4225091757699297
+        }
+      }
+    }
+  },
+  "source_replay_directories": [
+    "outputs/b2_replay_e0",
+    "outputs/b2_replay_e1_seed19",
+    "outputs/b2_replay_e1_seed37",
+    "outputs/b2_replay_e1_seed73"
+  ]
+}

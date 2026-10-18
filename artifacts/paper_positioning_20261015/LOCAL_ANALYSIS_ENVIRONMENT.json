@@ -1,0 +1,8 @@
+{
+  "scope": "current local analysis/figure environment only; not historical GPU training lock",
+  "python": "3.12.7",
+  "numpy": "1.26.4",
+  "matplotlib": "3.9.2",
+  "pymupdf": "1.28.0",
+  "platform": "Windows-10-10.0.19045-SP0"
+}

@@ -1,0 +1,26 @@
+\begin{table}[H]
+\centering
+\caption{OpenEarthMap Paris-excluded 74-city replay metrics by fixed checkpoint. Values are displayed to four decimal places; the B0 rangeland IoU for seed 19 is $1.6\times10^{-7}$ and those for seeds 37 and 73 are zero. The B0 and B1 supported-leaf mIoU ranges are 0.4359--0.4468 and 0.3309--0.3473, respectively. Supported-leaf mIoU averages the six leaves with exact operational LoveDA support; it is reported beside overall mIoU rather than as an alternative overall-performance estimate. City-bootstrap contrasts are computed from unrounded checkpoint metrics and rounded only for display (Table~\ref{tab:oem-controls}).}
+\label{tab:oem-seeds}
+\small
+\renewcommand{\arraystretch}{1.12}
+\setlength{\tabcolsep}{4pt}
+\begin{tabular*}{\linewidth}{@{\extracolsep{\fill}}lrrrr@{}}
+\toprule
+Arm & Seed & Overall mIoU & Rangeland IoU & Supported-leaf mIoU \\
+\midrule
+B0 & 19 & 0.3830 & 0.0000 & 0.4468 \\
+B0 & 37 & 0.3802 & 0.0000 & 0.4436 \\
+B0 & 73 & 0.3736 & 0.0000 & 0.4359 \\
+B0-half & 19 & 0.3652 & 0.0000 & 0.4261 \\
+B0-half & 37 & 0.3825 & 0.0000 & 0.4462 \\
+B0-half & 73 & 0.3683 & 0.0000 & 0.4296 \\
+B1-shuffle & 19 & 0.2710 & 0.2732 & 0.2707 \\
+B1-shuffle & 37 & 0.2564 & 0.2812 & 0.2523 \\
+B1-shuffle & 73 & 0.2604 & 0.2653 & 0.2596 \\
+B1 & 19 & 0.3400 & 0.3124 & 0.3446 \\
+B1 & 37 & 0.3292 & 0.3187 & 0.3309 \\
+B1 & 73 & 0.3411 & 0.3041 & 0.3473 \\
+\bottomrule
+\end{tabular*}
+\end{table}
